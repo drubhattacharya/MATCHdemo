@@ -3,45 +3,45 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Module 2 — Revenue Optimization & VBC Strategies</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<title>Module 2 — Revenue Optimization & Value-Based Care</title>
+<!-- Articulate-safe: Google Fonts with complete local fallback stack -->
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
 <style>
-/* ═══════════════════════════════════════════════
-   ROOT & RESET
-═══════════════════════════════════════════════ */
+/* ═══ ROOT ════════════════════════════════════════════════════════ */
 :root {
-  --navy:      #0B1F35;
-  --navy2:     #142840;
-  --teal:      #0A8B7F;
-  --teal2:     #0FB5A6;
-  --teal3:     #5EEAD4;
-  --gold:      #C4860A;
-  --gold2:     #F5A623;
-  --gold3:     #FEF3C7;
-  --blue:      #1D4ED8;
-  --blue2:     #3B82F6;
-  --green:     #047857;
-  --green2:    #10B981;
-  --red:       #B91C1C;
-  --red2:      #EF4444;
-  --amber:     #D97706;
-  --ink:       #0F172A;
-  --muted:     #64748B;
-  --border:    rgba(15,23,42,.10);
-  --border2:   rgba(15,23,42,.18);
-  --bg:        #F8FAFC;
-  --card:      #FFFFFF;
-  --serif:     'DM Serif Display', Georgia, serif;
-  --sans:      'DM Sans', system-ui, sans-serif;
-  --mono:      'DM Mono', monospace;
-  --r:         14px;
-  --r2:        20px;
-  --shadow:    0 4px 24px rgba(11,31,53,.08), 0 1px 4px rgba(11,31,53,.04);
-  --shadow2:   0 16px 64px rgba(11,31,53,.12), 0 4px 16px rgba(11,31,53,.06);
+  --navy:    #0B1F35;
+  --navy2:   #142840;
+  --teal:    #0A8B7F;
+  --teal2:   #0FB5A6;
+  --teal3:   #CCFBF1;
+  --gold:    #B45309;
+  --gold2:   #F59E0B;
+  --gold3:   #FEF3C7;
+  --blue:    #1D4ED8;
+  --blue2:   #DBEAFE;
+  --green:   #047857;
+  --green2:  #D1FAE5;
+  --red:     #B91C1C;
+  --red2:    #FEE2E2;
+  --purple:  #6D28D9;
+  --purple2: #EDE9FE;
+  --ink:     #0F172A;
+  --muted:   #64748B;
+  --border:  rgba(15,23,42,.10);
+  --border2: rgba(15,23,42,.18);
+  --bg:      #F1F5F9;
+  --card:    #FFFFFF;
+  --serif:   'DM Serif Display', 'Georgia', 'Times New Roman', serif;
+  --sans:    'DM Sans', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  --mono:    'DM Mono', 'Courier New', monospace;
+  --r:       12px;
+  --r2:      18px;
+  --sh:      0 2px 12px rgba(11,31,53,.08), 0 1px 3px rgba(11,31,53,.04);
+  --sh2:     0 8px 40px rgba(11,31,53,.12), 0 2px 8px rgba(11,31,53,.06);
 }
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-html{font-size:16px;}
-body{
+*,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+html { font-size:16px; -webkit-font-smoothing:antialiased; }
+body {
   font-family:var(--sans);
   background:var(--bg);
   color:var(--ink);
@@ -49,1629 +49,1648 @@ body{
   overflow-x:hidden;
 }
 
-/* ═══════════════════════════════════════════════
-   LAYOUT SHELL
-═══════════════════════════════════════════════ */
-.shell {
-  display:grid;
-  grid-template-rows: auto 1fr auto;
-  min-height:100vh;
-}
-
-/* ═══════════════════════════════════════════════
-   PROGRESS HEADER
-═══════════════════════════════════════════════ */
+/* ═══ PROGRESS HEADER ════════════════════════════════════════════ */
 .prog-header {
   background:var(--navy);
-  padding:0 32px;
-  position:sticky; top:0; z-index:200;
-  box-shadow:0 2px 16px rgba(0,0,0,.2);
+  padding:0 28px;
+  position:sticky; top:0; z-index:300;
+  box-shadow:0 2px 20px rgba(0,0,0,.25);
 }
 .prog-inner {
-  max-width:1100px;
-  margin:0 auto;
-  display:flex;
-  align-items:center;
-  gap:20px;
-  padding:14px 0;
-  flex-wrap:wrap;
+  max-width:1080px; margin:0 auto;
+  display:flex; align-items:center; gap:16px;
+  padding:12px 0; flex-wrap:wrap;
 }
-.prog-brand {
-  display:flex; align-items:center; gap:12px; flex-shrink:0;
-}
+.prog-brand { display:flex; align-items:center; gap:10px; flex-shrink:0; }
 .prog-icon {
-  width:38px; height:38px;
+  width:36px; height:36px;
   background:linear-gradient(135deg,var(--teal),var(--teal2));
-  border-radius:10px;
+  border-radius:9px;
   display:flex; align-items:center; justify-content:center;
-  font-size:18px; font-weight:900; color:#fff;
-  font-family:var(--serif);
+  font-family:var(--serif); font-size:16px; font-weight:900; color:#fff;
+  letter-spacing:-.02em;
 }
-.prog-title {
-  color:#fff;
-  font-size:13px; font-weight:600;
-  line-height:1.3;
-}
-.prog-title span {
-  display:block;
-  font-size:11px; font-weight:400;
-  color:rgba(255,255,255,.5);
-  letter-spacing:.04em; text-transform:uppercase;
-}
-.prog-scenes {
-  display:flex; gap:4px; flex:1; min-width:0;
-}
+.prog-title { color:#fff; font-size:13px; font-weight:600; line-height:1.3; }
+.prog-title span { display:block; font-size:10px; font-weight:400; color:rgba(255,255,255,.45); letter-spacing:.06em; text-transform:uppercase; margin-top:1px; }
+.prog-scenes { display:flex; gap:6px; align-items:center; flex:1; flex-wrap:wrap; }
 .prog-dot {
-  flex:1;
-  height:4px;
-  border-radius:2px;
-  background:rgba(255,255,255,.12);
-  transition: background .3s, transform .2s;
-  cursor:pointer;
-  position:relative;
+  width:28px; height:28px; border-radius:50%;
+  background:rgba(255,255,255,.12); border:2px solid transparent;
+  display:flex; align-items:center; justify-content:center;
+  font-size:10px; font-weight:700; color:rgba(255,255,255,.4);
+  cursor:default; transition:all .2s; position:relative; flex-shrink:0;
 }
-.prog-dot.done { background:var(--teal3); }
-.prog-dot.active { background:var(--gold2); transform:scaleY(2); }
-.prog-dot:hover::after {
-  content: attr(data-label);
-  position:absolute; top:12px; left:50%; transform:translateX(-50%);
-  background:var(--navy2); color:#fff;
-  font-size:11px; white-space:nowrap;
-  padding:4px 8px; border-radius:6px;
-  pointer-events:none;
+.prog-dot.done { background:rgba(10,139,127,.35); border-color:var(--teal2); color:var(--teal3); cursor:pointer; }
+.prog-dot.active { background:var(--teal); border-color:var(--teal2); color:#fff; box-shadow:0 0 0 3px rgba(15,181,166,.3); }
+.prog-dot[data-label]:hover::after {
+  content:attr(data-label);
+  position:absolute; top:calc(100% + 6px); left:50%; transform:translateX(-50%);
+  background:var(--navy2); color:#fff; font-size:10px; font-weight:600;
+  padding:3px 8px; border-radius:4px; white-space:nowrap; pointer-events:none;
 }
+.prog-score-wrap { display:flex; align-items:center; gap:8px; flex-shrink:0; }
 .prog-score {
-  color:rgba(255,255,255,.8);
-  font-size:12px; font-weight:600;
-  background:rgba(255,255,255,.08);
-  padding:5px 12px; border-radius:999px;
-  border:1px solid rgba(255,255,255,.12);
-  white-space:nowrap;
+  font-size:12px; font-weight:700; color:rgba(255,255,255,.7);
+  background:rgba(255,255,255,.1); padding:4px 10px; border-radius:20px;
+}
+.prog-badge-ex {
+  font-size:10px; font-weight:700; color:var(--gold2);
+  background:rgba(245,158,11,.15); border:1px solid rgba(245,158,11,.3);
+  padding:3px 8px; border-radius:20px; letter-spacing:.04em; text-transform:uppercase;
 }
 
-/* ═══════════════════════════════════════════════
-   SCENE CONTAINER
-═══════════════════════════════════════════════ */
-.scene {
-  display:none;
-  max-width:1100px;
-  margin:0 auto;
-  padding:40px 32px 60px;
-  animation: fadeIn .4s ease;
-}
-.scene.active { display:block; }
-@keyframes fadeIn {
-  from { opacity:0; transform:translateY(16px); }
-  to   { opacity:1; transform:translateY(0); }
-}
+/* ═══ SCENE SHELL ════════════════════════════════════════════════ */
+.scene-wrap { display:none; }
+.scene-wrap.active { display:block; animation:sceneIn .35s ease-out; }
+@keyframes sceneIn { from{opacity:0;transform:translateY(10px)} to{opacity:1;transform:none} }
+.scene-main { max-width:1080px; margin:0 auto; padding:32px 24px 48px; }
 
-/* ═══════════════════════════════════════════════
-   SCENE LABELS
-═══════════════════════════════════════════════ */
-.scene-label {
-  display:inline-flex; align-items:center; gap:8px;
-  font-size:11px; font-weight:700; letter-spacing:.08em; text-transform:uppercase;
-  color:var(--teal2); margin-bottom:10px;
+/* ═══ TYPOGRAPHY ═════════════════════════════════════════════════ */
+.scene-tag {
+  font-size:10px; font-weight:700; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--teal); margin-bottom:8px; display:flex; align-items:center; gap:6px;
 }
-.scene-label::before {
-  content:'';
-  display:inline-block; width:24px; height:2px;
-  background:var(--teal2);
-}
-
-/* ═══════════════════════════════════════════════
-   TYPOGRAPHY
-═══════════════════════════════════════════════ */
+.scene-tag::before { content:''; display:inline-block; width:20px; height:2px; background:var(--teal); border-radius:1px; }
 .display {
-  font-family:var(--serif);
-  font-size:clamp(28px,4vw,44px);
-  color:var(--navy);
-  line-height:1.15;
-  margin-bottom:12px;
-  letter-spacing:-.01em;
+  font-family:var(--serif); font-size:clamp(28px,4vw,42px); line-height:1.15;
+  color:var(--navy); margin-bottom:14px; font-weight:400;
 }
 .display em { color:var(--teal); font-style:italic; }
-.lead {
-  font-size:17px; line-height:1.7; color:var(--muted);
-  max-width:680px; margin-bottom:32px;
-}
-.body-text {
-  font-size:15px; line-height:1.75; color:#334155;
-  margin-bottom:16px;
+.lead { font-size:16px; line-height:1.75; color:var(--muted); max-width:700px; margin-bottom:28px; }
+.body-text { font-size:14px; line-height:1.75; color:var(--ink); }
+.body-text strong { color:var(--navy); }
+.section-label {
+  font-size:10px; font-weight:700; letter-spacing:.08em; text-transform:uppercase;
+  color:var(--muted); margin-bottom:10px;
 }
 
-/* ═══════════════════════════════════════════════
-   CARDS & PANELS
-═══════════════════════════════════════════════ */
+/* ═══ CARDS ══════════════════════════════════════════════════════ */
 .card {
-  background:var(--card);
-  border:1px solid var(--border2);
-  border-radius:var(--r2);
-  padding:28px;
-  box-shadow:var(--shadow);
+  background:var(--card); border-radius:var(--r2); padding:24px;
+  box-shadow:var(--sh); border:1px solid var(--border); margin-bottom:16px;
 }
-.card-accent {
-  border-left:4px solid var(--teal);
-}
-.card-gold {
-  border-left:4px solid var(--gold);
-  background:linear-gradient(135deg,#fffbeb,#fff);
-}
-.card-red {
-  border-left:4px solid var(--red);
-  background:linear-gradient(135deg,#fff1f2,#fff);
-}
-.card-blue {
-  border-left:4px solid var(--blue);
-  background:linear-gradient(135deg,#eff6ff,#fff);
-}
-.card-green {
-  border-left:4px solid var(--green);
-  background:linear-gradient(135deg,#f0fdf4,#fff);
-}
+.card-navy { background:var(--navy); color:#fff; }
+.card-navy .body-text { color:rgba(255,255,255,.8); }
+.card-teal { background:linear-gradient(135deg,#f0fdfa,#fff); border-color:rgba(10,139,127,.2); }
+.card-gold { background:linear-gradient(135deg,var(--gold3),#fff); border-color:rgba(180,83,9,.15); }
+.card-blue { background:linear-gradient(135deg,var(--blue2),#fff); border-color:rgba(29,78,216,.15); }
+.card-purple { background:linear-gradient(135deg,var(--purple2),#fff); border-color:rgba(109,40,217,.15); }
+.card-red { background:linear-gradient(135deg,var(--red2),#fff); border-color:rgba(185,28,28,.15); }
+.card-green { background:linear-gradient(135deg,var(--green2),#fff); border-color:rgba(4,120,87,.15); }
 
-.grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
-.grid-3 { display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; }
-@media(max-width:768px){
-  .grid-2,.grid-3{ grid-template-columns:1fr; }
-}
-
-/* ═══════════════════════════════════════════════
-   MEMO COMPONENT (Scene 1)
-═══════════════════════════════════════════════ */
-.memo {
-  background:#fff;
-  border:1px solid var(--border2);
-  border-radius:var(--r);
-  box-shadow:var(--shadow2);
-  max-width:720px;
-  margin:0 auto;
-  overflow:hidden;
-}
-.memo-header {
-  background:var(--navy);
-  padding:20px 32px;
-  display:flex; align-items:center; gap:16px;
-}
-.memo-logo {
-  width:44px; height:44px;
-  border-radius:10px;
-  background:linear-gradient(135deg,var(--teal),var(--teal2));
-  display:flex; align-items:center; justify-content:center;
-  font-family:var(--serif); font-size:20px; color:#fff; font-weight:900;
-}
-.memo-org { color:#fff; }
-.memo-org strong { display:block; font-size:15px; }
-.memo-org span { font-size:12px; color:rgba(255,255,255,.5); }
-.memo-meta {
-  background:var(--bg);
-  padding:16px 32px;
-  display:grid; grid-template-columns:80px 1fr; gap:4px 16px;
-  font-size:13px; border-bottom:2px solid var(--border2);
-}
-.memo-meta dt { font-weight:700; color:var(--muted); }
-.memo-meta dd { color:var(--ink); }
-.memo-body { padding:28px 32px; }
-.memo-body p { font-size:15px; line-height:1.75; color:#334155; margin-bottom:16px; }
-.memo-body p:last-child { margin-bottom:0; }
-.memo-highlight {
-  background:var(--gold3);
-  border-left:3px solid var(--gold);
-  padding:12px 16px;
-  border-radius:0 8px 8px 0;
-  margin:16px 0;
-  font-size:14px; color:var(--navy);
-}
-.memo-sig {
-  padding:20px 32px;
-  border-top:1px solid var(--border);
-  font-size:13px; color:var(--muted);
-  display:flex; justify-content:space-between; align-items:center;
-}
-
-/* ═══════════════════════════════════════════════
-   EVIDENCE CHAIN (Scene 2)
-═══════════════════════════════════════════════ */
-.chain {
-  display:flex; flex-direction:column; gap:0;
-  max-width:700px; margin:0 auto;
-}
-.chain-node {
-  display:flex; gap:20px; align-items:flex-start;
-  opacity:0; transform:translateX(-20px);
-  transition: opacity .5s, transform .5s;
-}
-.chain-node.visible { opacity:1; transform:translateX(0); }
-.chain-line {
-  display:flex; flex-direction:column; align-items:center; flex-shrink:0;
-}
-.chain-icon {
-  width:48px; height:48px;
-  border-radius:50%;
-  display:flex; align-items:center; justify-content:center;
-  font-size:20px;
-  flex-shrink:0;
-}
-.chain-connector {
-  width:2px; height:32px;
-  background:linear-gradient(to bottom, var(--teal3), transparent);
-  margin:4px 0;
-}
-.chain-content { padding-bottom:28px; flex:1; }
-.chain-content h4 { font-size:16px; font-weight:700; color:var(--navy); margin-bottom:4px; }
-.chain-content p { font-size:14px; color:var(--muted); line-height:1.6; }
-.chain-stat {
-  display:inline-block;
-  background:var(--navy);
-  color:#fff;
-  font-family:var(--mono);
-  font-size:13px; font-weight:500;
-  padding:3px 10px; border-radius:6px;
-  margin-top:6px;
-}
-
-/* ═══════════════════════════════════════════════
-   CALCULATOR (Scene 3)
-═══════════════════════════════════════════════ */
-.calc-grid {
-  display:grid;
-  grid-template-columns:380px 1fr;
-  gap:24px;
-  align-items:start;
-}
-@media(max-width:900px){ .calc-grid{ grid-template-columns:1fr; } }
-
-.calc-inputs { display:flex; flex-direction:column; gap:14px; }
-.calc-field {
-  background:#fff;
-  border:1px solid var(--border2);
-  border-radius:12px;
-  padding:14px 18px;
-  transition: border-color .2s, box-shadow .2s;
-}
-.calc-field:focus-within {
-  border-color:var(--teal);
-  box-shadow:0 0 0 3px rgba(10,139,127,.12);
-}
-.calc-field label {
-  display:block; font-size:12px; font-weight:700;
-  color:var(--muted); text-transform:uppercase; letter-spacing:.04em;
-  margin-bottom:6px;
-}
-.calc-field input {
-  width:100%; border:none; outline:none;
-  font-size:22px; font-weight:700; font-family:var(--mono);
-  color:var(--navy); background:transparent;
-}
-.calc-field .hint {
-  font-size:12px; color:var(--muted); margin-top:4px;
-}
-
-.calc-results { position:sticky; top:90px; }
-.result-waterfall { display:flex; flex-direction:column; gap:8px; margin-top:16px; }
-.result-row {
-  display:flex; align-items:center; justify-content:space-between;
-  padding:10px 16px; border-radius:10px;
-  background:var(--bg);
-  border:1px solid var(--border);
-  font-size:14px;
-  transform:translateX(20px); opacity:0;
-  transition: all .4s ease;
-}
-.result-row.visible { transform:translateX(0); opacity:1; }
-.result-row.positive { background:#f0fdf4; border-color:rgba(4,120,87,.2); }
-.result-row.negative { background:#fff1f2; border-color:rgba(185,28,28,.2); }
-.result-row.total {
-  background:var(--navy); color:#fff;
-  font-weight:700; font-size:16px;
-  border-color:var(--navy);
-  padding:14px 20px;
-}
-.result-row .label { color:inherit; opacity:.85; }
-.result-row .val { font-family:var(--mono); font-weight:700; }
-.result-row.positive .val { color:var(--green); }
-.result-row.negative .val { color:var(--red); }
-.result-row.total .val { color:var(--teal3); font-size:20px; }
-
-.roi-badge {
-  display:flex; flex-direction:column; align-items:center;
-  background:linear-gradient(135deg,var(--teal),var(--navy));
-  border-radius:var(--r2);
-  padding:24px;
-  color:#fff;
-  margin-top:12px;
-  text-align:center;
-}
-.roi-badge .roi-num {
-  font-family:var(--serif);
-  font-size:52px;
-  line-height:1;
-  color:var(--teal3);
-}
-.roi-badge .roi-label {
-  font-size:13px; opacity:.7; margin-top:6px; text-transform:uppercase; letter-spacing:.06em;
-}
-.roi-badge .roi-breakeven {
-  font-size:13px; margin-top:10px;
-  background:rgba(255,255,255,.1);
-  padding:6px 14px; border-radius:999px;
-}
-
-/* ═══════════════════════════════════════════════
-   CODING SCENARIO (Scene 4)
-═══════════════════════════════════════════════ */
-.scenario-choice {
-  display:flex; flex-direction:column; gap:14px;
-  margin:24px 0;
-}
-.choice-btn {
-  display:flex; gap:16px; align-items:flex-start;
-  background:#fff;
-  border:2px solid var(--border2);
-  border-radius:var(--r2);
-  padding:20px 24px;
-  cursor:pointer;
-  text-align:left;
-  transition: all .2s;
-  font-family:var(--sans);
-}
-.choice-btn:hover {
-  border-color:var(--teal);
-  background:linear-gradient(135deg, rgba(10,139,127,.03), #fff);
-  transform:translateX(4px);
-}
-.choice-btn.selected-correct {
-  border-color:var(--green);
-  background:linear-gradient(135deg, #f0fdf4, #fff);
-}
-.choice-btn.selected-wrong {
-  border-color:var(--red);
-  background:linear-gradient(135deg, #fff1f2, #fff);
-}
-.choice-btn.reveal-correct {
-  border-color:var(--green);
-  background:linear-gradient(135deg, rgba(4,120,87,.05), #fff);
-}
-.choice-letter {
-  width:36px; height:36px; border-radius:50%;
-  background:var(--navy); color:#fff;
-  font-weight:700; font-size:14px;
-  display:flex; align-items:center; justify-content:center;
-  flex-shrink:0;
-}
-.choice-btn.selected-correct .choice-letter { background:var(--green); }
-.choice-btn.selected-wrong .choice-letter { background:var(--red); }
-.choice-content h4 { font-size:15px; font-weight:700; color:var(--navy); margin-bottom:4px; }
-.choice-content p { font-size:14px; color:var(--muted); line-height:1.6; }
-
-.feedback-box {
-  display:none;
-  border-radius:var(--r2);
-  padding:24px 28px;
-  margin-top:20px;
-  animation:fadeIn .3s ease;
-}
-.feedback-box.correct {
-  background:linear-gradient(135deg, #f0fdf4, #fff);
-  border:1px solid rgba(4,120,87,.3);
-}
-.feedback-box.wrong {
-  background:linear-gradient(135deg, #fff1f2, #fff);
-  border:1px solid rgba(185,28,28,.3);
-}
-.feedback-box h4 { font-size:16px; font-weight:800; margin-bottom:8px; }
-.feedback-box.correct h4 { color:var(--green); }
-.feedback-box.wrong h4 { color:var(--red); }
-.feedback-box p { font-size:14px; line-height:1.7; color:#334155; margin-bottom:10px; }
-.feedback-box p:last-child { margin-bottom:0; }
-
-/* ═══════════════════════════════════════════════
-   COMPLIANCE PITFALL (Scene 5)
-═══════════════════════════════════════════════ */
-.pitfall-grid {
-  display:grid; grid-template-columns:1fr 1fr; gap:20px;
-  margin-bottom:24px;
-}
-@media(max-width:768px){ .pitfall-grid{ grid-template-columns:1fr; } }
-
-.pitfall-card {
-  background:#fff;
-  border:2px solid var(--border2);
-  border-radius:var(--r2);
-  padding:22px;
-  cursor:pointer;
-  transition:all .2s;
-}
-.pitfall-card:hover { border-color:var(--teal); transform:translateY(-2px); box-shadow:var(--shadow); }
-.pitfall-card.selected-wrong { border-color:var(--red); background:#fff1f2; }
-.pitfall-card.selected-correct { border-color:var(--green); background:#f0fdf4; }
-.pitfall-card.revealed-answer { border-color:var(--green); background:rgba(4,120,87,.04); }
-.pitfall-tag {
-  display:inline-block;
-  font-size:11px; font-weight:700; letter-spacing:.06em; text-transform:uppercase;
-  padding:3px 10px; border-radius:999px;
-  background:var(--navy); color:#fff;
-  margin-bottom:10px;
-}
-.pitfall-card h4 { font-size:15px; font-weight:700; color:var(--navy); margin-bottom:8px; }
-.pitfall-card p { font-size:13px; color:var(--muted); line-height:1.6; }
-
-/* ═══════════════════════════════════════════════
-   BOARD PRESENTATION (Scene 6)
-═══════════════════════════════════════════════ */
-.scenario-table {
-  width:100%; border-collapse:collapse; font-size:14px;
-  border-radius:var(--r); overflow:hidden;
-  box-shadow:var(--shadow);
-}
-.scenario-table th {
-  background:var(--navy); color:#fff;
-  padding:12px 16px; text-align:left;
-  font-size:12px; text-transform:uppercase; letter-spacing:.05em; font-weight:700;
-}
-.scenario-table td {
-  padding:12px 16px; border-bottom:1px solid var(--border);
-  vertical-align:top;
-}
-.scenario-table tr:nth-child(even) td { background:#f8fafc; }
-.scenario-table tr:last-child td { border-bottom:none; }
-.conf-high { color:var(--green); font-weight:700; }
-.conf-med { color:var(--amber); font-weight:700; }
-.conf-low { color:var(--muted); font-weight:700; }
-
-.board-choice {
-  display:flex; gap:12px; flex-wrap:wrap; margin:20px 0;
-}
-.board-btn {
-  flex:1 1 200px;
-  background:#fff;
-  border:2px solid var(--border2);
-  border-radius:var(--r2);
-  padding:16px 20px;
-  cursor:pointer;
-  text-align:left;
-  transition:all .2s;
-  font-family:var(--sans);
-}
-.board-btn:hover { border-color:var(--teal); transform:translateY(-2px); box-shadow:var(--shadow); }
-.board-btn.selected { border-color:var(--teal); background:linear-gradient(135deg,rgba(10,139,127,.06),#fff); }
-.board-btn .b-label { font-size:12px; font-weight:700; color:var(--teal); text-transform:uppercase; letter-spacing:.05em; margin-bottom:4px; }
-.board-btn .b-title { font-size:15px; font-weight:700; color:var(--navy); margin-bottom:4px; }
-.board-btn .b-val { font-family:var(--mono); font-size:20px; font-weight:700; color:var(--teal); }
-.board-btn .b-hint { font-size:12px; color:var(--muted); margin-top:4px; }
-
-/* ═══════════════════════════════════════════════
-   DEBRIEF (Scene 7)
-═══════════════════════════════════════════════ */
-.debrief-score {
-  text-align:center;
-  padding:40px 20px;
-}
-.score-ring {
-  width:140px; height:140px;
-  border-radius:50%;
-  background:conic-gradient(var(--teal) 0%, var(--teal) calc(var(--pct)*1%), var(--border2) calc(var(--pct)*1%));
-  display:flex; align-items:center; justify-content:center;
-  margin:0 auto 20px;
-  box-shadow:0 0 0 8px rgba(10,139,127,.08);
-}
-.score-inner {
-  width:110px; height:110px;
-  border-radius:50%;
-  background:#fff;
-  display:flex; flex-direction:column; align-items:center; justify-content:center;
-}
-.score-inner .num { font-family:var(--serif); font-size:38px; color:var(--navy); line-height:1; }
-.score-inner .den { font-size:12px; color:var(--muted); }
-
-.debrief-items { display:flex; flex-direction:column; gap:12px; }
-.debrief-item {
-  display:flex; gap:16px; align-items:flex-start;
-  padding:16px 20px;
-  background:#fff;
-  border:1px solid var(--border2);
-  border-radius:var(--r);
-}
-.debrief-icon {
-  width:36px; height:36px; border-radius:50%;
-  display:flex; align-items:center; justify-content:center;
-  font-size:16px; flex-shrink:0;
-}
-.debrief-icon.correct { background:#f0fdf4; }
-.debrief-icon.wrong { background:#fff1f2; }
-.debrief-item h5 { font-size:14px; font-weight:700; color:var(--navy); margin-bottom:2px; }
-.debrief-item p { font-size:13px; color:var(--muted); line-height:1.6; }
-
-/* ═══════════════════════════════════════════════
-   BUTTONS & NAV
-═══════════════════════════════════════════════ */
-.btn {
-  display:inline-flex; align-items:center; gap:8px;
-  padding:12px 24px;
-  border-radius:10px;
-  font-family:var(--sans);
-  font-size:14px; font-weight:700;
-  cursor:pointer;
-  border:none;
-  transition:all .2s;
-  text-decoration:none;
-}
-.btn-primary {
-  background:linear-gradient(135deg,var(--teal),var(--teal2));
-  color:#fff;
-  box-shadow:0 4px 16px rgba(10,139,127,.3);
-}
-.btn-primary:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(10,139,127,.4); }
-.btn-secondary {
-  background:#fff;
-  color:var(--navy);
-  border:2px solid var(--border2);
-}
-.btn-secondary:hover { border-color:var(--teal); background:rgba(10,139,127,.03); }
-.btn-gold {
-  background:linear-gradient(135deg,var(--gold),var(--gold2));
-  color:#fff;
-  box-shadow:0 4px 16px rgba(196,134,10,.3);
-}
-.btn-gold:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(196,134,10,.4); }
-.btn:disabled { opacity:.4; cursor:not-allowed; transform:none !important; }
-
-.nav-row {
-  display:flex; justify-content:space-between; align-items:center;
-  margin-top:40px; padding-top:24px;
-  border-top:1px solid var(--border);
-  flex-wrap:wrap; gap:12px;
-}
-
-/* ═══════════════════════════════════════════════
-   MISC UTILITIES
-═══════════════════════════════════════════════ */
+/* ═══ PILLS / BADGES ══════════════════════════════════════════════ */
 .pill {
-  display:inline-block;
-  padding:3px 12px; border-radius:999px;
-  font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.05em;
+  display:inline-flex; align-items:center; gap:5px;
+  font-size:10px; font-weight:700; letter-spacing:.06em; text-transform:uppercase;
+  padding:3px 10px; border-radius:20px;
 }
-.pill-teal { background:rgba(10,139,127,.1); color:var(--teal); border:1px solid rgba(10,139,127,.2); }
-.pill-gold { background:#fef3c7; color:var(--gold); border:1px solid rgba(196,134,10,.3); }
-.pill-navy { background:var(--navy); color:#fff; }
-.pill-red  { background:#fff1f2; color:var(--red); border:1px solid rgba(185,28,28,.2); }
+.pill-teal  { background:var(--teal3); color:var(--teal); }
+.pill-gold  { background:var(--gold3); color:var(--gold); }
+.pill-navy  { background:rgba(11,31,53,.1); color:var(--navy); }
+.pill-blue  { background:var(--blue2); color:var(--blue); }
+.pill-purple{ background:var(--purple2); color:var(--purple); }
+.pill-green { background:var(--green2); color:var(--green); }
+.pill-red   { background:var(--red2); color:var(--red); }
+.conf-high  { background:var(--green2); color:var(--green); padding:2px 8px; border-radius:12px; font-size:11px; font-weight:700; }
+.conf-med   { background:var(--gold3); color:var(--gold); padding:2px 8px; border-radius:12px; font-size:11px; font-weight:700; }
+.conf-low   { background:var(--red2); color:var(--red); padding:2px 8px; border-radius:12px; font-size:11px; font-weight:700; }
 
-.stat-row { display:flex; gap:16px; flex-wrap:wrap; margin:16px 0; }
-.stat {
-  flex:1 1 180px;
-  background:var(--bg);
-  border:1px solid var(--border2);
-  border-radius:var(--r);
-  padding:16px 20px;
-}
-.stat .s-label { font-size:11px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:.06em; }
-.stat .s-val   { font-family:var(--serif); font-size:32px; color:var(--navy); margin:4px 0 2px; }
-.stat .s-hint  { font-size:12px; color:var(--muted); }
+/* ═══ GRIDS ══════════════════════════════════════════════════════ */
+.g2 { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+.g3 { display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; }
+.g4 { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
+@media(max-width:720px) { .g2,.g3,.g4 { grid-template-columns:1fr; } }
+@media(max-width:900px) { .g4 { grid-template-columns:1fr 1fr; } }
 
-.cite {
-  font-size:12px; color:var(--muted);
-  border-left:2px solid var(--border2);
-  padding-left:12px; margin-top:8px;
-  font-style:italic;
-}
+/* ═══ KPI TILES ══════════════════════════════════════════════════ */
+.kpi-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:10px; margin:12px 0; }
+.kpi { background:var(--card); border:1px solid var(--border); border-radius:var(--r); padding:12px 14px; }
+.kpi.teal  { background:rgba(10,139,127,.06); border-color:rgba(10,139,127,.2); }
+.kpi.gold  { background:rgba(180,83,9,.06);   border-color:rgba(180,83,9,.2); }
+.kpi.green { background:rgba(4,120,87,.06);    border-color:rgba(4,120,87,.2); }
+.kpi.blue  { background:rgba(29,78,216,.06);   border-color:rgba(29,78,216,.2); }
+.kpi.purple{ background:rgba(109,40,217,.06);  border-color:rgba(109,40,217,.2); }
+.kpi .k-label { font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); margin-bottom:3px; }
+.kpi .k-val { font-family:var(--mono); font-size:20px; font-weight:700; color:var(--navy); line-height:1.1; }
+.kpi .k-hint { font-size:11px; color:var(--muted); margin-top:3px; line-height:1.4; }
 
-.dashboard-ref {
-  display:inline-flex; align-items:center; gap:8px;
-  background:var(--navy);
-  color:rgba(255,255,255,.85);
-  font-size:12px; font-weight:600;
-  padding:6px 14px; border-radius:8px;
-  margin:8px 0;
-  border:1px solid rgba(255,255,255,.1);
+/* ═══ PREDICTION CHALLENGE ═══════════════════════════════════════ */
+.pred-box {
+  background:linear-gradient(135deg,#0B1F35,#142840);
+  border-radius:var(--r2); padding:24px; margin-bottom:20px;
+  border:1px solid rgba(255,255,255,.08);
 }
-.dashboard-ref::before {
-  content:'⎋';
-  color:var(--teal3); font-size:14px;
+.pred-box .pred-q { font-family:var(--serif); font-size:18px; color:#fff; margin-bottom:16px; line-height:1.5; }
+.pred-box .pred-q em { color:var(--teal2); font-style:italic; }
+.pred-opts { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+@media(max-width:640px) { .pred-opts { grid-template-columns:1fr; } }
+.pred-btn {
+  background:rgba(255,255,255,.06); border:1.5px solid rgba(255,255,255,.12);
+  border-radius:10px; padding:12px 14px; cursor:pointer;
+  text-align:left; color:#fff; font-family:var(--sans); font-size:13px;
+  line-height:1.5; transition:all .15s;
 }
+.pred-btn:hover { background:rgba(15,181,166,.15); border-color:var(--teal2); }
+.pred-btn.correct { background:rgba(4,120,87,.25); border-color:#10B981; }
+.pred-btn.wrong   { background:rgba(185,28,28,.2);  border-color:var(--red); }
+.pred-btn .opt-letter { font-family:var(--mono); font-size:11px; font-weight:700; color:var(--teal2); display:block; margin-bottom:4px; }
+.pred-reveal {
+  margin-top:14px; background:rgba(15,181,166,.12);
+  border:1px solid rgba(15,181,166,.25); border-radius:10px; padding:14px 16px;
+  font-size:13px; color:#fff; line-height:1.7; display:none;
+}
+.pred-reveal.show { display:block; animation:fadeIn .3s ease; }
+.pred-reveal strong { color:var(--teal2); }
+@keyframes fadeIn { from{opacity:0;transform:translateY(4px)} to{opacity:1;transform:none} }
 
-footer {
-  background:var(--navy);
-  color:rgba(255,255,255,.4);
-  text-align:center;
-  padding:16px 32px;
-  font-size:12px;
+/* ═══ ROI CALCULATOR ═════════════════════════════════════════════ */
+.calc-shell { background:var(--card); border:1px solid var(--border); border-radius:var(--r2); padding:20px; box-shadow:var(--sh); }
+.calc-inputs { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:16px; }
+@media(max-width:580px) { .calc-inputs { grid-template-columns:1fr; } }
+.calc-field label { display:block; font-size:11px; font-weight:700; color:var(--navy); margin-bottom:4px; letter-spacing:.02em; }
+.calc-field input, .calc-field select {
+  width:100%; padding:8px 10px;
+  border:1.5px solid var(--border2); border-radius:8px;
+  font-family:var(--mono); font-size:14px; color:var(--navy);
+  background:#fff; transition:border .15s;
 }
+.calc-field input:focus, .calc-field select:focus { border-color:var(--teal); outline:none; box-shadow:0 0 0 3px rgba(10,139,127,.12); }
+.calc-field .hint { font-size:10px; color:var(--muted); margin-top:3px; }
+.calc-divider { border:none; border-top:1px solid var(--border); margin:14px 0; }
+.waterfall { display:flex; flex-direction:column; gap:4px; }
+.w-row {
+  display:flex; justify-content:space-between; align-items:center;
+  padding:8px 12px; border-radius:8px; font-size:13px;
+  opacity:0; transform:translateX(-6px); transition:all .2s;
+}
+.w-row.vis { opacity:1; transform:none; }
+.w-row.pos { background:rgba(4,120,87,.07); border:1px solid rgba(4,120,87,.15); }
+.w-row.neg { background:rgba(185,28,28,.06); border:1px solid rgba(185,28,28,.12); }
+.w-row.tot { background:var(--navy); border:1px solid var(--navy); font-weight:700; }
+.w-row.layer { background:rgba(10,139,127,.08); border:1px solid rgba(10,139,127,.2); }
+.w-row.layer2 { background:rgba(29,78,216,.07); border:1px solid rgba(29,78,216,.18); }
+.w-row.layer3 { background:rgba(109,40,217,.07); border:1px solid rgba(109,40,217,.18); }
+.w-row.grand { background:linear-gradient(135deg,var(--green),#065f46); border:none; font-weight:800; }
+.w-row .w-label { color:inherit; }
+.w-row.tot .w-label, .w-row.grand .w-label { color:#fff; }
+.w-row .w-val { font-family:var(--mono); font-weight:700; }
+.w-row.pos .w-val { color:var(--green); }
+.w-row.neg .w-val { color:var(--red); }
+.w-row.tot .w-val { color:#A7F3D0; }
+.w-row.layer .w-val { color:var(--teal); }
+.w-row.layer2 .w-val { color:var(--blue); }
+.w-row.layer3 .w-val { color:var(--purple); }
+.w-row.grand .w-val { color:#FDE68A; }
+.roi-display {
+  display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap;
+  background:linear-gradient(135deg,var(--navy),#1a3a5c);
+  border-radius:var(--r); padding:16px 20px; margin-top:12px; gap:12px;
+}
+.roi-big { font-family:var(--mono); font-size:38px; font-weight:900; color:#F5A623; line-height:1; }
+.roi-net { font-family:var(--mono); font-size:15px; color:rgba(167,243,208,.9); }
+.roi-be  { font-size:11px; color:rgba(255,255,255,.5); background:rgba(255,255,255,.08); padding:3px 10px; border-radius:99px; }
 
-/* ═══════════════════════════════════════════════
-   TIMELINE (CCM/TCM scene)
-═══════════════════════════════════════════════ */
-.timeline {
-  display:flex; gap:0; margin:24px 0;
-  border-radius:var(--r); overflow:hidden;
-  box-shadow:var(--shadow);
+/* ═══ SENSITIVITY TABLE ══════════════════════════════════════════ */
+.sens-table { width:100%; border-collapse:collapse; font-size:12px; font-family:var(--mono); }
+.sens-table th { background:var(--navy); color:#fff; padding:6px 10px; text-align:center; font-weight:700; }
+.sens-table td { padding:6px 10px; text-align:right; border-bottom:1px solid var(--border); }
+.sens-table tr:hover td { background:rgba(10,139,127,.06); }
+.sens-table .row-label { text-align:left; font-weight:700; color:var(--navy); }
+.sens-table .highlight { background:rgba(4,120,87,.12); font-weight:700; color:var(--green); }
+.sens-table .breakeven { background:rgba(180,83,9,.1); font-weight:700; color:var(--gold); }
+
+/* ═══ CHOICE INTERACTIONS ════════════════════════════════════════ */
+.choice-grid { display:flex; flex-direction:column; gap:8px; }
+.choice-btn {
+  display:flex; gap:14px; align-items:flex-start;
+  background:var(--card); border:2px solid var(--border2);
+  border-radius:var(--r); padding:14px 16px; cursor:pointer;
+  text-align:left; font-family:var(--sans); transition:all .15s;
 }
+.choice-btn:hover:not(:disabled) { border-color:var(--teal); background:rgba(10,139,127,.04); }
+.choice-btn:disabled { cursor:default; }
+.choice-btn.selected-correct { border-color:var(--green); background:var(--green2); }
+.choice-btn.selected-wrong   { border-color:var(--red);   background:var(--red2); }
+.choice-btn.reveal-correct   { border-color:var(--green); background:rgba(4,120,87,.06); }
+.choice-letter {
+  width:28px; height:28px; border-radius:50%; flex-shrink:0;
+  display:flex; align-items:center; justify-content:center;
+  font-weight:800; font-size:12px; font-family:var(--mono);
+  background:rgba(11,31,53,.08); color:var(--navy);
+}
+.choice-btn.selected-correct .choice-letter { background:var(--green); color:#fff; }
+.choice-btn.selected-wrong   .choice-letter { background:var(--red); color:#fff; }
+.choice-btn.reveal-correct   .choice-letter { background:var(--green); color:#fff; }
+.choice-content h4 { font-size:13px; font-weight:700; color:var(--navy); margin-bottom:4px; line-height:1.4; }
+.choice-content p  { font-size:12px; color:var(--muted); line-height:1.5; }
+
+/* Board scenario buttons */
+.board-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:10px; }
+@media(max-width:600px) { .board-grid { grid-template-columns:1fr; } }
+.board-btn {
+  background:var(--card); border:2px solid var(--border2);
+  border-radius:var(--r); padding:16px; cursor:pointer;
+  text-align:left; font-family:var(--sans); transition:all .15s;
+}
+.board-btn:hover:not([style*="pointer-events"]) { border-color:var(--teal); }
+.b-label { font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); margin-bottom:6px; }
+.b-title { font-size:13px; font-weight:800; color:var(--navy); margin-bottom:4px; }
+.b-val   { font-family:var(--mono); font-size:22px; font-weight:900; color:var(--teal); }
+.b-hint  { font-size:11px; color:var(--muted); margin-top:3px; }
+
+/* VBC choice cards */
+.vbc-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:16px; }
+@media(max-width:640px) { .vbc-grid { grid-template-columns:1fr; } }
+.vbc-card {
+  border:2px solid var(--border2); border-radius:var(--r); padding:16px;
+  cursor:pointer; transition:all .15s; background:var(--card);
+}
+.vbc-card:hover:not([style*="pointer-events"]) { border-color:var(--purple); background:var(--purple2); }
+.vbc-card.selected-correct { border-color:var(--green); background:var(--green2); }
+.vbc-card.selected-wrong   { border-color:var(--red);   background:var(--red2); }
+.vbc-card.reveal-correct   { border-color:var(--green); background:rgba(4,120,87,.06); }
+
+/* ═══ FEEDBACK BOX ═══════════════════════════════════════════════ */
+.feedback-box {
+  border-radius:var(--r); padding:16px 20px; margin-top:12px;
+  display:none; animation:fadeIn .25s ease;
+}
+.feedback-box.correct { background:var(--green2); border:1.5px solid rgba(4,120,87,.3); }
+.feedback-box.wrong   { background:var(--red2);   border:1.5px solid rgba(185,28,28,.25); }
+.feedback-box h4 { font-size:14px; font-weight:800; color:var(--navy); margin-bottom:6px; }
+.feedback-box p  { font-size:13px; color:var(--ink); line-height:1.7; }
+
+/* ═══ EVIDENCE CHAIN ═════════════════════════════════════════════ */
+.chain { display:flex; flex-direction:column; gap:0; }
+.chain-node {
+  display:flex; gap:14px; align-items:flex-start;
+  opacity:0; transform:translateY(8px); transition:all .35s;
+  cursor:pointer; padding:14px 16px;
+  border-radius:var(--r); border:1.5px solid transparent;
+}
+.chain-node.visible { opacity:1; transform:none; }
+.chain-node:hover.visible { background:rgba(10,139,127,.04); border-color:rgba(10,139,127,.2); }
+.chain-node + .chain-node { border-top:none; }
+.chain-icon {
+  width:40px; height:40px; border-radius:50%; flex-shrink:0;
+  display:flex; align-items:center; justify-content:center;
+  font-size:18px; background:rgba(10,139,127,.1);
+}
+.chain-line {
+  width:2px; height:20px; background:linear-gradient(to bottom,var(--teal2),transparent);
+  margin:0 auto; margin-left:33px;
+}
+.chain-content h4 { font-size:14px; font-weight:700; color:var(--navy); margin-bottom:3px; }
+.chain-content p  { font-size:12px; color:var(--muted); line-height:1.5; }
+.chain-content cite { font-size:10px; color:var(--teal); font-style:normal; font-weight:600; display:block; margin-top:4px; }
+
+/* ═══ TIMELINE ═══════════════════════════════════════════════════ */
+.timeline { display:flex; gap:0; overflow-x:auto; padding-bottom:8px; margin:16px 0; }
 .tl-step {
-  flex:1;
-  padding:16px 14px;
-  text-align:center;
-  font-size:12px;
-  position:relative;
+  min-width:110px; flex:1; padding:12px 10px; text-align:center;
+  border-right:1px solid var(--border); position:relative;
 }
-.tl-step::after {
-  content:'▶';
-  position:absolute; right:-8px; top:50%; transform:translateY(-50%);
-  font-size:10px; color:rgba(255,255,255,.4);
-  z-index:1;
-}
-.tl-step:last-child::after { display:none; }
-.tl-step .tl-day { font-size:10px; font-weight:700; opacity:.7; text-transform:uppercase; margin-bottom:4px; }
-.tl-step .tl-action { font-size:12px; font-weight:700; }
-.tl-step .tl-note { font-size:11px; margin-top:4px; opacity:.75; }
-.tl-0 { background:#1a3a5c; color:#fff; }
-.tl-1 { background:var(--navy); color:#fff; }
-.tl-2 { background:var(--teal); color:#fff; }
-.tl-3 { background:var(--teal2); color:#fff; }
-.tl-4 { background:var(--green2); color:#fff; }
-.tl-alert { background:var(--red); color:#fff; }
+.tl-step:last-child { border-right:none; }
+.tl-day    { font-size:10px; font-weight:800; color:var(--muted); letter-spacing:.04em; text-transform:uppercase; margin-bottom:4px; }
+.tl-action { font-size:12px; font-weight:700; color:var(--navy); margin-bottom:3px; }
+.tl-note   { font-size:10px; color:var(--muted); line-height:1.4; }
+.tl-step.tl-alert { background:rgba(10,139,127,.08); border-color:rgba(10,139,127,.25); }
+.tl-step.tl-alert .tl-action { color:var(--teal); }
 
-/* ═══════════════════════════════════════════════
-   KPI GRID
-═══════════════════════════════════════════════ */
-.kpi-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:14px; margin:20px 0; }
-.kpi {
-  background:#fff;
-  border:1px solid var(--border2);
-  border-radius:var(--r);
-  padding:16px 18px;
-  transition: box-shadow .2s;
+/* ═══ VALUE STACK BUILDER ════════════════════════════════════════ */
+.stack-builder { display:flex; flex-direction:column; gap:0; }
+.stack-row {
+  display:flex; justify-content:space-between; align-items:center;
+  padding:10px 14px; border-radius:8px; margin-bottom:5px;
+  font-size:13px; transition:all .25s;
 }
-.kpi:hover { box-shadow:var(--shadow); }
-.kpi .k-label { font-size:11px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:.05em; margin-bottom:4px; }
-.kpi .k-val   { font-family:var(--mono); font-size:26px; font-weight:700; color:var(--navy); }
-.kpi .k-hint  { font-size:12px; color:var(--muted); margin-top:4px; }
-.kpi.teal   { border-top:3px solid var(--teal); }
-.kpi.gold   { border-top:3px solid var(--gold); .k-val { color:var(--gold); } }
-.kpi.green  { border-top:3px solid var(--green); }
-.kpi.blue   { border-top:3px solid var(--blue); }
+.stack-row .s-label { font-weight:600; }
+.stack-row .s-val { font-family:var(--mono); font-weight:800; }
+.stack-row .s-conf { font-size:10px; border-radius:20px; padding:2px 7px; font-weight:700; }
 
-/* accent label */
-.module-badge {
-  display:inline-flex; align-items:center; gap:8px;
-  background:linear-gradient(135deg,var(--navy),var(--navy2));
-  color:#fff;
-  padding:8px 18px; border-radius:999px;
-  font-size:12px; font-weight:700;
-  margin-bottom:24px;
+/* ═══ DEBRIEF ════════════════════════════════════════════════════ */
+.score-ring-wrap { display:flex; justify-content:center; margin:24px 0; }
+.score-ring {
+  width:120px; height:120px; border-radius:50%;
+  background:conic-gradient(var(--teal) calc(var(--pct)*1%), #e2e8f0 0);
+  display:flex; align-items:center; justify-content:center;
+  box-shadow:0 0 0 4px #fff, 0 0 0 6px var(--border);
+}
+.score-inner { background:#fff; width:90px; height:90px; border-radius:50%; display:flex; flex-direction:column; align-items:center; justify-content:center; }
+.score-inner .num { font-family:var(--mono); font-size:32px; font-weight:900; color:var(--navy); line-height:1; }
+.score-inner .den { font-size:11px; color:var(--muted); font-weight:600; }
+.debrief-item { display:flex; gap:14px; align-items:flex-start; padding:14px 0; border-bottom:1px solid var(--border); }
+.debrief-item:last-child { border-bottom:none; }
+.debrief-item h5 { font-size:13px; font-weight:700; color:var(--navy); margin-bottom:4px; }
+.debrief-item p { font-size:12px; color:var(--muted); line-height:1.6; }
+
+/* ═══ PLATFORM / WORKBOOK REFS ═══════════════════════════════════ */
+.xref-bar {
+  display:flex; flex-wrap:wrap; gap:6px; margin-top:12px;
+}
+.xref {
+  display:inline-flex; align-items:center; gap:5px;
+  font-size:10px; font-weight:700; padding:4px 10px; border-radius:20px;
   letter-spacing:.03em;
 }
-.module-badge .num {
-  background:var(--teal); color:#fff;
-  width:22px; height:22px; border-radius:50%;
-  display:flex; align-items:center; justify-content:center;
-  font-size:12px; font-weight:900;
+.xref-platform { background:rgba(11,31,53,.08); color:var(--navy); border:1px solid rgba(11,31,53,.14); }
+.xref-workbook { background:var(--gold3); color:var(--gold); border:1px solid rgba(180,83,9,.2); }
+.xref::before { font-size:11px; }
+.xref-platform::before { content:'⬡'; }
+.xref-workbook::before { content:'📖'; }
+
+/* ═══ SCENARIO TABLE ══════════════════════════════════════════════ */
+.scen-table { width:100%; border-collapse:collapse; font-size:13px; margin:14px 0; }
+.scen-table th { background:var(--navy); color:#fff; padding:9px 12px; text-align:left; font-size:11px; letter-spacing:.04em; text-transform:uppercase; }
+.scen-table td { padding:9px 12px; border-bottom:1px solid var(--border); }
+.scen-table tr:hover td { background:rgba(10,139,127,.04); }
+.scen-table .anchor-row td { background:rgba(4,120,87,.06); font-weight:700; }
+
+/* ═══ MEMO ════════════════════════════════════════════════════════ */
+.memo {
+  background:#fffdf7; border:1px solid rgba(180,83,9,.2);
+  border-radius:var(--r2); padding:28px 32px;
+  font-family:var(--sans); box-shadow:0 2px 16px rgba(0,0,0,.06);
+  position:relative;
+}
+.memo::before {
+  content:''; position:absolute; top:0; left:0; right:0; height:4px;
+  background:linear-gradient(90deg,var(--navy),var(--teal));
+  border-radius:var(--r2) var(--r2) 0 0;
+}
+.memo-head { display:grid; grid-template-columns:auto 1fr; gap:6px 20px; margin-bottom:20px; font-size:13px; }
+.memo-head .field { font-weight:700; color:var(--navy); }
+.memo-head .val   { color:var(--ink); }
+.memo-rule { border:none; border-top:1px solid rgba(180,83,9,.2); margin:16px 0; }
+.memo-body p { font-size:14px; line-height:1.85; color:var(--ink); margin-bottom:12px; }
+.memo-body p:last-child { margin-bottom:0; }
+
+/* ═══ NAVIGATION ROW ═════════════════════════════════════════════ */
+.nav-row { display:flex; justify-content:space-between; align-items:center; margin-top:28px; flex-wrap:wrap; gap:10px; }
+.nav-row-center { justify-content:center; }
+.btn {
+  display:inline-flex; align-items:center; gap:7px;
+  padding:10px 22px; border-radius:9px; font-family:var(--sans);
+  font-size:13px; font-weight:700; cursor:pointer; border:none;
+  transition:all .15s; letter-spacing:.01em;
+}
+.btn:disabled { opacity:.45; cursor:not-allowed; }
+.btn-primary { background:linear-gradient(135deg,var(--teal),var(--teal2)); color:#fff; box-shadow:0 2px 8px rgba(10,139,127,.3); }
+.btn-primary:hover:not(:disabled) { transform:translateY(-1px); box-shadow:0 4px 14px rgba(10,139,127,.35); }
+.btn-secondary { background:var(--card); color:var(--navy); border:1.5px solid var(--border2); }
+.btn-secondary:hover:not(:disabled) { border-color:var(--navy); background:#f8fafc; }
+.btn-gold { background:linear-gradient(135deg,var(--gold),var(--gold2)); color:#fff; box-shadow:0 2px 8px rgba(180,83,9,.3); }
+.btn-gold:hover:not(:disabled) { transform:translateY(-1px); box-shadow:0 4px 14px rgba(180,83,9,.4); }
+.btn-navy { background:var(--navy); color:#fff; }
+
+/* ═══ LAYER TOGGLE ═══════════════════════════════════════════════ */
+.layer-toggle {
+  display:flex; align-items:center; justify-content:space-between;
+  padding:10px 14px; background:rgba(11,31,53,.04);
+  border:1.5px solid var(--border2); border-radius:var(--r); cursor:pointer;
+  margin-bottom:8px; transition:all .15s;
+}
+.layer-toggle:hover { border-color:var(--teal); }
+.layer-toggle input { margin-left:10px; transform:scale(1.2); cursor:pointer; }
+
+/* ═══ FOOTER ═════════════════════════════════════════════════════ */
+footer {
+  text-align:center; font-size:10px; color:var(--muted); padding:20px 24px;
+  border-top:1px solid var(--border); background:var(--card);
+  letter-spacing:.04em;
 }
 </style>
 </head>
 <body>
 
-<!-- ═══════════════════════════ PROGRESS HEADER ══════════════════ -->
-<div class="prog-header">
+<!-- ═══ PROGRESS HEADER ══════════════════════════════════════════ -->
+<header class="prog-header">
   <div class="prog-inner">
     <div class="prog-brand">
       <div class="prog-icon">M2</div>
       <div class="prog-title">
         Revenue Optimization & VBC
-        <span>Module 2 of 5  ·  Executive Training</span>
+        <span>NEMT Executive Training · Module 2 of 5</span>
       </div>
     </div>
     <div class="prog-scenes" id="progDots"></div>
-    <div class="prog-score" id="progScore">Score: 0 / 3</div>
+    <div class="prog-score-wrap">
+      <div class="prog-score" id="progScore">Score: 0 / 4</div>
+      <div class="prog-badge-ex" id="progEx">Scene 1</div>
+    </div>
   </div>
-</div>
+</header>
 
-<!-- ═══════════════════════════ SCENE CONTAINER ══════════════════ -->
-<div style="flex:1">
+<div id="sceneContainer">
 
-<!-- ────────────────────────────────────────────
-     SCENE 1 — THE MEMO
-──────────────────────────────────────────────── -->
-<div class="scene active" id="s1">
-  <div class="module-badge"><span class="num">2</span> Revenue Optimization & Value-Based Care Strategies</div>
-  <div class="scene-label">Scene 1 of 7 · Context Setting</div>
-  <h1 class="display">The Memo on <em>Your Desk</em></h1>
-  <p class="lead">You are Dr. Sandra Reyes, CFO of Meridian Health System — a 450-bed regional health system serving a predominantly LMI population. This memo arrived this morning.</p>
+<!-- ═══════════════════════════════════════════════════════════════
+     SCENE 1 — CONTEXT: THE CFO MEMO
+════════════════════════════════════════════════════════════════ -->
+<div class="scene-wrap active" id="s1">
+<div class="scene-main">
+  <div class="scene-tag">Scene 1 of 8 · Context Setting</div>
+  <h1 class="display">The <em>Executive Memo</em></h1>
+  <p class="lead">You are the CFO of a 450-bed regional health system. This memo arrived this morning. Read it carefully — every scene in this module flows from the decision it frames.</p>
 
   <div class="memo">
-    <div class="memo-header">
-      <div class="memo-logo">MH</div>
-      <div class="memo-org">
-        <strong>Meridian Health System</strong>
-        <span>Office of the Chief Medical Officer</span>
-      </div>
+    <div class="memo-head">
+      <span class="field">TO:</span>     <span class="val">Chief Financial Officer</span>
+      <span class="field">FROM:</span>   <span class="val">VP of Community Health &amp; Regulatory Affairs</span>
+      <span class="field">DATE:</span>   <span class="val">Current period</span>
+      <span class="field">SUBJECT:</span><span class="val">NEMT Pilot — Financial Case &amp; Partnership Opportunity</span>
+      <span class="field">PRIORITY:</span><span class="val" style="color:var(--red);font-weight:700;">High — Board Finance Committee Meeting in 30 Days</span>
     </div>
-    <dl class="memo-meta">
-      <dt>TO:</dt>    <dd>Dr. Sandra Reyes, CFO</dd>
-      <dt>FROM:</dt>  <dd>Dr. James Okafor, CMO</dd>
-      <dt>DATE:</dt>  <dd>March 6, 2026</dd>
-      <dt>RE:</dt>    <dd>NEMT Pilot — Budget Approval Request (FY2026 Q2)</dd>
-    </dl>
+    <hr class="memo-rule"/>
     <div class="memo-body">
-      <p>Sandra — I need your sign-off on the NEMT pilot by end of week. The county transit authority and First Community Bank have both committed to partnership, but they need our written approval to proceed.</p>
-      <div class="memo-highlight">
-        ⚠️ Our ambulatory division ran 40,000 outpatient visits last year with a <strong>20% no-show rate</strong>. Staff reason-coding shows <strong>30% of those missed appointments are transportation-related</strong>. We are leaving significant revenue on the table — and our ACO REACH quality scores are suffering for it.
+      <p>Our 2025 CHNA identifies transportation as a primary barrier to care access for LMI patients in our service area — consistent with national evidence that 3–4 million Americans miss or delay medical appointments annually due to lack of transportation.</p>
+      <p>A county transit authority proposes co-sponsoring an NEMT pilot: <strong>$60/round trip</strong>, 10% overhead, estimated <strong>50% mitigation</strong> of transportation-attributable no-shows. A community bank has committed <strong>$50,000/year in CRA-eligible funding</strong>. The bank's CRA examiner confirmed this qualifies as a community development activity under the LMI health services provision.</p>
+      <p>Our ambulatory division schedules <strong>40,000 outpatient visits/year</strong> with a <strong>20% no-show rate</strong>. Staff coding revealed transportation barriers account for <strong>30% of missed appointments</strong>. Net revenue per kept visit: <strong>$225</strong>. Marginal clinical cost: <strong>$90/visit</strong>. LMI share: 90%.</p>
+      <p>I am asking you to evaluate the financial case across four value layers — FFS contribution margin, coding uplift, CCM/TCM billing, and VBC quality earn-back — and present a board recommendation in 30 days. <strong>This is both a mission decision and a business decision. The evidence suggests they point in the same direction.</strong></p>
+    </div>
+  </div>
+
+  <div class="card card-teal" style="margin-top:16px;">
+    <div class="pill pill-teal" style="margin-bottom:10px;">Your Mission</div>
+    <div class="g2">
+      <div>
+        <p class="body-text">Over the next seven scenes you will:</p>
+        <ul style="font-size:14px;line-height:1.9;color:var(--ink);padding-left:20px;margin-top:8px;">
+          <li>Review the evidence chain linking transportation to financial outcomes</li>
+          <li>Build the ROI model layer by layer — predicting before you calculate</li>
+          <li>Navigate four scored decisions on compliance and board framing</li>
+          <li>Construct a defensible recommendation for the board finance committee</li>
+        </ul>
       </div>
-      <p>The pilot calls for $60/round trip with 10% overhead. First Community Bank has offered a <strong>$50,000 CRA-eligible contribution</strong> — reducing our net outlay to approximately $29,200. I believe the ROI is compelling on the FFS basis alone, before factoring in CCM/TCM capture and VBC quality earn-back.</p>
-      <p>I've also flagged this with our ACO quality team. Our Diabetes Glycemic Status (QPP Measure 001) and Transitional Care/Med Rec (Star Ratings) performance both correlate strongly with appointment adherence in our population.</p>
-    </div>
-    <div class="memo-sig">
-      <span>Dr. James Okafor, MD, MBA, FACHE</span>
-      <span style="color:var(--muted)">Confidential — For CFO review</span>
+      <div>
+        <p class="body-text" style="margin-bottom:10px;"><strong>Scoring:</strong> 4 decisions. A 4/4 score means you are ready to champion this program in a real executive setting. Each decision reflects an error that real finance and compliance teams commonly make.</p>
+        <p class="body-text"><strong>Platform &amp; Workbook:</strong> Every calculation in this module can be replicated live in the CHNA-CRA Navigator dashboard and verified against the Master Learner Workbook exercises cited on each scene.</p>
+      </div>
     </div>
   </div>
 
-  <div class="card card-gold" style="margin-top:24px; max-width:720px; margin-left:auto; margin-right:auto;">
-    <h4 style="font-size:15px; font-weight:800; color:var(--gold); margin-bottom:6px;">Your Decision This Session</h4>
-    <p class="body-text" style="margin:0">Over the next six scenes, you will evaluate the evidence, run the financial model, navigate two compliance decisions, and present a recommendation to the board. <strong>Your choices are scored.</strong> A 3/3 score means you are ready to champion this program in a real executive setting.</p>
+  <div class="xref-bar">
+    <span class="xref xref-platform">Navigator: Tier 3 — ROI &amp; Break-even</span>
+    <span class="xref xref-workbook">Workbook: Module 2 Framework (pp. 1–4)</span>
   </div>
 
-  <div class="nav-row">
-    <div></div>
-    <button class="btn btn-primary" onclick="go(2)">Review the Evidence →</button>
+  <div class="nav-row nav-row-center">
+    <button class="btn btn-primary" onclick="go(2)">Begin: Review the Evidence →</button>
   </div>
 </div>
+</div>
 
-<!-- ────────────────────────────────────────────
-     SCENE 2 — EVIDENCE CHAIN
-──────────────────────────────────────────────── -->
-<div class="scene" id="s2">
-  <div class="scene-label">Scene 2 of 7 · Evidence Review</div>
-  <h1 class="display">The <em>Clinical & Financial</em> Case</h1>
-  <p class="lead">Before approving any investment, you need to understand the causal chain linking transportation to revenue and quality outcomes. Click each node to reveal the evidence.</p>
+<!-- ═══════════════════════════════════════════════════════════════
+     SCENE 2 — EVIDENCE REVIEW
+════════════════════════════════════════════════════════════════ -->
+<div class="scene-wrap" id="s2">
+<div class="scene-main">
+  <div class="scene-tag">Scene 2 of 8 · Evidence Foundation</div>
+  <h1 class="display">The <em>Evidence Chain</em></h1>
+  <p class="lead">Before running any model, you must be able to defend the causal pathway. Click each link in the evidence chain to reveal the supporting research. All four links must be confirmed before you can proceed.</p>
 
-  <div style="display:grid; grid-template-columns:1fr 360px; gap:28px; align-items:start;">
-    <div class="chain" id="evidenceChain">
-      <div class="chain-node" id="node0" onclick="revealNode(0)">
-        <div class="chain-line">
-          <div class="chain-icon" style="background:#fef3c7; font-size:22px;">🚌</div>
-          <div class="chain-connector"></div>
-        </div>
-        <div class="chain-content">
-          <h4>Transportation Barriers → Missed Appointments</h4>
-          <p>30% of your no-shows are transportation-attributable. National literature confirms transportation is among the top 3 modifiable drivers of missed outpatient visits in LMI populations. A systematic meta-analysis of NEMT interventions found pooled reductions in missed appointment rates when transportation was addressed.</p>
-          <span class="chain-stat">30% of 8,000 no-shows = 2,400 transport-attributable/yr</span>
-          <p class="cite">NEMT Systematic Meta-analysis, PMC9026972 · CMS VBID Transportation Use Case, CY2023</p>
-        </div>
-      </div>
-      <div class="chain-node" id="node1" onclick="revealNode(1)">
-        <div class="chain-line">
-          <div class="chain-icon" style="background:#eff6ff;">📉</div>
-          <div class="chain-connector"></div>
-        </div>
-        <div class="chain-content">
-          <h4>Missed Appointments → Chronic Disease Deterioration</h4>
-          <p>In diabetes populations, missed appointments are associated with poorer glycemic control and reduced self-care processes. In hypertension, nonattendance is linked to worse blood pressure control — directly relevant to QPP Measure 236. For high-utilizers, missing post-discharge follow-up increases readmission risk.</p>
-          <span class="chain-stat">Missed HbA1c labs → QPP Measure 001 "not performed" pathway</span>
-          <p class="cite">JAMA Internal Medicine 609512 · PubMed 14734947 · PMC8131454</p>
-        </div>
-      </div>
-      <div class="chain-node" id="node2" onclick="revealNode(2)">
-        <div class="chain-line">
-          <div class="chain-icon" style="background:#f0fdf4;">💰</div>
-          <div class="chain-connector"></div>
-        </div>
-        <div class="chain-content">
-          <h4>Missed Appointments → Direct Revenue Loss</h4>
-          <p>Each prevented no-show is a recovered visit worth $225 in net revenue. With 1,200 preventable no-shows per year at a 50% mitigation rate, the gross revenue opportunity is $270,000 annually — before subtracting clinical costs. The marginal clinical cost per recovered visit is $90, leaving a $135/visit contribution margin above program costs.</p>
-          <span class="chain-stat">1,200 prevented × $225 = $270,000 gross/yr</span>
-          <p class="cite">Excel-parity base model — see ROI & Break-even tab (Tier 3)</p>
-        </div>
-      </div>
-      <div class="chain-node" id="node3" onclick="revealNode(3)">
-        <div class="chain-line">
-          <div class="chain-icon" style="background:#fdf4ff;">⭐</div>
-        </div>
-        <div class="chain-content">
-          <h4>Kept Appointments → VBC Quality Earn-back</h4>
-          <p>Quality programs (ACO REACH, Medicare Advantage Star Ratings) reward performance on measure specifications that require completed clinical encounters. Meridian's ACO REACH contract has $500,000 at risk. A 7-point quality score improvement — plausible with improved appointment adherence — yields $35,000 in incremental linear earn-back, or up to $150,000 under a cliff bonus structure.</p>
-          <span class="chain-stat">7-pt delta × $500K pool = $35,000 linear earn-back</span>
-          <p class="cite">CMS ACO REACH PY2026 · QPP Measure Specs 001, 236, 113</p>
-        </div>
+  <div class="pred-box" style="margin-bottom:20px;">
+    <div class="pred-q">Before reviewing the evidence — <em>which link do you expect to be least supported</em> by published research?</div>
+    <div class="pred-opts">
+      <button class="pred-btn" onclick="selectPredEvidence('a',this)"><span class="opt-letter">A</span>Transportation → Missed Appointments</button>
+      <button class="pred-btn" onclick="selectPredEvidence('b',this)"><span class="opt-letter">B</span>Missed Appointments → Worse Disease Control</button>
+      <button class="pred-btn" onclick="selectPredEvidence('c',this)"><span class="opt-letter">C</span>Kept Appointments → Revenue Recovery</button>
+      <button class="pred-btn" onclick="selectPredEvidence('d',this)"><span class="opt-letter">D</span>Kept Appointments → VBC Quality Earn-back</button>
+    </div>
+    <div class="pred-reveal" id="pred-evidence-reveal">
+      <strong>Answer: D — VBC Quality Earn-back</strong> has the least direct evidence because the causal chain requires (1) appointments kept → (2) quality measures closed → (3) dollars earned under a specific contract structure. Links A–C have strong direct evidence. Link D requires an attribution model to isolate NEMT's contribution from other quality interventions — which is why the VBC layer carries "Low-Medium" confidence in the financial model.
+    </div>
+  </div>
+
+  <div class="chain" id="evidenceChain">
+    <div class="chain-node" id="enode0" onclick="revealNode(0)">
+      <div class="chain-icon">🚗</div>
+      <div class="chain-content">
+        <h4>Link 1 — Transportation → Missed Appointments</h4>
+        <p>Transportation barriers are documented drivers of no-shows. Click to reveal the evidence.</p>
+        <cite id="ec0">[ Click to expand ]</cite>
       </div>
     </div>
-
-    <div>
-      <div class="card" style="position:sticky; top:90px;">
-        <div class="pill pill-teal" style="margin-bottom:12px;">Evidence Tracker</div>
-        <div id="evidenceTracker">
-          <p style="font-size:14px; color:var(--muted);">Click each node in the chain to review the evidence. All four must be revealed to continue.</p>
-        </div>
-        <div class="dashboard-ref" style="margin-top:16px; font-size:11px;">Assessment Tab (Tier 1) — Evidence Traceability</div>
+    <div class="chain-line"></div>
+    <div class="chain-node" id="enode1" onclick="revealNode(1)">
+      <div class="chain-icon">🩺</div>
+      <div class="chain-content">
+        <h4>Link 2 — Missed Appointments → Worse Disease Control</h4>
+        <p>Missed care compounds over time into measurably worse clinical outcomes. Click to reveal.</p>
+        <cite id="ec1">[ Click to expand ]</cite>
       </div>
     </div>
+    <div class="chain-line"></div>
+    <div class="chain-node" id="enode2" onclick="revealNode(2)">
+      <div class="chain-icon">💰</div>
+      <div class="chain-content">
+        <h4>Link 3 — Kept Appointments → Revenue Recovery</h4>
+        <p>Kept appointments translate directly to recovered contribution margin. Click to reveal.</p>
+        <cite id="ec2">[ Click to expand ]</cite>
+      </div>
+    </div>
+    <div class="chain-line"></div>
+    <div class="chain-node" id="enode3" onclick="revealNode(3)">
+      <div class="chain-icon">⭐</div>
+      <div class="chain-content">
+        <h4>Link 4 — Kept Appointments → VBC Quality Earn-back</h4>
+        <p>Quality measure closure depends on completed clinical encounters. Click to reveal — and the attribution caveat.</p>
+        <cite id="ec3">[ Click to expand ]</cite>
+      </div>
+    </div>
+  </div>
+
+  <div id="evidenceStatus" style="margin-top:16px;font-size:13px;color:var(--muted);font-weight:600;"></div>
+
+  <div class="xref-bar">
+    <span class="xref xref-platform">Navigator: Tier 1 — Assessment &amp; CHNA Evidence</span>
+    <span class="xref xref-workbook">Workbook: Evidence Citations (Appendix, pp. 48–50)</span>
   </div>
 
   <div class="nav-row">
     <button class="btn btn-secondary" onclick="go(1)">← Back</button>
-    <button class="btn btn-primary" id="evidenceNext" disabled onclick="go(3)">Run the ROI Model →</button>
+    <button class="btn btn-primary" id="evidenceNext" disabled onclick="go(3)">Run the FFS Model →</button>
   </div>
 </div>
+</div>
 
-<!-- ────────────────────────────────────────────
-     SCENE 3 — FFS CALCULATOR
-──────────────────────────────────────────────── -->
-<div class="scene" id="s3">
-  <div class="scene-label">Scene 3 of 7 · Interactive Calculation</div>
-  <h1 class="display">The <em>FFS ROI</em> Model</h1>
-  <p class="lead">Adjust the inputs below and watch the financial model update in real time. This is the same Excel-parity model used in the CHNA-CRA Navigator dashboard.</p>
+<!-- ═══════════════════════════════════════════════════════════════
+     SCENE 3 — EXERCISE 1: FFS BASE ROI
+════════════════════════════════════════════════════════════════ -->
+<div class="scene-wrap" id="s3">
+<div class="scene-main">
+  <div class="scene-tag">Scene 3 of 8 · Exercise 1 · Layer 0</div>
+  <h1 class="display">The <em>FFS Foundation</em></h1>
+  <p class="lead">Before adjusting a single input — commit to a prediction. This is not a test. It is the core technique that separates analysts who understand models from analysts who can only operate them.</p>
 
-  <div class="calc-grid">
+  <div class="pred-box">
+    <div class="pred-q">At default inputs — 40,000 visits, 20% no-show, 30% transport share, 50% mitigation, $225 revenue, $90 cost, $60/trip — <em>what is your predicted first-year net benefit?</em></div>
+    <div class="pred-opts">
+      <button class="pred-btn" onclick="selectPred(3,'a',this)"><span class="opt-letter">A</span>Negative — trip costs exceed recovered margin</button>
+      <button class="pred-btn" onclick="selectPred(3,'b',this)"><span class="opt-letter">B</span>~$40,000–$60,000 — modest positive, break-even territory</button>
+      <button class="pred-btn" onclick="selectPred(3,'c',this)"><span class="opt-letter">C</span>~$80,000–$90,000 — meaningful positive, ROI just above 1×</button>
+      <button class="pred-btn" onclick="selectPred(3,'d',this)"><span class="opt-letter">D</span>~$150,000–$200,000 — strong positive, ROI above 2×</button>
+    </div>
+    <div class="pred-reveal" id="pred-s3">
+      <strong>Answer: C — approximately $82,800 net benefit, ROI ≈ 1.05×</strong><br/>
+      Transport no-shows = 40,000 × 0.20 × 0.30 = <strong>2,400</strong><br/>
+      Prevented = 2,400 × 0.50 = <strong>1,200 visits</strong><br/>
+      Gross revenue = 1,200 × $225 = <strong>$270,000</strong><br/>
+      Marginal cost = 1,200 × $90 = <strong>$108,000</strong> | Trip cost = 1,200 × $60 × 1.10 = <strong>$79,200</strong><br/>
+      Net benefit = $270,000 − $108,000 − $79,200 = <strong>$82,800</strong><br/>
+      The margin of safety: break-even trip cost = $225 − $90 = <strong>$135/trip</strong> — $75 above the $60 vendor rate.
+    </div>
+  </div>
+
+  <div class="g2">
+    <div class="calc-shell">
+      <div class="section-label">Layer 0 — FFS Base Inputs</div>
+      <div class="calc-inputs">
+        <div class="calc-field"><label>Annual visits (V)</label><input id="v" type="number" value="40000" oninput="calcFFS()"/></div>
+        <div class="calc-field"><label>No-show rate (n)</label><input id="n" type="number" value="0.20" step="0.01" oninput="calcFFS()"/></div>
+        <div class="calc-field"><label>Transport share (s)</label><input id="s" type="number" value="0.30" step="0.01" oninput="calcFFS()"/></div>
+        <div class="calc-field"><label>Mitigation rate (m)</label><input id="m" type="number" value="0.50" step="0.01" oninput="calcFFS()"/></div>
+        <div class="calc-field"><label>Net revenue/visit ($r)</label><input id="r" type="number" value="225" oninput="calcFFS()"/></div>
+        <div class="calc-field"><label>Marginal cost/visit ($c)</label><input id="c" type="number" value="90" oninput="calcFFS()"/></div>
+        <div class="calc-field"><label>Trip cost ($t)</label><input id="t" type="number" value="60" oninput="calcFFS()"/></div>
+        <div class="calc-field"><label>Overhead rate (o)</label><input id="o" type="number" value="0.10" step="0.01" oninput="calcFFS()"/></div>
+      </div>
+      <hr class="calc-divider"/>
+      <div class="waterfall" id="wf0"></div>
+      <div class="roi-display">
+        <div>
+          <div style="font-size:10px;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.08em;margin-bottom:2px;">ROI</div>
+          <div class="roi-big" id="roi0">—</div>
+        </div>
+        <div style="text-align:right;">
+          <div class="roi-net" id="net0">—</div>
+          <div class="roi-be" id="be0" style="margin-top:6px;">Break-even: —</div>
+        </div>
+      </div>
+    </div>
+
     <div>
-      <div class="card" style="margin-bottom:20px;">
-        <div class="pill pill-navy" style="margin-bottom:14px; font-size:11px;">A · Volume & Access</div>
-        <div class="calc-inputs">
-          <div class="calc-field">
-            <label>Annual targeted outpatient visits (V)</label>
-            <input type="number" id="inp_v" value="40000" oninput="calcROI()"/>
-            <div class="hint">Total scheduled visits in ambulatory division</div>
-          </div>
-          <div class="calc-field">
-            <label>Baseline no-show rate (n)</label>
-            <input type="number" id="inp_n" value="0.20" step="0.01" oninput="calcROI()"/>
-            <div class="hint">Enter as decimal (0.20 = 20%)</div>
-          </div>
-          <div class="calc-field">
-            <label>Transportation-attributable share (s)</label>
-            <input type="number" id="inp_s" value="0.30" step="0.01" oninput="calcROI()"/>
-            <div class="hint">From reason-code analysis</div>
-          </div>
-          <div class="calc-field">
-            <label>Net revenue per kept visit ($)</label>
-            <input type="number" id="inp_r" value="225" oninput="calcROI()"/>
-          </div>
-          <div class="calc-field">
-            <label>Marginal clinical cost per visit ($)</label>
-            <input type="number" id="inp_c" value="90" oninput="calcROI()"/>
-          </div>
+      <div class="card card-gold">
+        <div class="pill pill-gold" style="margin-bottom:10px;">Sensitivity Analysis</div>
+        <p class="body-text" style="margin-bottom:12px;font-size:13px;">FFS net benefit across mitigation rates × trip costs at default volume/revenue settings. Your current inputs are highlighted.</p>
+        <div style="overflow-x:auto;">
+          <table class="sens-table" id="sensTable">
+            <thead>
+              <tr>
+                <th style="text-align:left;">Mitig →</th>
+                <th>$45/trip</th><th>$55/trip</th><th>$65/trip</th><th>$80/trip</th><th>$100/trip</th>
+              </tr>
+            </thead>
+            <tbody id="sensTbody"></tbody>
+          </table>
         </div>
       </div>
-      <div class="card">
-        <div class="pill pill-navy" style="margin-bottom:14px; font-size:11px;">B · Program Inputs</div>
-        <div class="calc-inputs">
-          <div class="calc-field">
-            <label>Mitigation rate (m) — prevented share</label>
-            <input type="number" id="inp_m" value="0.50" step="0.01" oninput="calcROI()"/>
-          </div>
-          <div class="calc-field">
-            <label>Trip cost per round trip ($)</label>
-            <input type="number" id="inp_t" value="60" oninput="calcROI()"/>
-          </div>
-          <div class="calc-field">
-            <label>Overhead rate (o)</label>
-            <input type="number" id="inp_o" value="0.10" step="0.01" oninput="calcROI()"/>
-          </div>
-        </div>
+      <div class="card card-teal" style="margin-top:0;">
+        <div class="pill pill-teal" style="margin-bottom:8px;">Break-even Insight</div>
+        <p class="body-text" id="beInsight" style="font-size:13px;"></p>
       </div>
     </div>
+  </div>
 
-    <div class="calc-results">
-      <div class="card">
-        <div class="pill pill-teal" style="margin-bottom:14px;">Live Results</div>
-        <div class="result-waterfall" id="waterfall"></div>
-        <div class="roi-badge" id="roiBadge" style="margin-top:16px;">
-          <div class="roi-label">Return on Investment</div>
-          <div class="roi-num" id="roiNum">—</div>
-          <div class="roi-label">Net Annual Benefit</div>
-          <div class="roi-num" style="font-size:28px; color:#fff;" id="netNum">—</div>
-          <div class="roi-breakeven" id="breakeven">Break-even trip cost: —</div>
-        </div>
-      </div>
-      <div class="card card-gold" style="margin-top:16px;">
-        <div class="pill pill-gold" style="margin-bottom:10px; font-size:11px;">Prediction Check</div>
-        <p style="font-size:14px; color:var(--ink); line-height:1.7;">With defaults, the model produces <strong>$82,800 net annual benefit</strong> at <strong>1.05× ROI</strong>. The break-even trip cost is <strong>$135/trip</strong> — giving $75 of margin above the $60 vendor rate.<br><br>This is the FFS floor. The full case is built in Scenes 4–6.</p>
-      </div>
-      <div class="dashboard-ref" style="margin-top:12px; font-size:11px;">ROI & Break-even Tab (Tier 3) — Section A &amp; B</div>
-    </div>
+  <div class="xref-bar">
+    <span class="xref xref-platform">Navigator: Tier 3 — ROI &amp; Break-even, Sections A &amp; B</span>
+    <span class="xref xref-workbook">Workbook: Exercise 1 — The FFS Contribution Margin Case</span>
   </div>
 
   <div class="nav-row">
     <button class="btn btn-secondary" onclick="go(2)">← Back</button>
-    <button class="btn btn-primary" onclick="go(4)">Next: The Coding Decision →</button>
+    <button class="btn btn-primary" onclick="go(4)">Add the Coding Layer →</button>
   </div>
 </div>
+</div>
 
-<!-- ────────────────────────────────────────────
-     SCENE 4 — CODING LAYER DECISION (SCORED)
-──────────────────────────────────────────────── -->
-<div class="scene" id="s4">
-  <div class="scene-label">Scene 4 of 7 · Scored Decision · Question 1 of 3</div>
-  <h1 class="display">The Coding <em>Layer Decision</em></h1>
-  <p class="lead">Your informatics director has flagged a documentation opportunity at NEMT-enabled visits. She is asking for your decision on two simultaneous proposals.</p>
+<!-- ═══════════════════════════════════════════════════════════════
+     SCENE 4 — EXERCISE 2: CODING LAYER + SCORED Q1
+════════════════════════════════════════════════════════════════ -->
+<div class="scene-wrap" id="s4">
+<div class="scene-main">
+  <div class="scene-tag">Scene 4 of 8 · Exercise 2 · Layer 1 · Scored Decision 1 of 4</div>
+  <h1 class="display">The <em>Coding Layer</em></h1>
+  <p class="lead">NEMT-enabled visits create a documentation opportunity: SDOH Z-code capture and CPT coding improvement. This layer adds value without changing the base ROI formula — and it surfaces a compliance question you must answer before operationalizing it.</p>
 
-  <div class="grid-2">
-    <div class="card card-accent">
-      <div class="pill pill-teal" style="margin-bottom:10px;">Proposal A</div>
-      <h4 style="font-size:16px; font-weight:800; color:var(--navy); margin-bottom:8px;">SDOH Z-code Documentation</h4>
-      <p class="body-text">Systematically screen and document Z75.3 (transportation barrier) for NEMT-enabled visits. Estimated 25% capture rate, $20 average uplift per Z-coded encounter.</p>
-      <div class="stat-row" style="margin:12px 0;">
-        <div class="stat" style="flex:1;">
-          <div class="s-label">Annual Z-coded visits</div>
-          <div class="s-val">300</div>
-          <div class="s-hint">1,200 × 25%</div>
+  <div class="g2">
+    <div>
+      <div class="card card-blue" style="margin-bottom:14px;">
+        <div class="pill pill-blue" style="margin-bottom:8px;">Proposal A — Z-code Documentation</div>
+        <p class="body-text" style="font-size:13px;margin-bottom:10px;">Systematically screen and document <strong>Z75.3</strong> (transportation barrier) at NEMT-enabled visits. Conservative estimate: <strong>25% capture rate, $20 average uplift</strong> per Z-coded encounter from improved reimbursement classification.</p>
+        <div class="kpi-grid">
+          <div class="kpi blue"><div class="k-label">Z-coded visits</div><div class="k-val" id="z_visits">—</div><div class="k-hint">prevented × 25%</div></div>
+          <div class="kpi blue"><div class="k-label">Annual uplift</div><div class="k-val" id="z_uplift_val">—</div><div class="k-hint">visits × $20</div></div>
         </div>
-        <div class="stat" style="flex:1;">
-          <div class="s-label">Annual uplift</div>
-          <div class="s-val">$6,000</div>
-          <div class="s-hint">300 × $20</div>
+        <div class="calc-inputs" style="margin-top:12px;">
+          <div class="calc-field"><label>Z-code capture rate (%)</label><input id="zrate" type="number" value="25" min="0" max="100" oninput="calcCoding()"/></div>
+          <div class="calc-field"><label>$ uplift per encounter</label><input id="zupl" type="number" value="20" oninput="calcCoding()"/></div>
         </div>
       </div>
-    </div>
-    <div class="card card-blue">
-      <div class="pill pill-navy" style="margin-bottom:10px;">Proposal B</div>
-      <h4 style="font-size:16px; font-weight:800; color:var(--navy); margin-bottom:8px;">CPT-Level Coding Improvement</h4>
-      <p class="body-text">Improve visit-level E/M coding accuracy for recovered visits. Estimated 15% capture rate, $15 average uplift per corrected encounter.</p>
-      <div class="stat-row" style="margin:12px 0;">
-        <div class="stat" style="flex:1;">
-          <div class="s-label">Improved visits</div>
-          <div class="s-val">180</div>
-          <div class="s-hint">1,200 × 15%</div>
+      <div class="card card-purple">
+        <div class="pill pill-purple" style="margin-bottom:8px;">Proposal B — CPT Coding Improvement</div>
+        <p class="body-text" style="font-size:13px;margin-bottom:10px;">Improve E/M coding accuracy at recovered visits. Conservative estimate: <strong>15% capture rate, $15 uplift</strong> per corrected encounter from quality program attribution.</p>
+        <div class="kpi-grid">
+          <div class="kpi purple"><div class="k-label">Improved visits</div><div class="k-val" id="cpt_visits">—</div><div class="k-hint">prevented × 15%</div></div>
+          <div class="kpi purple"><div class="k-label">Annual uplift</div><div class="k-val" id="cpt_uplift_val">—</div><div class="k-hint">visits × $15</div></div>
         </div>
-        <div class="stat" style="flex:1;">
-          <div class="s-label">Annual uplift</div>
-          <div class="s-val">$2,700</div>
-          <div class="s-hint">180 × $15</div>
+        <div class="calc-inputs" style="margin-top:12px;">
+          <div class="calc-field"><label>CPT capture rate (%)</label><input id="cptrate" type="number" value="15" min="0" max="100" oninput="calcCoding()"/></div>
+          <div class="calc-field"><label>$ uplift per encounter</label><input id="cptupl" type="number" value="15" oninput="calcCoding()"/></div>
         </div>
       </div>
     </div>
+    <div>
+      <div class="card">
+        <div class="section-label">Value Stack — Layers 0 + 1</div>
+        <div class="waterfall" id="wf1"></div>
+        <div class="roi-display" style="margin-top:10px;">
+          <div>
+            <div style="font-size:10px;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.08em;margin-bottom:2px;">Layer 0+1 Net</div>
+            <div class="roi-big" id="roi1" style="font-size:28px;">—</div>
+          </div>
+          <div style="text-align:right;">
+            <div class="roi-net" id="cod_total">Coding uplift: —</div>
+            <div class="roi-net" id="cod_pct" style="font-size:12px;opacity:.7;">— of FFS base</div>
+          </div>
+        </div>
+      </div>
+      <div class="card card-gold">
+        <div class="pill pill-gold" style="margin-bottom:8px;">⚖️ The Compliance Flag</div>
+        <p class="body-text" style="font-size:13px;">Your compliance officer: <em>"CPT content — code descriptors — is copyright-protected by the AMA. Building documentation tools that display CPT descriptors requires an AMA license. Reference CMS MLN materials instead, which reproduce a limited licensed set."</em></p>
+      </div>
+    </div>
   </div>
 
-  <div class="card card-gold" style="margin:20px 0;">
-    <h4 style="font-size:15px; font-weight:800; color:var(--gold); margin-bottom:8px;">⚖️ The Compliance Flag</h4>
-    <p class="body-text" style="margin:0">Your compliance officer has raised a concern about Proposal B: <em>"CPT content — including code descriptors — is copyright-protected by the American Medical Association. If we build training materials or documentation tools that display CPT descriptors, we may need an AMA license. We should reference CMS MLN materials instead, which reproduce a limited licensed set."</em><br><br>She is asking: <strong>How should we handle CPT content in the documentation tool we build for this program?</strong></p>
+  <div class="card" style="margin-top:4px;">
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px;">
+      <div class="pill pill-red">Scored Decision 1 of 4</div>
+      <p style="font-size:13px;font-weight:700;color:var(--navy);">How do you handle CPT content in the documentation tool you build for this program?</p>
+    </div>
+    <div class="choice-grid" id="q1choices">
+      <button class="choice-btn" onclick="answer(1,'a')">
+        <div class="choice-letter">A</div>
+        <div class="choice-content"><h4>Reproduce full CPT descriptors — they're widely known and fair use applies to educational platforms.</h4><p>Build the workflow with full CPT descriptions displayed inline for clinician reference.</p></div>
+      </button>
+      <button class="choice-btn" onclick="answer(1,'b')">
+        <div class="choice-letter">B</div>
+        <div class="choice-content"><h4>Reference CMS MLN materials only. Obtain AMA license if displaying CPT descriptors. Do not reproduce raw CPT content in the platform.</h4><p>Use CMS-licensed materials as primary reference. Engage AMA licensing only if direct CPT display is required.</p></div>
+      </button>
+      <button class="choice-btn" onclick="answer(1,'c')">
+        <div class="choice-letter">C</div>
+        <div class="choice-content"><h4>Use CPT code numbers only (not descriptors) and link to AMA's public website.</h4><p>Avoid the licensing question entirely by displaying no descriptor text.</p></div>
+      </button>
+    </div>
+    <div class="feedback-box" id="q1fb"></div>
   </div>
 
-  <h3 style="font-size:16px; font-weight:800; color:var(--navy); margin-bottom:12px;">Decision 1: What is the correct approach to CPT content in your documentation tool?</h3>
-  <div class="scenario-choice" id="q1choices">
-    <button class="choice-btn" onclick="answer(1,'a')">
-      <div class="choice-letter">A</div>
-      <div class="choice-content">
-        <h4>Reproduce the full CPT descriptors in the tool — they're widely known and fair use applies to educational platforms.</h4>
-        <p>Build the documentation workflow with the full CPT code descriptions displayed inline for clinician reference.</p>
-      </div>
-    </button>
-    <button class="choice-btn" onclick="answer(1,'b')">
-      <div class="choice-letter">B</div>
-      <div class="choice-content">
-        <h4>Reference CMS MLN materials only, obtain an AMA license if displaying CPT descriptors, and do not reproduce raw CPT content in the platform.</h4>
-        <p>Use CMS-licensed materials as the primary reference. Engage AMA licensing if direct CPT display is required for clinical workflow.</p>
-      </div>
-    </button>
-    <button class="choice-btn" onclick="answer(1,'c')">
-      <div class="choice-letter">C</div>
-      <div class="choice-content">
-        <h4>Use only CPT code numbers (not descriptors) and link out to the AMA's public website for descriptions.</h4>
-        <p>Avoid the licensing question by not displaying any descriptor text — clinicians look up codes on ama-assn.org directly.</p>
-      </div>
-    </button>
+  <div class="xref-bar">
+    <span class="xref xref-platform">Navigator: Tier 3 — Coding ROI Layer (optional toggle)</span>
+    <span class="xref xref-workbook">Workbook: Exercise 2 — The Coding Layer (pp. 12–16)</span>
   </div>
-  <div class="feedback-box" id="q1feedback"></div>
 
   <div class="nav-row">
     <button class="btn btn-secondary" onclick="go(3)">← Back</button>
-    <button class="btn btn-primary" id="q1next" disabled onclick="go(5)">Next: The CCM/TCM Decision →</button>
+    <button class="btn btn-primary" id="q1next" disabled onclick="go(5)">Add CCM / TCM →</button>
   </div>
 </div>
+</div>
 
-<!-- ────────────────────────────────────────────
-     SCENE 5 — CCM/TCM COMPLIANCE (SCORED)
-──────────────────────────────────────────────── -->
-<div class="scene" id="s5">
-  <div class="scene-label">Scene 5 of 7 · Scored Decision · Question 2 of 3</div>
-  <h1 class="display">The CCM / TCM <em>Compliance Decision</em></h1>
-  <p class="lead">Your medical director wants to leverage NEMT contact windows for CCM and TCM billing. Your compliance officer needs you to select the operationally sound approach.</p>
+<!-- ═══════════════════════════════════════════════════════════════
+     SCENE 5 — EXERCISE 3: CCM/TCM + SCORED Q2
+════════════════════════════════════════════════════════════════ -->
+<div class="scene-wrap" id="s5">
+<div class="scene-main">
+  <div class="scene-tag">Scene 5 of 8 · Exercise 3 · Layer 2 · Scored Decision 2 of 4</div>
+  <h1 class="display">CCM / TCM <em>Capture</em></h1>
+  <p class="lead">NEMT creates reliable patient contact windows — a structural advantage for CCM and TCM billing. The financial case is significant. The compliance architecture must be exact. One wrong decision here creates False Claims Act exposure.</p>
 
-  <div class="card card-accent" style="margin-bottom:24px;">
-    <div class="pill pill-teal" style="margin-bottom:10px;">Program Context</div>
-    <div class="kpi-grid">
-      <div class="kpi teal">
-        <div class="k-label">CCM-eligible patients</div>
-        <div class="k-val">500</div>
-        <div class="k-hint">2+ chronic conditions qualifying under CMS criteria</div>
+  <div class="pred-box">
+    <div class="pred-q">CCM: 500 eligible patients, 40% enrollment, 8 billed months/year, $62/month allowed, 85% billing success, 20 staff-minutes/month at $0.65/min. <em>What is the estimated net CCM contribution?</em></div>
+    <div class="pred-opts">
+      <button class="pred-btn" onclick="selectPred(5,'a',this)"><span class="opt-letter">A</span>Negative — staff cost exceeds billings</button>
+      <button class="pred-btn" onclick="selectPred(5,'b',this)"><span class="opt-letter">B</span>~$25,000–$35,000 gross (before incremental attribution)</button>
+      <button class="pred-btn" onclick="selectPred(5,'c',this)"><span class="opt-letter">C</span>~$65,000–$70,000 gross net of staff cost</button>
+      <button class="pred-btn" onclick="selectPred(5,'d',this)"><span class="opt-letter">D</span>~$150,000+ — largest single layer</button>
+    </div>
+    <div class="pred-reveal" id="pred-s5">
+      <strong>Answer: C — approximately $66,560 gross net of staff cost</strong><br/>
+      Enrolled = 500 × 0.40 = <strong>200 patients</strong><br/>
+      Billed months = 200 × 8 × 0.85 = <strong>1,360 patient-months</strong><br/>
+      Gross CCM = 1,360 × $62 = <strong>$84,320</strong><br/>
+      Staff cost = 1,360 × 20 min × $0.65 = <strong>$17,680</strong><br/>
+      Net CCM (gross) = $84,320 − $17,680 = <strong>$66,640</strong><br/>
+      <em>Important:</em> Only the ~40% incremental to NEMT enrollment lift is attributed = <strong>$26,656</strong>. Report incremental only.
+    </div>
+  </div>
+
+  <div class="g2">
+    <div>
+      <div class="card card-teal">
+        <div class="pill pill-teal" style="margin-bottom:8px;">CCM Financial Inputs</div>
+        <div class="calc-inputs">
+          <div class="calc-field"><label>CCM-eligible patients</label><input id="ccm_pat" type="number" value="500" oninput="calcCCM()"/></div>
+          <div class="calc-field"><label>Enrollment rate (%)</label><input id="ccm_enr" type="number" value="40" oninput="calcCCM()"/></div>
+          <div class="calc-field"><label>Billed months/patient/yr</label><input id="ccm_mo" type="number" value="8" oninput="calcCCM()"/></div>
+          <div class="calc-field"><label>Avg allowed/month ($)</label><input id="ccm_all" type="number" value="62" oninput="calcCCM()"/></div>
+          <div class="calc-field"><label>Billing success (%)</label><input id="ccm_suc" type="number" value="85" oninput="calcCCM()"/></div>
+          <div class="calc-field"><label>Staff min/month (×$0.65)</label><input id="ccm_min" type="number" value="20" oninput="calcCCM()"/></div>
+        </div>
+        <div class="kpi-grid" style="margin-top:8px;">
+          <div class="kpi teal"><div class="k-label">Gross CCM net</div><div class="k-val" id="ccm_gross">—</div><div class="k-hint">all enrolled patients</div></div>
+          <div class="kpi gold"><div class="k-label">Incremental (40%)</div><div class="k-val" id="ccm_incr">—</div><div class="k-hint">attributed to NEMT</div></div>
+        </div>
       </div>
-      <div class="kpi teal">
-        <div class="k-label">Enrollment rate</div>
-        <div class="k-val">40%</div>
-        <div class="k-hint">200 enrolled patients</div>
+
+      <div class="card card-teal" style="margin-top:0;">
+        <div class="pill pill-teal" style="margin-bottom:8px;">TCM Financial Inputs</div>
+        <div class="calc-inputs">
+          <div class="calc-field"><label>Eligible discharges/yr</label><input id="tcm_dis" type="number" value="200" oninput="calcCCM()"/></div>
+          <div class="calc-field"><label>Reach/completion (%)</label><input id="tcm_rch" type="number" value="55" oninput="calcCCM()"/></div>
+          <div class="calc-field"><label>% billed 99496 (7-day)</label><input id="tcm_high" type="number" value="35" oninput="calcCCM()"/></div>
+          <div class="calc-field"><label>Billing success (%)</label><input id="tcm_suc" type="number" value="82" oninput="calcCCM()"/></div>
+        </div>
+        <div class="kpi-grid" style="margin-top:8px;">
+          <div class="kpi teal"><div class="k-label">TCM net</div><div class="k-val" id="tcm_net_val">—</div><div class="k-hint">after staff labor</div></div>
+        </div>
       </div>
-      <div class="kpi gold">
-        <div class="k-label">Billed patient-months</div>
-        <div class="k-val">1,360</div>
-        <div class="k-hint">200 × 8 months × 85% success</div>
+
+      <div style="background:rgba(185,28,28,.07);border:1.5px solid rgba(185,28,28,.2);border-radius:var(--r);padding:10px 14px;font-size:11px;color:var(--red);font-weight:700;">
+        ⚠️ Compliance guardrail: CCM/TCM time must be real, threshold-meeting, and non-duplicative. Patient travel time is not billable. CCM and TCM time cannot be double-counted in the same period.
       </div>
-      <div class="kpi green">
-        <div class="k-label">Net CCM contribution</div>
-        <div class="k-val">$66K</div>
-        <div class="k-hint">Gross $84K − $18K labor</div>
+    </div>
+
+    <div>
+      <div class="card">
+        <div class="section-label">TCM Service Timeline — 30 Days</div>
+        <div class="timeline">
+          <div class="tl-step"><div class="tl-day">Day 0</div><div class="tl-action">Discharge</div><div class="tl-note">Flag transport need immediately</div></div>
+          <div class="tl-step"><div class="tl-day">Day 1–2</div><div class="tl-action">Interactive Contact</div><div class="tl-note">Phone/electronic required</div></div>
+          <div class="tl-step tl-alert"><div class="tl-day">Day 1–7</div><div class="tl-action">F2F Visit (99496)</div><div class="tl-note">NEMT directly enables this</div></div>
+          <div class="tl-step"><div class="tl-day">Day 1–14</div><div class="tl-action">F2F Visit (99495)</div><div class="tl-note">NEMT removes barrier</div></div>
+          <div class="tl-step"><div class="tl-day">By Visit</div><div class="tl-action">Med Rec</div><div class="tl-note">Required before F2F</div></div>
+          <div class="tl-step"><div class="tl-day">Day 30</div><div class="tl-action">Period Closes</div><div class="tl-note">Highest readmission risk</div></div>
+        </div>
+        <div class="section-label" style="margin-top:14px;">Value Stack — Layers 0 + 1 + 2</div>
+        <div class="waterfall" id="wf2"></div>
       </div>
     </div>
   </div>
 
-  <h4 style="font-size:14px; font-weight:700; color:var(--navy); margin-bottom:12px;">TCM 30-Day Service Timeline</h4>
-  <div class="timeline">
-    <div class="tl-step tl-0">
-      <div class="tl-day">Day 0</div>
-      <div class="tl-action">Discharge</div>
-      <div class="tl-note">Flag transport need</div>
+  <div class="card" style="margin-top:4px;">
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px;">
+      <div class="pill pill-red">Scored Decision 2 of 4</div>
+      <p style="font-size:13px;font-weight:700;color:var(--navy);">Which CCM/TCM implementation approach is compliant and operationally sound?</p>
     </div>
-    <div class="tl-step tl-1">
-      <div class="tl-day">Day 1–2</div>
-      <div class="tl-action">Interactive Contact</div>
-      <div class="tl-note">Phone/electronic required</div>
+    <div class="choice-grid" id="q2choices">
+      <button class="choice-btn" onclick="answer(2,'a')">
+        <div class="choice-letter">A</div>
+        <div class="choice-content"><h4>Bill CCM for all enrolled patients every month — the NEMT contact creates the touchpoint needed to justify the code.</h4><p>Document the ride pickup as the CCM contact event. Count round-trip duration toward the 20-minute billing threshold.</p></div>
+      </button>
+      <button class="choice-btn" onclick="answer(2,'b')">
+        <div class="choice-letter">B</div>
+        <div class="choice-content"><h4>Schedule genuine clinical staff time during NEMT windows. Document staff time separately and non-duplicatively. Bill only when thresholds are genuinely met.</h4><p>NEMT creates the reliable contact opportunity. Clinical staff perform real care management. Time is documented as staff time, never travel time.</p></div>
+      </button>
+      <button class="choice-btn" onclick="answer(2,'c')">
+        <div class="choice-letter">C</div>
+        <div class="choice-content"><h4>Only bill TCM — avoid CCM entirely because NEMT contact creates ambiguity about billable time.</h4><p>Skip CCM to eliminate compliance risk. TCM has clearer face-to-face requirements.</p></div>
+      </button>
+      <button class="choice-btn" onclick="answer(2,'d')">
+        <div class="choice-letter">D</div>
+        <div class="choice-content"><h4>Count CCM and TCM time together in the same month — combined care management exceeds 20 minutes.</h4><p>During TCM's 30-day period, bill CCM using the same care coordination time since it serves the same patient goal.</p></div>
+      </button>
     </div>
-    <div class="tl-step tl-alert">
-      <div class="tl-day">Day 1–7</div>
-      <div class="tl-action">F2F Visit (99496)</div>
-      <div class="tl-note">NEMT directly enables this</div>
-    </div>
-    <div class="tl-step tl-2">
-      <div class="tl-day">Day 1–14</div>
-      <div class="tl-action">F2F Visit (99495)</div>
-      <div class="tl-note">NEMT removes barrier</div>
-    </div>
-    <div class="tl-step tl-3">
-      <div class="tl-day">By Visit Date</div>
-      <div class="tl-action">Med Reconciliation</div>
-      <div class="tl-note">Required on or before F2F</div>
-    </div>
-    <div class="tl-step tl-4">
-      <div class="tl-day">Day 30</div>
-      <div class="tl-action">Period Closes</div>
-      <div class="tl-note">Max readmission risk window</div>
-    </div>
+    <div class="feedback-box" id="q2fb"></div>
   </div>
 
-  <h3 style="font-size:16px; font-weight:800; color:var(--navy); margin:24px 0 12px;">Decision 2: Which CCM/TCM implementation approach is compliant and operationally sound?</h3>
-  <div class="pitfall-grid" id="q2choices">
-    <div class="pitfall-card" onclick="answerPitfall('a')">
-      <div class="pitfall-tag">Option A</div>
-      <h4>Bill CCM for all enrolled patients every month — the NEMT contact creates the touchpoint we need to justify the code.</h4>
-      <p>Document the ride pickup as the CCM contact event. Count the round-trip duration toward the 20-minute threshold for billing purposes.</p>
-    </div>
-    <div class="pitfall-card" onclick="answerPitfall('b')">
-      <div class="pitfall-tag">Option B</div>
-      <h4>Schedule genuine clinical staff time (care plan review, med reconciliation, symptom monitoring) during NEMT windows. Document staff time separately. Bill only when thresholds are genuinely met.</h4>
-      <p>NEMT creates the reliable contact opportunity. Clinical staff perform and document real care management activities during that window. Time is non-duplicative and threshold-meeting.</p>
-    </div>
-    <div class="pitfall-card" onclick="answerPitfall('c')">
-      <div class="pitfall-tag">Option C</div>
-      <h4>Only bill TCM — avoid CCM entirely because the NEMT contact creates ambiguity about what is billable time.</h4>
-      <p>TCM has clearer face-to-face requirements and is less audit-prone. Skip CCM to eliminate compliance risk entirely.</p>
-    </div>
-    <div class="pitfall-card" onclick="answerPitfall('d')">
-      <div class="pitfall-tag">Option D</div>
-      <h4>Count CCM and TCM time together in the same month when a patient has both — the combined care management is more than 20 minutes total.</h4>
-      <p>During TCM's 30-day period, also bill CCM using the same care coordination time since it all serves the same patient goal.</p>
-    </div>
+  <div class="xref-bar">
+    <span class="xref xref-platform">Navigator: Tier 3 — CCM/TCM Layer (Layer B toggle)</span>
+    <span class="xref xref-workbook">Workbook: Exercise 3 — CCM/TCM Capture (pp. 17–22)</span>
   </div>
-  <div class="feedback-box" id="q2feedback"></div>
 
   <div class="nav-row">
     <button class="btn btn-secondary" onclick="go(4)">← Back</button>
-    <button class="btn btn-primary" id="q2next" disabled onclick="go(6)">Next: The Board Presentation →</button>
+    <button class="btn btn-primary" id="q2next" disabled onclick="go(6)">Add VBC Quality Layer →</button>
   </div>
 </div>
+</div>
 
-<!-- ────────────────────────────────────────────
-     SCENE 6 — BOARD PRESENTATION (SCORED)
-──────────────────────────────────────────────── -->
-<div class="scene" id="s6">
-  <div class="scene-label">Scene 6 of 7 · Scored Decision · Question 3 of 3</div>
-  <h1 class="display">The <em>Board Presentation</em></h1>
-  <p class="lead">You are presenting the NEMT pilot recommendation to the board finance committee. All four value layers have been modeled. Choose the scenario that best anchors your recommendation.</p>
+<!-- ═══════════════════════════════════════════════════════════════
+     SCENE 6 — EXERCISE 4: VBC QUALITY THRESHOLD + SCORED Q3
+════════════════════════════════════════════════════════════════ -->
+<div class="scene-wrap" id="s6">
+<div class="scene-main">
+  <div class="scene-tag">Scene 6 of 8 · Exercise 4 · Layer 3 · Scored Decision 3 of 4</div>
+  <h1 class="display">The VBC <em>Quality Threshold</em></h1>
+  <p class="lead">Value-based contracts structure dollars around quality performance. Kept appointments close quality measures. The earn-back calculation depends entirely on your contract structure — and the difference can be a 4× multiplier on the same quality improvement.</p>
 
-  <table class="scenario-table" style="margin-bottom:24px;">
-    <thead>
-      <tr>
-        <th>Layer</th>
-        <th>Annual Value</th>
-        <th>Attribution Confidence</th>
-        <th>Key Dependency</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><strong>Layer 0: FFS base net benefit</strong></td>
-        <td><strong>$82,800</strong></td>
-        <td><span class="conf-high">High</span></td>
-        <td>Excel-parity calculation; no external assumptions</td>
-      </tr>
-      <tr>
-        <td>Layer 1: Coding uplift (Z + CPT)</td>
-        <td>$8,700</td>
-        <td><span class="conf-med">Medium</span></td>
-        <td>Requires documentation workflow build</td>
-      </tr>
-      <tr>
-        <td>Layer 2: CCM net (incremental ~40%)</td>
-        <td>$26,656</td>
-        <td><span class="conf-med">Medium</span></td>
-        <td>Requires enrollment lift attributable to NEMT</td>
-      </tr>
-      <tr>
-        <td>Layer 3: TCM net contribution</td>
-        <td>$18,967</td>
-        <td><span class="conf-high">High</span></td>
-        <td>Face-to-face completion directly enabled by NEMT</td>
-      </tr>
-      <tr>
-        <td>Layer 4: VBC quality earn-back (linear)</td>
-        <td>$35,000</td>
-        <td><span class="conf-low">Low-Medium</span></td>
-        <td>Attribution model required; concurrent interventions</td>
-      </tr>
-      <tr style="background:#f0fdf4;">
-        <td><strong>All-in total value</strong></td>
-        <td><strong>$172,123</strong></td>
-        <td></td>
-        <td>Program cost: $79,200 · Bank offset: $50,000</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <h3 style="font-size:16px; font-weight:800; color:var(--navy); margin-bottom:8px;">Decision 3: Which scenario anchors your board recommendation?</h3>
-  <p class="body-text">The board asks: <em>"Give us a single number to anchor the case. What should we expect this program to deliver in Year 1?"</em></p>
-
-  <div class="board-choice" id="q3choices">
-    <div class="board-btn" onclick="answerBoard('a')">
-      <div class="b-label">Option A — Optimistic</div>
-      <div class="b-title">All-in total value</div>
-      <div class="b-val">$172,123</div>
-      <div class="b-hint">All four layers active, Year 1</div>
+  <div class="g2" style="margin-bottom:16px;">
+    <div class="card card-blue">
+      <div class="pill pill-blue" style="margin-bottom:8px;">Pattern A — Linear Earn-back (ACO / Withhold)</div>
+      <p class="body-text" style="font-size:13px;margin-bottom:12px;">A dollar pool is withheld and earned back proportionally to quality score across the scoring range. Common in MSSP, ACO REACH.</p>
+      <div style="background:rgba(29,78,216,.08);border-radius:8px;padding:10px 12px;font-family:var(--mono);font-size:12px;line-height:1.8;color:var(--navy);">
+        Earn-back = (Projected − Baseline) / 100 × At-risk pool<br/>
+        Example: 7-pt delta, $500K pool → <strong>$35,000</strong>
+      </div>
     </div>
-    <div class="board-btn" onclick="answerBoard('b')">
-      <div class="b-label">Option B — Conservative ✓</div>
-      <div class="b-title">FFS base + confirmed TCM</div>
-      <div class="b-val">$110,567</div>
-      <div class="b-hint">High-confidence layers only</div>
-    </div>
-    <div class="board-btn" onclick="answerBoard('c')">
-      <div class="b-label">Option C — Minimal</div>
-      <div class="b-title">FFS base only</div>
-      <div class="b-val">$82,800</div>
-      <div class="b-hint">Most conservative single estimate</div>
-    </div>
-    <div class="board-btn" onclick="answerBoard('d')">
-      <div class="b-label">Option D — ROI-only</div>
-      <div class="b-title">Net outlay ROI</div>
-      <div class="b-val">4.90×</div>
-      <div class="b-hint">On $29,200 net cash outlay</div>
+    <div class="card card-purple">
+      <div class="pill pill-purple" style="margin-bottom:8px;">Pattern B — Cliff / Threshold Bonus (Star Ratings)</div>
+      <p class="body-text" style="font-size:13px;margin-bottom:12px;">A bonus is paid only if performance reaches a threshold — binary. Common in Medicare Advantage Star Ratings.</p>
+      <div style="background:rgba(109,40,217,.08);border-radius:8px;padding:10px 12px;font-family:var(--mono);font-size:12px;line-height:1.8;color:var(--navy);">
+        Bonus = Full_bonus IF projected ≥ threshold, ELSE $0<br/>
+        Same 7-pt improvement crossing threshold → <strong>$150,000</strong>
+      </div>
     </div>
   </div>
-  <div class="feedback-box" id="q3feedback"></div>
+
+  <div class="g2">
+    <div class="calc-shell">
+      <div class="section-label">VBC Quality Layer Inputs</div>
+      <div class="calc-inputs">
+        <div class="calc-field">
+          <label>Contract type</label>
+          <select id="vbc_type" onchange="calcVBC()">
+            <option value="linear">Linear earn-back (ACO/withhold)</option>
+            <option value="cliff">Cliff / threshold bonus (Star Ratings)</option>
+          </select>
+        </div>
+        <div class="calc-field"><label>Dollars at risk ($)</label><input id="vbc_pool" type="number" value="500000" oninput="calcVBC()"/></div>
+        <div class="calc-field"><label>Baseline quality score</label><input id="vbc_base" type="number" value="72" oninput="calcVBC()"/></div>
+        <div class="calc-field"><label>Projected score with NEMT</label><input id="vbc_proj" type="number" value="79" oninput="calcVBC()"/></div>
+        <div class="calc-field" id="cliff_thresh_wrap" style="display:none;"><label>Threshold score for bonus</label><input id="vbc_thresh" type="number" value="75" oninput="calcVBC()"/></div>
+        <div class="calc-field" id="cliff_bonus_wrap" style="display:none;"><label>Bonus amount ($)</label><input id="vbc_bonus_amt" type="number" value="150000" oninput="calcVBC()"/></div>
+        <div class="calc-field"><label>Bank CRA contribution ($)</label><input id="bank_cra" type="number" value="50000" oninput="calcVBC()"/></div>
+      </div>
+      <hr class="calc-divider"/>
+      <div class="waterfall" id="wf3"></div>
+      <div class="roi-display" style="margin-top:10px;">
+        <div>
+          <div style="font-size:10px;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.08em;margin-bottom:2px;">VBC Earn-back</div>
+          <div class="roi-big" id="vbc_earn" style="font-size:28px;color:#C4ADE8;">—</div>
+        </div>
+        <div style="text-align:right;">
+          <div class="roi-net" id="allin_net">All-in net: —</div>
+          <div class="roi-net" id="allin_roi" style="font-size:12px;opacity:.8;">ROI: —</div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="card">
+        <div class="section-label">Quality Measures Most Affected by NEMT</div>
+        <table class="scen-table" style="font-size:12px;">
+          <thead><tr><th>Measure</th><th>How NEMT Helps</th><th>Confidence</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Transitions of Care / Med Rec</strong></td><td>NEMT enables the 7/14-day F2F — binary attribution chain</td><td><span class="conf-high">High</span></td></tr>
+            <tr><td>Diabetes Glycemic Status (001)</td><td>Missed labs → worse HbA1c classification</td><td><span class="conf-med">Medium</span></td></tr>
+            <tr><td>Controlling High BP (236)</td><td>Missed follow-ups reduce documented control probability</td><td><span class="conf-med">Medium</span></td></tr>
+            <tr><td>Colorectal Screening (113)</td><td>Missed PCP touchpoints reduce gap closure</td><td><span class="conf-low">Low-Med</span></td></tr>
+          </tbody>
+        </table>
+        <div id="vbc_context" style="margin-top:10px;font-size:12px;color:var(--navy);line-height:1.7;"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:4px;">
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px;">
+      <div class="pill pill-red">Scored Decision 3 of 4</div>
+      <p style="font-size:13px;font-weight:700;color:var(--navy);">A board member asks: "Is the VBC earn-back model based on evidence that NEMT directly improves quality scores?" What is the correct response?</p>
+    </div>
+    <div class="vbc-grid" id="q3choices">
+      <div class="vbc-card" onclick="answerVBC('a')">
+        <div class="pill pill-navy" style="margin-bottom:8px;">Option A</div>
+        <h4 style="font-size:13px;font-weight:700;color:var(--navy);margin-bottom:6px;">Yes — quality measures are directly tied to completed visits, and NEMT enables those visits. The earn-back is fully attributable to NEMT.</h4>
+        <p style="font-size:12px;color:var(--muted);">Present the full VBC earn-back as a high-confidence layer in the board recommendation.</p>
+      </div>
+      <div class="vbc-card" onclick="answerVBC('b')">
+        <div class="pill pill-navy" style="margin-bottom:8px;">Option B</div>
+        <h4 style="font-size:13px;font-weight:700;color:var(--navy);margin-bottom:6px;">NEMT creates the appointment opportunity, but quality score attribution requires isolating NEMT's contribution from concurrent interventions. We present this layer with low-to-medium confidence and require an attribution study before Year 2 projections.</h4>
+        <p style="font-size:12px;color:var(--muted);">Include in the model with explicit attribution caveats and a planned cohort study.</p>
+      </div>
+      <div class="vbc-card" onclick="answerVBC('c')">
+        <div class="pill pill-navy" style="margin-bottom:8px;">Option C</div>
+        <h4 style="font-size:13px;font-weight:700;color:var(--navy);margin-bottom:6px;">The VBC layer cannot be included in the model at all without a completed RCT demonstrating NEMT's direct impact on quality scores.</h4>
+        <p style="font-size:12px;color:var(--muted);">Remove the VBC layer from the board presentation until the study is complete.</p>
+      </div>
+      <div class="vbc-card" onclick="answerVBC('d')">
+        <div class="pill pill-navy" style="margin-bottom:8px;">Option D</div>
+        <h4 style="font-size:13px;font-weight:700;color:var(--navy);margin-bottom:6px;">Use the Transitions of Care measure only — it has the highest attribution confidence — and present that single measure's earn-back as the full VBC layer value.</h4>
+        <p style="font-size:12px;color:var(--muted);">Narrow the VBC claim to the most defensible single measure.</p>
+      </div>
+    </div>
+    <div class="feedback-box" id="q3fb"></div>
+  </div>
+
+  <div class="xref-bar">
+    <span class="xref xref-platform">Navigator: Tier 3 — VBC Quality Layer (Layer A toggle, linear/cliff selector)</span>
+    <span class="xref xref-workbook">Workbook: Exercise 4 — The VBC Quality Threshold Layer (pp. 23–28)</span>
+  </div>
 
   <div class="nav-row">
     <button class="btn btn-secondary" onclick="go(5)">← Back</button>
-    <button class="btn btn-gold" id="q3next" disabled onclick="go(7)">View Your Debrief →</button>
+    <button class="btn btn-primary" id="q3next" disabled onclick="go(7)">Build the Board Case →</button>
   </div>
 </div>
+</div>
 
-<!-- ────────────────────────────────────────────
-     SCENE 7 — DEBRIEF
-──────────────────────────────────────────────── -->
-<div class="scene" id="s7">
-  <div class="scene-label">Scene 7 of 7 · Expert Debrief</div>
+<!-- ═══════════════════════════════════════════════════════════════
+     SCENE 7 — EXERCISE 5: ALL-IN BOARD CASE + SCORED Q4
+════════════════════════════════════════════════════════════════ -->
+<div class="scene-wrap" id="s7">
+<div class="scene-main">
+  <div class="scene-tag">Scene 7 of 8 · Exercise 5 · Synthesis · Scored Decision 4 of 4</div>
+  <h1 class="display">The <em>Board Recommendation</em></h1>
+  <p class="lead">You have built the four-layer value stack. Now you must frame it for a board finance committee that does not have time for nuance — and will hold you accountable for whatever number you give them.</p>
+
+  <div class="g2" style="margin-bottom:16px;">
+    <div class="card">
+      <div class="section-label">Complete Value Stack — All Layers</div>
+      <div class="waterfall" id="wf_final"></div>
+    </div>
+    <div>
+      <div class="card card-teal">
+        <div class="pill pill-teal" style="margin-bottom:10px;">Three-Scenario Framework</div>
+        <p class="body-text" style="font-size:13px;margin-bottom:12px;">A board finance committee will not accept a single-point estimate. Present three scenarios with explicit attribution assumptions and a clearly designated anchor.</p>
+        <table class="scen-table">
+          <thead><tr><th>Scenario</th><th>Layers</th><th>Annual Value</th><th>ROI</th></tr></thead>
+          <tbody>
+            <tr><td>Conservative (Y1 floor)</td><td>FFS + Coding</td><td id="scen_cons">—</td><td id="scen_cons_roi">—</td></tr>
+            <tr class="anchor-row"><td><strong>Base Case ★ Anchor</strong></td><td>+ TCM (confirmed)</td><td id="scen_base"><strong>—</strong></td><td id="scen_base_roi"><strong>—</strong></td></tr>
+            <tr><td>Optimistic (Y2+)</td><td>All layers active</td><td id="scen_opt">—</td><td id="scen_opt_roi">—</td></tr>
+            <tr><td>Net Outlay (Y2+)</td><td>+ Bank CRA offset</td><td id="scen_net">—</td><td id="scen_net_roi">—</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="card card-gold" style="margin-top:0;">
+        <div class="pill pill-gold" style="margin-bottom:8px;">Attribution Discipline</div>
+        <p class="body-text" style="font-size:13px;line-height:1.7;">A board that approves expecting $172K and receives $82K will feel misled and may cut Year 2 funding — even though $82K is a successful outcome. Anchor to the conservative-to-base scenario. The higher layers are the upside story for Year 2, not the Year 1 promise.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px;">
+      <div class="pill pill-red">Scored Decision 4 of 4</div>
+      <p style="font-size:13px;font-weight:700;color:var(--navy);">The board asks: <em>"Give us a single number to anchor the Year 1 case."</em> Which scenario do you recommend?</p>
+    </div>
+    <div class="board-grid" id="q4choices">
+      <div class="board-btn" onclick="answerBoard('a')">
+        <div class="b-label">Option A — Optimistic</div>
+        <div class="b-title">All-in total value</div>
+        <div class="b-val" id="b_opt">—</div>
+        <div class="b-hint">All four layers, Year 1 activation</div>
+      </div>
+      <div class="board-btn" onclick="answerBoard('b')">
+        <div class="b-label">Option B — Conservative-to-Base ✓</div>
+        <div class="b-title">FFS base + confirmed TCM</div>
+        <div class="b-val" id="b_base" style="color:var(--green);">—</div>
+        <div class="b-hint">Two high-confidence layers only</div>
+      </div>
+      <div class="board-btn" onclick="answerBoard('c')">
+        <div class="b-label">Option C — Minimal</div>
+        <div class="b-title">FFS base only</div>
+        <div class="b-val" id="b_cons">—</div>
+        <div class="b-hint">Most conservative single estimate</div>
+      </div>
+      <div class="board-btn" onclick="answerBoard('d')">
+        <div class="b-label">Option D — Net Outlay ROI</div>
+        <div class="b-title">ROI on net cash outlay</div>
+        <div class="b-val" id="b_netlabel">—</div>
+        <div class="b-hint">After bank CRA offset</div>
+      </div>
+    </div>
+    <div class="feedback-box" id="q4fb"></div>
+  </div>
+
+  <div class="xref-bar">
+    <span class="xref xref-platform">Navigator: Tier 3 — All-Layers Value Stack + Board Scenario Comparison</span>
+    <span class="xref xref-platform">Navigator: Generate Artifacts → Board Executive Summary</span>
+    <span class="xref xref-workbook">Workbook: Exercise 5 — The All-in ROI Decision (pp. 29–35)</span>
+  </div>
+
+  <div class="nav-row">
+    <button class="btn btn-secondary" onclick="go(6)">← Back</button>
+    <button class="btn btn-gold" id="q4next" disabled onclick="go(8)">View Your Debrief →</button>
+  </div>
+</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     SCENE 8 — EXPERT DEBRIEF
+════════════════════════════════════════════════════════════════ -->
+<div class="scene-wrap" id="s8">
+<div class="scene-main">
+  <div class="scene-tag">Scene 8 of 8 · Expert Debrief</div>
   <h1 class="display">Your <em>Debrief</em></h1>
-  <p class="lead">Review your performance across the three scored decisions. Each decision reflects a real executive judgment this program requires.</p>
+  <p class="lead">Four scored decisions. Review your performance and the expert rationale behind each correct answer. These decisions reflect real errors that executive teams make — and real compliance and financial consequences.</p>
 
-  <div class="debrief-score">
+  <div class="score-ring-wrap">
     <div class="score-ring" id="scoreRing" style="--pct:0">
       <div class="score-inner">
         <div class="num" id="debriefNum">0</div>
-        <div class="den">out of 3</div>
-      </div>
-    </div>
-    <p id="debriefMsg" style="font-size:16px; color:var(--muted); max-width:500px; margin:0 auto;"></p>
-  </div>
-
-  <div class="debrief-items" id="debriefItems"></div>
-
-  <div class="card card-accent" style="margin-top:28px;">
-    <div class="pill pill-teal" style="margin-bottom:12px;">Module 2 — Key Takeaways</div>
-    <div class="grid-2">
-      <div>
-        <h4 style="font-size:15px; font-weight:800; color:var(--navy); margin-bottom:8px;">📐 Financial Framework</h4>
-        <p style="font-size:14px; color:var(--muted); line-height:1.7;">The ROI model has four additive layers: FFS base → Coding uplift → CCM/TCM → VBC earn-back. Present all four with explicit attribution confidence. Anchor the board recommendation to the conservative-to-base scenario, not the optimistic ceiling.</p>
-      </div>
-      <div>
-        <h4 style="font-size:15px; font-weight:800; color:var(--navy); margin-bottom:8px;">⚖️ Compliance Architecture</h4>
-        <p style="font-size:14px; color:var(--muted); line-height:1.7;">CCM/TCM time must be real, threshold-meeting, and non-duplicative. CPT content requires AMA licensing beyond CMS MLN materials. NEMT creates the contact window; clinical staff fill it with genuine care management work.</p>
-      </div>
-      <div>
-        <h4 style="font-size:15px; font-weight:800; color:var(--navy); margin-bottom:8px;">🏛️ The Mission Case</h4>
-        <p style="font-size:14px; color:var(--muted); line-height:1.7;">For LMI patients managing chronic conditions, a missed appointment compounds over months into worse disease control, avoidable hospitalizations, and deteriorating quality of life. The financial layers are proof that doing the right thing is also financially sound.</p>
-      </div>
-      <div>
-        <h4 style="font-size:15px; font-weight:800; color:var(--navy); margin-bottom:8px;">📊 Dashboard Integration</h4>
-        <p style="font-size:14px; color:var(--muted); line-height:1.7;">The CHNA-CRA Navigator replicates this ROI model live with your actual CHNA documents. Use Tier 3 for the base model, the CCM/TCM and VBC toggles for the extended layers, and Application Drafts for board-ready artifacts.</p>
+        <div class="den">out of 4</div>
       </div>
     </div>
   </div>
+  <p id="debriefMsg" style="text-align:center;font-size:15px;color:var(--muted);max-width:560px;margin:0 auto 28px;line-height:1.7;"></p>
 
-  <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:28px; justify-content:center;">
+  <div id="debriefItems" style="margin-bottom:24px;"></div>
+
+  <div class="g2">
+    <div class="card card-teal">
+      <div class="pill pill-teal" style="margin-bottom:12px;">Module 2 Key Takeaways</div>
+      <div style="display:flex;flex-direction:column;gap:14px;">
+        <div>
+          <h4 style="font-size:13px;font-weight:800;color:var(--navy);margin-bottom:4px;">📐 The Four-Layer Architecture</h4>
+          <p style="font-size:12px;color:var(--muted);line-height:1.6;">FFS base → Coding uplift → CCM/TCM → VBC earn-back. Each layer is additive. Attribution confidence decreases as you move up the stack. Layer 0 (FFS) is the floor; Layer 3 (VBC) requires a formal attribution study.</p>
+        </div>
+        <div>
+          <h4 style="font-size:13px;font-weight:800;color:var(--navy);margin-bottom:4px;">⚖️ Compliance Architecture</h4>
+          <p style="font-size:12px;color:var(--muted);line-height:1.6;">CPT descriptors require AMA licensing. CCM/TCM time must be real, documented, and non-duplicative. Patient travel time is never billable. False Claims Act exposure is not theoretical — it is the primary compliance risk in this program.</p>
+        </div>
+        <div>
+          <h4 style="font-size:13px;font-weight:800;color:var(--navy);margin-bottom:4px;">📊 Board Presentation Discipline</h4>
+          <p style="font-size:12px;color:var(--muted);line-height:1.6;">Anchor to conservative-to-base (FFS + TCM). Present optimistic as Year 2 upside. The ROI on net outlay is accurate but misleading — use program cost ROI as the decision metric. Three scenarios prevent a single-number failure.</p>
+        </div>
+        <div>
+          <h4 style="font-size:13px;font-weight:800;color:var(--navy);margin-bottom:4px;">🔬 Attribution Methodology</h4>
+          <p style="font-size:12px;color:var(--muted);line-height:1.6;">The FFS and TCM attribution chains are high-confidence and traceable. CCM is medium-confidence (enrollment lift attribution required). VBC requires a formal matched-cohort study — the Rochester Epidemiology Project model is the gold standard.</p>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="card">
+        <div class="pill pill-gold" style="margin-bottom:10px;">Value Stack You Built</div>
+        <div class="waterfall" id="wf_debrief"></div>
+        <div style="margin-top:12px;font-size:11px;color:var(--muted);line-height:1.6;border-top:1px solid var(--border);padding-top:10px;">
+          All calculations use your module inputs. Replicate live in the Navigator dashboard using the ROI &amp; Break-even tier with all layer toggles enabled.
+        </div>
+      </div>
+      <div class="card card-navy" style="margin-top:0;">
+        <div class="pill pill-teal" style="margin-bottom:10px;">Platform &amp; Workbook Integration</div>
+        <p style="font-size:12px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:10px;">The CHNA-CRA Navigator replicates this full ROI model live with your actual institutional data. Every calculation in this module maps directly to the Navigator tiers and the Learner Workbook exercises.</p>
+        <div class="xref-bar">
+          <span class="xref xref-platform" style="background:rgba(255,255,255,.12);color:#fff;border-color:rgba(255,255,255,.2);">Navigator: Tier 3 — Full ROI Model</span>
+          <span class="xref xref-workbook">Workbook: All 5 Exercises + Quick Reference</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:28px;">
     <button class="btn btn-secondary" onclick="resetAll()">↺ Restart Module</button>
-    <button class="btn btn-primary" onclick="alert('In Articulate: this would navigate to Module 3 — Patient Engagement & Behavioral Science')">Module 3: Patient Engagement →</button>
-    <button class="btn btn-gold" onclick="alert('In Articulate: this would open the Learner Workbook PDF for download')">Download Workbook</button>
+    <button class="btn btn-primary" onclick="alert('In Articulate: navigate to Module 3 — Patient Engagement & Behavioral Science')">Module 3: Patient Engagement →</button>
+    <button class="btn btn-gold" onclick="alert('In Articulate: open the Master Learner Workbook PDF for download')">📖 Download Workbook</button>
+    <button class="btn btn-navy" onclick="alert('In Articulate: open the CHNA-CRA Navigator dashboard')">⬡ Open Navigator</button>
   </div>
-
-  <div class="dashboard-ref" style="margin:16px auto; width:fit-content;">Training Module Tab — Complete interactive exercises with full calculations</div>
+</div>
 </div>
 
-</div><!-- end scene container -->
+</div><!-- /sceneContainer -->
 
 <footer>
-  Module 2 — Revenue Optimization & Value-Based Care Strategies · Executive Training Program · Prototype v1.0 · For embedding in Articulate Storyline 360 or Rise 360
+  Module 2 — Revenue Optimization &amp; Value-Based Care · Executive Training Program · Enhanced v2.0<br/>
+  Designed for embedding in Articulate Storyline 360 (web object) or Rise 360 (custom HTML block) · All fonts gracefully degrade to system serif/sans
 </footer>
 
 <script>
-// ═══════════════════════════════════════════════
-//   STATE
-// ═══════════════════════════════════════════════
-const SCENES = 7;
+// ═══ STATE ══════════════════════════════════════════════════════
+const TOTAL_SCENES = 8;
+const TOTAL_Q      = 4;
 let currentScene = 1;
 let score = 0;
-let answers = {}; // q1,q2,q3 → 'correct'|'wrong'
+let answers = {}; // q1..q4 → true/false
 let nodesRevealed = 0;
+let predAnswered   = {};
+const SCENE_LABELS = ['Context','Evidence','FFS Base','Coding Layer','CCM / TCM','VBC Quality','Board Case','Debrief'];
 
-const SCENE_LABELS = [
-  "The Memo","Evidence Review","ROI Model","Coding Decision",
-  "CCM/TCM Compliance","Board Presentation","Debrief"
-];
+// Cached layer values for stack building
+let L = { ffsNet:0, progCost:0, codNet:0, ccmIncr:0, tcmNet:0, vbcEarn:0, bankCRA:0 };
 
-// ═══════════════════════════════════════════════
-//   PROGRESS
-// ═══════════════════════════════════════════════
-function initProgress(){
-  const c = document.getElementById('progDots');
-  c.innerHTML = '';
-  for(let i=1;i<=SCENES;i++){
+// ═══ HELPERS ════════════════════════════════════════════════════
+function gv(id)   { const e=document.getElementById(id); return e ? (parseFloat(e.value)||0) : 0; }
+function norm(v)  { return v>1 ? v/100 : v; }
+function fmt(n)   { if(isNaN(n)) return '—'; const s=Math.round(Math.abs(n)).toLocaleString(); return (n<0?'-$':'$')+s; }
+function pct(n,d) { return d ? (n/d*100).toFixed(0)+'%' : '—'; }
+
+function buildWF(id, rows) {
+  const el = document.getElementById(id); if(!el) return;
+  el.innerHTML = rows.map((r,i) =>
+    `<div class="w-row ${r.cls}" style="transition-delay:${i*60}ms">
+       <span class="w-label">${r.label}</span>
+       <span class="w-val">${r.v<0?'-$'+Math.round(Math.abs(r.v)).toLocaleString():'$'+Math.round(r.v).toLocaleString()}</span>
+     </div>`
+  ).join('');
+  setTimeout(()=>{ el.querySelectorAll('.w-row').forEach(r=>r.classList.add('vis')); },80);
+}
+
+function setEl(id, txt) { const e=document.getElementById(id); if(e) e.textContent=txt||'—'; }
+
+// ═══ PROGRESS ════════════════════════════════════════════════════
+function initProgress() {
+  const c = document.getElementById('progDots'); c.innerHTML='';
+  for(let i=1;i<=TOTAL_SCENES;i++) {
     const d = document.createElement('div');
-    d.className = 'prog-dot';
-    d.dataset.label = SCENE_LABELS[i-1];
-    d.onclick = () => { if(i <= currentScene) go(i); };
+    d.className='prog-dot'; d.textContent=i;
+    d.dataset.label=SCENE_LABELS[i-1];
+    d.onclick=()=>{ if(i<=currentScene) go(i); };
     c.appendChild(d);
   }
   updateProgress();
 }
-
-function updateProgress(){
-  const dots = document.querySelectorAll('.prog-dot');
-  dots.forEach((d,i)=>{
+function updateProgress() {
+  document.querySelectorAll('.prog-dot').forEach((d,i)=>{
     d.classList.remove('done','active');
-    if(i+1 < currentScene) d.classList.add('done');
+    if(i+1 <  currentScene) d.classList.add('done');
     if(i+1 === currentScene) d.classList.add('active');
   });
-  document.getElementById('progScore').textContent = `Score: ${score} / 3`;
+  setEl('progScore',`Score: ${score} / ${TOTAL_Q}`);
+  setEl('progEx', SCENE_LABELS[currentScene-1]);
 }
 
-// ═══════════════════════════════════════════════
-//   NAVIGATION
-// ═══════════════════════════════════════════════
-function go(n){
-  document.querySelectorAll('.scene').forEach(s=>s.classList.remove('active'));
-  document.getElementById('s'+n).classList.add('active');
-  currentScene = n;
-  updateProgress();
+// ═══ NAVIGATION ══════════════════════════════════════════════════
+function go(n) {
+  document.querySelectorAll('.scene-wrap').forEach(s=>s.classList.remove('active'));
+  const sw = document.getElementById('s'+n); if(sw) sw.classList.add('active');
+  currentScene=n; updateProgress();
   window.scrollTo({top:0,behavior:'smooth'});
-  if(n===2) startEvidence();
-  if(n===3) { calcROI(); setTimeout(animateWaterfall,300); }
-  if(n===7) renderDebrief();
+  if(n===2) initEvidence();
+  if(n===3) { calcFFS(); buildSensitivity(); }
+  if(n===4) { calcCoding(); }
+  if(n===5) { calcCCM(); }
+  if(n===6) { calcVBC(); }
+  if(n===7) { buildFinalStack(); }
+  if(n===8) { renderDebrief(); }
 }
 
-// ═══════════════════════════════════════════════
-//   EVIDENCE CHAIN
-// ═══════════════════════════════════════════════
-function startEvidence(){
-  // Show first node immediately
-  setTimeout(()=>{
-    document.getElementById('node0').classList.add('visible');
-  },200);
+// ═══ EVIDENCE CHAIN ══════════════════════════════════════════════
+const EVIDENCE_CONTENT = [
+  { cite:'CMS VBID Transportation Use Case CY2023 · PMC9026972 (NEMT systematic meta-analysis)',
+    extra:'Transportation barriers are associated with 3–4 million missed medical appointments annually in the U.S. PMC9026972 pooled evidence shows transportation interventions reduce missed appointments — but uptake management is the critical variable (Chaiyachati 2018).' },
+  { cite:'PMC12587199 — TCM follow-up associated with decreased 30-day readmissions',
+    extra:'Each missed appointment in a chronic disease management series compounds: uncontrolled HbA1c, documented BP, and medication non-adherence are all partially driven by missed follow-up visits. The attribution chain from NEMT → kept visit → disease control is high-confidence for CCM-enrolled patients.' },
+  { cite:'CMS MLN — CCM/TCM billing guidelines · Basic health economics contribution margin model',
+    extra:'The FFS calculation is deterministic and Excel-parity: prevented no-shows × (revenue − marginal cost − trip cost). Attribution is direct and auditable. No external assumptions required for Layer 0.' },
+  { cite:'QPP quality measure specifications (001, 236, 113) · CMS Star Ratings Technical Notes',
+    extra:'Quality measure closure requires a documented clinical encounter. NEMT enables the encounter. However, multiple concurrent interventions affect quality scores simultaneously — isolating NEMT\'s contribution requires a formal matched-cohort study (e.g., Rochester Epidemiology Project design). This is why VBC earn-back carries Low-Medium attribution confidence.' },
+];
+
+function initEvidence() {
+  setTimeout(()=>{ document.getElementById('enode0').classList.add('visible'); },200);
 }
 
-function revealNode(idx){
-  const node = document.getElementById('node'+idx);
-  node.classList.add('visible');
-  // Auto-reveal next
-  if(idx < 3){
-    setTimeout(()=>{
-      document.getElementById('node'+(idx+1)).classList.add('visible');
-    },600);
+function revealNode(idx) {
+  const ec = EVIDENCE_CONTENT[idx];
+  const citeEl = document.getElementById('ec'+idx);
+  if(citeEl) { citeEl.textContent = ec.cite; }
+  const node = document.getElementById('enode'+idx);
+  if(node) {
+    const p = node.querySelector('p');
+    if(p) p.textContent = ec.extra;
+    node.style.background='rgba(10,139,127,.04)';
+    node.style.borderColor='rgba(10,139,127,.2)';
   }
+  if(idx<3) setTimeout(()=>{ document.getElementById('enode'+(idx+1)).classList.add('visible'); },500);
   nodesRevealed = Math.max(nodesRevealed, idx+1);
-  updateEvidenceTracker();
-  if(nodesRevealed >= 4){
-    document.getElementById('evidenceNext').disabled = false;
+  if(nodesRevealed>=4) {
+    document.getElementById('evidenceNext').disabled=false;
+    setEl('evidenceStatus','✓ All four evidence links confirmed. Proceed to build the financial model.');
+  } else {
+    setEl('evidenceStatus', (4-nodesRevealed)+' link(s) remaining. Click each to expand.');
   }
 }
 
-function updateEvidenceTracker(){
-  const labels = ['Transportation → Missed Visits','Missed Visits → Disease Control','Missed Visits → Revenue Loss','Kept Visits → VBC Earn-back'];
-  let html = '';
-  for(let i=0;i<4;i++){
-    const done = nodesRevealed > i;
-    html += `<div style="display:flex;align-items:center;gap:8px;padding:6px 0;border-bottom:1px solid var(--border);font-size:13px;">
-      <span style="color:${done?'var(--green)':'var(--border2)'}; font-size:16px;">${done?'✓':'○'}</span>
-      <span style="color:${done?'var(--navy)':'var(--muted)'};font-weight:${done?'600':'400'}">${labels[i]}</span>
-    </div>`;
-  }
-  if(nodesRevealed>=4) html += '<p style="font-size:13px;color:var(--green);font-weight:700;margin-top:10px;">✓ All evidence reviewed. Proceed to the model.</p>';
-  document.getElementById('evidenceTracker').innerHTML = html;
+// ═══ PREDICTIONS ═════════════════════════════════════════════════
+function selectPredEvidence(choice, btn) {
+  if(predAnswered['evidence']) return;
+  predAnswered['evidence']=true;
+  const isCorrect = choice==='d';
+  btn.classList.add(isCorrect?'correct':'wrong');
+  document.getElementById('pred-evidence-reveal').classList.add('show');
 }
 
-// ═══════════════════════════════════════════════
-//   ROI CALCULATOR
-// ═══════════════════════════════════════════════
-function norm(v){ return v > 1 ? v/100 : v; }
-function fmt(n){ return '$'+Math.round(n).toLocaleString(); }
+function selectPred(scene, choice, btn) {
+  const key='s'+scene;
+  if(predAnswered[key]) return;
+  predAnswered[key]=true;
+  const correct = {3:'c', 5:'c'};
+  const isCorrect = choice===correct[scene];
+  btn.classList.add(isCorrect?'correct':'wrong');
+  document.getElementById('pred-'+key).classList.add('show');
+}
 
-function calcROI(){
-  const V = parseFloat(document.getElementById('inp_v').value)||0;
-  const n = norm(parseFloat(document.getElementById('inp_n').value)||0);
-  const s = norm(parseFloat(document.getElementById('inp_s').value)||0);
-  const r = parseFloat(document.getElementById('inp_r').value)||0;
-  const c = parseFloat(document.getElementById('inp_c').value)||0;
-  const m = norm(parseFloat(document.getElementById('inp_m').value)||0);
-  const t = parseFloat(document.getElementById('inp_t').value)||0;
-  const o = norm(parseFloat(document.getElementById('inp_o').value)||0);
+// ═══ LAYER 0 — FFS CALCULATOR ════════════════════════════════════
+function calcFFS() {
+  const V=gv('v'), n=norm(gv('n')), s=norm(gv('s')), m=norm(gv('m'));
+  const r=gv('r'), c=gv('c'), t=gv('t'), o=norm(gv('o'));
+  const prev = V*n*s*m;
+  const gross = prev*r, margC = prev*c, tripC = prev*t;
+  const ohC = tripC*o, prog = tripC+ohC;
+  const net = gross - margC - prog;
+  const be  = r - c;
+  L.ffsNet=net; L.progCost=prog;
 
-  const transport_ns = V * n * s;
-  const prevented   = transport_ns * m;
-  const gross_rev   = prevented * r;
-  const marg_cost   = prevented * c;
-  const trip_cost   = prevented * t;
-  const oh_cost     = trip_cost * o;
-  const prog_cost   = trip_cost + oh_cost;
-  const net         = gross_rev - marg_cost - prog_cost;
-  const roi         = prog_cost > 0 ? (net/prog_cost) : 0;
-  const breakeven   = r - c;
+  buildWF('wf0',[
+    {label:`Gross revenue (${Math.round(prev).toLocaleString()} visits × $${r})`, v:gross,  cls:'pos'},
+    {label:`Marginal clinical cost (× $${c})`,                                    v:-margC, cls:'neg'},
+    {label:`Trip cost (${Math.round(prev).toLocaleString()} × $${t})`,            v:-tripC, cls:'neg'},
+    {label:`Overhead (${(o*100).toFixed(0)}%)`,                                    v:-ohC,   cls:'neg'},
+    {label:'Layer 0 — FFS Net Annual Benefit',                                     v:net,    cls:'tot'},
+  ]);
+  const roi = prog>0 ? (net/prog).toFixed(2)+'×' : '—';
+  setEl('roi0', roi); setEl('net0', fmt(net)+' net benefit');
+  setEl('be0', `Break-even trip cost: $${be.toFixed(0)}/trip`);
+  const beInsight = `At $${t}/trip, you have <strong>$${(be-t).toFixed(0)}/trip</strong> of margin below break-even ($${be.toFixed(0)}). The program remains FFS-positive at trip costs up to <strong>$${be.toFixed(0)}/round trip</strong> — a ${pct(be-t,be)} safety margin. Even at 30% mitigation instead of 50%, FFS net benefit is ${fmt(V*n*s*0.30*(r-c) - V*n*s*0.30*t*(1+o))}.`;
+  const ins=document.getElementById('beInsight'); if(ins) ins.innerHTML=beInsight;
+  buildSensitivity();
+}
 
-  const rows = [
-    {label:`Gross revenue (${Math.round(prevented).toLocaleString()} visits × ${fmt(r)})`, val:gross_rev, cls:'positive'},
-    {label:`Marginal clinical cost (× ${fmt(c)})`, val:-marg_cost, cls:'negative'},
-    {label:`Trip cost (× $${t})`, val:-trip_cost, cls:'negative'},
-    {label:`Overhead (${(o*100).toFixed(0)}%)`, val:-oh_cost, cls:'negative'},
-    {label:`Net Annual Benefit`, val:net, cls:'total'},
-  ];
-
-  const wf = document.getElementById('waterfall');
-  wf.innerHTML = rows.map(row=>`
-    <div class="result-row ${row.cls}">
-      <span class="label">${row.label}</span>
-      <span class="val">${row.val<0?'-'+fmt(Math.abs(row.val)):fmt(row.val)}</span>
-    </div>
-  `).join('');
-
-  setTimeout(()=>{
-    wf.querySelectorAll('.result-row').forEach((el,i)=>{
-      setTimeout(()=>el.classList.add('visible'),i*80);
+function buildSensitivity() {
+  const V=gv('v'), n=norm(gv('n')), s=norm(gv('s')), r=gv('r'), c=gv('c'), o=norm(gv('o'));
+  const tCur=gv('t'), mCur=norm(gv('m'));
+  const mitigs=[0.30,0.40,0.50,0.60,0.70];
+  const trips=[45,55,65,80,100];
+  let html='';
+  mitigs.forEach(mv=>{
+    html+='<tr>';
+    html+=`<td class="row-label">${(mv*100).toFixed(0)}%</td>`;
+    trips.forEach(tv=>{
+      const prev2=V*n*s*mv;
+      const net2 = prev2*r - prev2*c - prev2*tv*(1+o);
+      const isCurT = tv===tCur;
+      const isCurM = Math.abs(mv-mCur)<0.005;
+      const cls = (isCurT&&isCurM) ? 'highlight' : (net2<0?'breakeven':'');
+      html+=`<td class="${cls}">${fmt(net2)}</td>`;
     });
-  },50);
-
-  document.getElementById('roiNum').textContent = roi.toFixed(2)+'×';
-  document.getElementById('netNum').textContent = fmt(net);
-  document.getElementById('breakeven').textContent = `Break-even trip cost: $${breakeven.toFixed(0)}/trip`;
-}
-
-function animateWaterfall(){
-  document.querySelectorAll('.result-row').forEach((el,i)=>{
-    setTimeout(()=>el.classList.add('visible'),i*100);
+    html+='</tr>';
   });
+  const tb=document.getElementById('sensTbody'); if(tb) tb.innerHTML=html;
 }
 
-// ═══════════════════════════════════════════════
-//   SCORED QUESTIONS
-// ═══════════════════════════════════════════════
+// ═══ LAYER 1 — CODING ════════════════════════════════════════════
+function calcCoding() {
+  const V=gv('v'), n=norm(gv('n')), s=norm(gv('s')), m=norm(gv('m'));
+  const r=gv('r'), c=gv('c'), t=gv('t'), o=norm(gv('o'));
+  const prev=V*n*s*m, prog=prev*t*(1+o);
+  const ffs=prev*r-prev*c-prog;
+  const zR=norm(gv('zrate')), zU=gv('zupl'), cR=norm(gv('cptrate')), cU=gv('cptupl');
+  const zVisits=prev*zR, zUpl=zVisits*zU;
+  const cVisits=prev*cR, cUpl=cVisits*cU;
+  const codNet=zUpl+cUpl;
+  L.ffsNet=ffs; L.progCost=prog; L.codNet=codNet;
 
-// Q1 — CPT Licensing
-const Q1 = {
-  correct: 'b',
-  feedback: {
-    correct: {
-      title: '✓ Correct — Compliance-First Approach',
-      body: `Reference CMS MLN materials as the primary source and engage AMA licensing if you need to display CPT descriptors directly. The AMA holds copyright on CPT codes and descriptors; entities displaying them in platforms or training materials generally require a license. This is not a theoretical risk — the AMA actively enforces CPT copyright. The practical workaround is to build documentation workflows that reference CMS-licensed materials (which reproduce allowable CPT content under federal government license) and link out to AMA resources for descriptor lookup.`
-    },
-    wrong_a: {
-      title: '✗ Incorrect — Fair Use Does Not Apply Here',
-      body: `"Fair use" is a legal defense to copyright infringement, not a license. It is fact-specific and rarely protects systematic reproduction in commercial or clinical platforms. The AMA explicitly states that CPT licensing is required for entities displaying CPT content in platforms. Using this approach would expose Meridian to copyright enforcement action.`
-    },
-    wrong_c: {
-      title: '○ Partially Correct — But Incomplete',
-      body: `Using only CPT code numbers avoids the descriptor issue, but it is not a complete strategy — it still requires AMA guidance on whether code numbers alone trigger licensing. More importantly, it creates a documentation tool that requires clinicians to leave the workflow to look up codes, reducing adoption. The better answer (B) preserves workflow efficiency while maintaining compliance.`
+  setEl('z_visits', Math.round(zVisits).toLocaleString());
+  setEl('z_uplift_val', fmt(zUpl));
+  setEl('cpt_visits', Math.round(cVisits).toLocaleString());
+  setEl('cpt_uplift_val', fmt(cUpl));
+
+  buildWF('wf1',[
+    {label:`Layer 0 — FFS Net Benefit`, v:ffs, cls:'tot'},
+    {label:`Layer 1a — Z-code Documentation Uplift`, v:zUpl, cls:'layer2'},
+    {label:`Layer 1b — CPT Coding Improvement`, v:cUpl, cls:'layer2'},
+    {label:`Layer 0+1 Combined Net`, v:ffs+codNet, cls:'grand'},
+  ]);
+  setEl('roi1', fmt(ffs+codNet));
+  setEl('cod_total', `Coding uplift: ${fmt(codNet)}`);
+  setEl('cod_pct', codNet>0&&ffs>0 ? `+${pct(codNet,ffs)} above FFS base` : '—');
+}
+
+// ═══ LAYER 2 — CCM/TCM ═══════════════════════════════════════════
+function calcCCM() {
+  const cp=gv('ccm_pat'), ce=norm(gv('ccm_enr')), cmo=gv('ccm_mo');
+  const call=gv('ccm_all'), csuc=norm(gv('ccm_suc')), cmin=gv('ccm_min');
+  const enrolled=cp*ce;
+  const billedMo=enrolled*cmo*csuc;
+  const grossCCM=billedMo*call;
+  const laborCCM=billedMo*cmin*0.65;
+  const ccmGross=grossCCM-laborCCM;
+  const ccmIncr=ccmGross*0.40;
+
+  const td=gv('tcm_dis'), tr=norm(gv('tcm_rch')), thigh=norm(gv('tcm_high')), tsuc=norm(gv('tcm_suc'));
+  const billableTCM=td*tr*tsuc;
+  const wtAvg=thigh*290+(1-thigh)*215;
+  const tcmNet=billableTCM*wtAvg - billableTCM*45*0.65;
+
+  L.ccmIncr=ccmIncr; L.tcmNet=tcmNet;
+
+  setEl('ccm_gross', fmt(ccmGross));
+  setEl('ccm_incr',  fmt(ccmIncr));
+  setEl('tcm_net_val', fmt(tcmNet));
+
+  buildWF('wf2',[
+    {label:'Layer 0 — FFS Net Benefit',                v:L.ffsNet,  cls:'tot'},
+    {label:'Layer 1 — Coding Uplift',                   v:L.codNet,  cls:'layer2'},
+    {label:'Layer 2a — CCM Net (40% incremental)',      v:ccmIncr,   cls:'layer'},
+    {label:'Layer 2b — TCM Net',                        v:tcmNet,    cls:'layer'},
+    {label:'Layers 0–2 Combined Net',                   v:L.ffsNet+L.codNet+ccmIncr+tcmNet, cls:'grand'},
+  ]);
+}
+
+// ═══ LAYER 3 — VBC ═══════════════════════════════════════════════
+function calcVBC() {
+  const vbcType = document.getElementById('vbc_type').value;
+  const pool=gv('vbc_pool'), base=gv('vbc_base'), proj=gv('vbc_proj');
+  const thresh=gv('vbc_thresh'), bonusAmt=gv('vbc_bonus_amt'), bank=gv('bank_cra');
+
+  // show/hide cliff fields
+  ['cliff_thresh_wrap','cliff_bonus_wrap'].forEach(id=>{
+    const el=document.getElementById(id); if(el) el.style.display=vbcType==='cliff'?'block':'none';
+  });
+
+  let vbcEarn=0;
+  if(vbcType==='linear') {
+    vbcEarn = Math.max(0, ((proj-base)/100)*pool);
+  } else {
+    vbcEarn = proj>=thresh ? bonusAmt : 0;
+  }
+  L.vbcEarn=vbcEarn; L.bankCRA=bank;
+  const allIn = L.ffsNet+L.codNet+L.ccmIncr+L.tcmNet+vbcEarn+bank;
+  const roi = L.progCost>0 ? (allIn/L.progCost).toFixed(2)+'×' : '—';
+
+  setEl('vbc_earn', fmt(vbcEarn));
+  setEl('allin_net', 'All-in net: '+fmt(allIn));
+  setEl('allin_roi', 'Program ROI: '+roi);
+
+  let ctx = '';
+  if(vbcType==='linear') {
+    const delta=proj-base;
+    ctx=`Linear model: ${delta}-point score improvement × $${(pool/100).toLocaleString()} per point = ${fmt(vbcEarn)} earn-back. Attribution caveat: multiple concurrent interventions affect quality scores — NEMT's contribution requires a formal matched-cohort study to isolate.`;
+  } else {
+    ctx= proj>=thresh
+      ? `Cliff model: Projected score (${proj}) ≥ threshold (${thresh}) → full bonus of ${fmt(bonusAmt)} earned. Same 7-pt improvement under linear model would earn only ${fmt(((proj-base)/100)*pool)}.`
+      : `Cliff model: Projected score (${proj}) < threshold (${thresh}) → $0 earned. The program does not cross the performance threshold. Consider whether CCM/TCM + NEMT together can move the score above ${thresh}.`;
+  }
+  const ctxEl=document.getElementById('vbc_context'); if(ctxEl) ctxEl.textContent=ctx;
+
+  buildWF('wf3',[
+    {label:'Layers 0–2 Combined Net',       v:L.ffsNet+L.codNet+L.ccmIncr+L.tcmNet, cls:'tot'},
+    {label:'Layer 3 — VBC Quality Earn-back', v:vbcEarn, cls:'layer3'},
+    {label:'Bank CRA Contribution (offset)', v:bank, cls:'layer3'},
+    {label:'ALL-IN NET VALUE',               v:allIn, cls:'grand'},
+  ]);
+}
+
+// ═══ FINAL STACK ══════════════════════════════════════════════════
+function buildFinalStack() {
+  const allIn = L.ffsNet+L.codNet+L.ccmIncr+L.tcmNet+L.vbcEarn+L.bankCRA;
+  buildWF('wf_final',[
+    {label:`Layer 0: FFS Net Benefit`,              v:L.ffsNet,           cls:'pos'},
+    {label:`Layer 1: Coding Uplift`,                v:L.codNet,           cls:'layer2'},
+    {label:`Layer 2a: CCM Net (incremental)`,       v:L.ccmIncr,          cls:'layer'},
+    {label:`Layer 2b: TCM Net`,                     v:L.tcmNet,           cls:'layer'},
+    {label:`Layer 3: VBC Quality Earn-back`,        v:L.vbcEarn,          cls:'layer3'},
+    {label:`Bank CRA Contribution`,                 v:L.bankCRA,          cls:'layer3'},
+    {label:`ALL-IN NET VALUE`,                      v:allIn,              cls:'grand'},
+  ]);
+
+  const cons=L.ffsNet+L.codNet;
+  const base=cons+L.tcmNet;
+  const opt=L.ffsNet+L.codNet+L.ccmIncr+L.tcmNet+L.vbcEarn;
+  const net=opt+L.bankCRA;
+
+  const rp=L.progCost>0;
+  setEl('scen_cons', fmt(cons));     setEl('scen_cons_roi', rp ? (cons/L.progCost).toFixed(2)+'×' : '—');
+  setEl('scen_base', fmt(base));     setEl('scen_base_roi', rp ? (base/L.progCost).toFixed(2)+'×' : '—');
+  setEl('scen_opt',  fmt(opt));      setEl('scen_opt_roi',  rp ? (opt/L.progCost).toFixed(2)+'×' : '—');
+  setEl('scen_net',  fmt(net));      setEl('scen_net_roi',  rp ? (net/L.progCost).toFixed(2)+'×' : '—');
+
+  setEl('b_opt',   fmt(opt));
+  setEl('b_base',  fmt(base));
+  setEl('b_cons',  fmt(cons));
+  const outlayROI = (L.progCost-L.bankCRA)>0 ? (net/(L.progCost-L.bankCRA)).toFixed(2)+'×' : '—';
+  setEl('b_netlabel', outlayROI);
+}
+
+// ═══ SCORED QUESTIONS ══════════════════════════════════════════════
+const Q = {
+  1: {
+    correct:'b',
+    feedback:{
+      b:{ ok:true,  title:'✓ Compliance-First — Correct',
+          body:'CMS MLN materials reproduce a limited, federally-licensed set of CPT content. For any CPT descriptor display beyond that, an AMA license is required. The AMA actively enforces CPT copyright — this is not a theoretical risk. Building your documentation workflow around CMS MLN sources and linking out for descriptor lookup is both compliant and operationally practical.' },
+      a:{ ok:false, title:'✗ Fair Use Does Not Apply Here',
+          body:'"Fair use" is a case-specific legal defense, not a license. It rarely protects systematic reproduction in clinical platforms. The AMA explicitly states that organizations displaying CPT content in tools or training materials require a license. This approach creates direct copyright enforcement exposure.' },
+      c:{ ok:false, title:'○ Partially Correct — but Incomplete',
+          body:'Using code numbers only avoids the descriptor issue but creates a documentation tool requiring clinicians to leave the workflow to look up codes — reducing adoption. The correct answer (B) maintains workflow efficiency while satisfying the licensing requirement.' },
+    }
+  },
+  2: {
+    correct:'b',
+    feedback:{
+      b:{ ok:true,  title:'✓ Operationally Sound and Compliant — Correct',
+          body:'NEMT creates the reliable contact window. Clinical staff fill it with genuine, documented, threshold-meeting care management work — medication review, care plan education, symptom monitoring. Time must be staff time (never ride logistics), documented separately, genuinely meeting the 20-minute CCM threshold. This is the only compliant path. The compliance key: the clinical work is real; the ride makes it possible.' },
+      a:{ ok:false, title:'✗ False Claims Act Exposure',
+          body:'Billing CCM when the 20-minute threshold was not genuinely met, or documenting ride pickup as the CCM contact event, is potentially fraudulent. Patient travel time is not billable under any billing code. This approach could trigger OIG investigation and Civil Monetary Penalties.' },
+      c:{ ok:false, title:'✗ Unnecessarily Forfeits Revenue',
+          body:'Avoiding CCM entirely eliminates ~$26,000+ in net annual contribution. CCM is entirely appropriate when thresholds and documentation requirements are met. The compliance concern is about documentation discipline — not about CCM itself.' },
+      d:{ ok:false, title:'✗ Double-Counting Violation',
+          body:'CMS is explicit: time billed toward CCM cannot also be counted toward any other billed code in the same period, including TCM. The MLN CCM guidance directly addresses non-duplication. This approach violates the rule and creates audit exposure.' },
+    }
+  },
+  3: {
+    correct:'b',
+    feedback:{
+      b:{ ok:true,  title:'✓ Attribution Discipline — Correct',
+          body:'The VBC layer belongs in the model with explicit low-to-medium confidence labeling and a planned attribution study. Multiple concurrent interventions affect quality scores simultaneously. Presenting it as fully attributable to NEMT (Option A) overstates the evidence. Excluding it entirely (Option C) is overly conservative and loses a legitimate planning scenario. Option D (Transitions of Care only) is defensible but unnecessarily narrows the analysis. The correct answer acknowledges the attribution challenge and proposes the solution.' },
+      a:{ ok:false, title:'✗ Attribution Overstatement',
+          body:'Quality scores are affected by clinical workflow, staffing, technology, and patient complexity simultaneously. NEMT enables kept appointments; kept appointments close quality measures. But other interventions run in parallel. Presenting VBC earn-back as fully attributable to NEMT, without an attribution study, invites a finance committee challenge you cannot answer.' },
+      c:{ ok:false, title:'✗ Overly Conservative',
+          body:'Excluding the VBC layer entirely removes a legitimate planning scenario from the board analysis. The standard is not "RCT required before inclusion" — it is "disclose confidence level and attribution methodology." Present it as low-to-medium confidence with a planned cohort study, not as zero.' },
+      d:{ ok:false, title:'○ Defensible but Suboptimal',
+          body:'Narrowing to Transitions of Care is a valid conservative approach — it has the highest confidence. But it artificially limits the analysis. The better answer is to include all affected measures with appropriate confidence weighting and propose a formal attribution study, rather than truncating the model pre-emptively.' },
+    }
+  },
+  4: {
+    correct:'b',
+    feedback:{
+      b:{ ok:true,  title:'✓ The Conservative-to-Base Anchor — Correct',
+          body:'FFS base + confirmed TCM includes only the two high-confidence, directly-enabled layers. TCM completion is binary: the face-to-face either happens within 7/14 days or it does not, and NEMT\'s attribution is traceable. A board anchored to this number will see upside in Year 2 (when CCM is fully enrolled and VBC attribution is modeled). A board anchored to the all-in figure will experience "underperformance" even when the program succeeds.' },
+      a:{ ok:false, title:'✗ Attribution Discipline Failure',
+          body:'All-in assumes all four layers are active and fully operational in Year 1. CCM requires enrollment lift, coding requires workflow build, VBC requires an attribution study. Using the optimistic figure as the anchor creates a high probability of perceived Year 1 failure — which threatens Year 2 funding even when the program is actually succeeding at the FFS + TCM level.' },
+      c:{ ok:false, title:'○ Defensible but Strategically Weak',
+          body:'FFS-only ($82,800) is the safest floor but undersells the program. TCM completion is directly and traceably enabled by NEMT transportation. Including it is both defensible and strategically appropriate.' },
+      d:{ ok:false, title:'✗ Misleading Financial Framing',
+          body:'ROI on net outlay is mathematically correct but structurally misleading — it inflates the apparent return by using the after-bank-subsidy denominator. The board should evaluate the return on total economic investment, not just the health system\'s net cash contribution. A finance committee skeptic will call this financial engineering.' },
     }
   }
 };
 
-// Q2 — CCM/TCM Compliance
-const Q2 = {
-  correct: 'b',
-  feedback: {
-    correct: {
-      title: '✓ Correct — Operationally Sound and Compliant',
-      body: `This is the only compliant approach. NEMT creates the reliable contact window. Clinical staff then perform genuine, threshold-meeting, non-duplicative care management work (medication review, care plan education, symptom monitoring, coordination calls). The time must be documented as actual staff time — separately from ride logistics — and must genuinely meet the 20-minute CCM threshold. CMS is explicit that CCM is non-face-to-face, time-based, and can be furnished "incident to" by clinical staff. The compliance key is: the clinical work is real; the ride makes it possible.`
-    },
-    wrong_a: {
-      title: '✗ Incorrect — False Claims Risk',
-      body: `Billing CCM for all enrolled patients regardless of whether the 20-minute threshold was genuinely met constitutes False Claims Act exposure. Patient travel time is not billable time. Documenting a ride as the CCM contact event is not compliant — it is potentially fraudulent. This approach could trigger OIG investigation and Civil Monetary Penalties.`
-    },
-    wrong_c: {
-      title: '✗ Incorrect — Unnecessarily Forfeits Revenue',
-      body: `Avoiding CCM entirely eliminates $66K in net annual contribution from the program. CCM is entirely appropriate when the threshold and documentation requirements are met. The compliance concern is not about CCM itself — it is about ensuring time is real, documented, and non-duplicative. A compliant CCM program is both possible and financially significant.`
-    },
-    wrong_d: {
-      title: '✗ Incorrect — Double-Counting Violation',
-      body: `CMS is explicit: time billed toward CCM in a given month cannot also be counted toward another billed code, including TCM. During a TCM 30-day service period, CCM may be billed, but only for time that is genuinely separate from TCM-related activities and not double-counted. The CMS MLN CCM booklet directly addresses this. This approach as described violates the non-duplication rule.`
-    }
-  }
-};
-
-// Q3 — Board Presentation
-const Q3 = {
-  correct: 'b',
-  feedback: {
-    correct: {
-      title: '✓ Correct — The Conservative-to-Base Anchor',
-      body: `Anchoring to $110,567 (FFS base + confirmed TCM) is the right executive decision. It includes only the two high-confidence layers — the direct financial recovery from prevented no-shows, and TCM completion which is directly enabled by NEMT transportation. The coding and CCM layers require operational build-out; the VBC earn-back requires attribution modeling. A board that approves expecting $172K and receives $82K will feel misled. A board that approves expecting $110K and receives $130K (once CCM is fully operational) will champion the program for expansion.`
-    },
-    wrong_a: {
-      title: '✗ Incorrect — Attribution Discipline Failure',
-      body: `$172,123 assumes all four layers are active and fully operational in Year 1. CCM requires an enrollment lift attributable to NEMT, the coding layer requires workflow build, and VBC earn-back requires an attribution model isolating NEMT's contribution from other concurrent quality interventions. Using the optimistic figure as the anchor creates a high probability of Year 1 underperformance and board confidence erosion — which threatens Year 2 funding even when the program is actually succeeding.`
-    },
-    wrong_c: {
-      title: '○ Defensible but Strategically Weak',
-      body: `$82,800 (FFS only) is the most conservative and most defensible figure. It is not wrong — but it undersells the program significantly. TCM completion is directly and traceably enabled by NEMT transportation. Including it in the anchor figure is both defensible and strategic. A board anchored to $82K may approve a smaller program than the evidence supports.`
-    },
-    wrong_d: {
-      title: '✗ Incorrect — Misleading Framing',
-      body: `4.90× ROI on net outlay is mathematically correct but structurally misleading. It makes the program appear extraordinarily profitable by using the after-bank-subsidy denominator. The board should understand the return on total economic investment ($79,200), not just the health system's net cash contribution. Using the net outlay ROI as the anchor figure invites a skeptic to call it financial engineering — which undermines credibility for the rest of the analysis.`
-    }
-  }
-};
-
-function answer(q, choice){
-  if(answers['q'+q]) return; // already answered
-  const qData = q===1?Q1:q===2?Q2:Q3;
-  const isCorrect = choice === qData.correct;
-  if(isCorrect) score++;
-
-  answers['q'+q] = isCorrect ? 'correct' : 'wrong';
-
-  // Style choices
-  const container = document.getElementById('q'+q+'choices');
+function answer(q, choice) {
+  if(answers['q'+q]!==undefined) return;
+  const qd=Q[q]; const fd=qd.feedback[choice]||{ok:false,title:'Incorrect',body:'See the correct answer.'};
+  answers['q'+q]=fd.ok; if(fd.ok) score++;
+  const container=document.getElementById('q'+q+'choices');
   container.querySelectorAll('.choice-btn').forEach((btn,i)=>{
-    const letter = 'abcd'[i];
-    btn.disabled = true;
-    if(letter === qData.correct) btn.classList.add('reveal-correct');
-    if(letter === choice && !isCorrect) btn.classList.add('selected-wrong');
-    if(letter === choice && isCorrect) btn.classList.add('selected-correct');
+    const l='abc'[i]; btn.disabled=true;
+    if(l===qd.correct) btn.classList.add('reveal-correct');
+    if(l===choice && !fd.ok) btn.classList.add('selected-wrong');
+    if(l===choice && fd.ok)  btn.classList.add('selected-correct');
   });
-
-  // Show feedback
-  const fb = document.getElementById('q'+q+'feedback');
-  let fd;
-  if(isCorrect) fd = qData.feedback.correct;
-  else fd = qData.feedback['wrong_'+choice] || {title:'Incorrect',body:'See the correct answer highlighted above.'};
-  fb.className = 'feedback-box ' + (isCorrect?'correct':'wrong');
-  fb.style.display = 'block';
-  fb.innerHTML = `<h4>${fd.title}</h4><p>${fd.body}</p>`;
-
-  document.getElementById('q'+q+'next').disabled = false;
+  const fb=document.getElementById('q'+q+'fb');
+  fb.className='feedback-box '+(fd.ok?'correct':'wrong');
+  fb.style.display='block';
+  fb.innerHTML=`<h4>${fd.title}</h4><p>${fd.body}</p>`;
+  document.getElementById('q'+q+'next').disabled=false;
   updateProgress();
 }
 
-function answerPitfall(choice){
-  if(answers['q2']) return;
-  answer(2, choice);
-  // Also style pitfall cards
-  document.getElementById('q2choices').querySelectorAll('.pitfall-card').forEach((card,i)=>{
-    const letter = 'abcd'[i];
-    card.style.pointerEvents='none';
-    if(letter === 'b') card.classList.add('revealed-answer');
-    if(letter === choice && choice!=='b') card.classList.add('selected-wrong');
-    if(letter === choice && choice==='b') card.classList.add('selected-correct');
+function answerVBC(choice) {
+  if(answers['q3']!==undefined) return;
+  const qd=Q[3]; const fd=qd.feedback[choice]||{ok:false,title:'Incorrect',body:''};
+  answers['q3']=fd.ok; if(fd.ok) score++;
+  document.getElementById('q3choices').querySelectorAll('.vbc-card').forEach((card,i)=>{
+    const l='abcd'[i]; card.style.pointerEvents='none';
+    if(l===qd.correct) card.classList.add('reveal-correct');
+    if(l===choice && !fd.ok) card.classList.add('selected-wrong');
+    if(l===choice && fd.ok)  card.classList.add('selected-correct');
   });
-}
-
-function answerBoard(choice){
-  if(answers['q3']) return;
-  answers['q3'] = choice === Q3.correct ? 'correct' : 'wrong';
-  if(choice === Q3.correct) score++;
-  updateProgress();
-
-  document.getElementById('q3choices').querySelectorAll('.board-btn').forEach((btn,i)=>{
-    const letter = 'abcd'[i];
-    btn.style.pointerEvents='none';
-    if(letter === Q3.correct){ btn.style.borderColor='var(--green)'; btn.style.background='linear-gradient(135deg,#f0fdf4,#fff)'; }
-    if(letter === choice && choice!==Q3.correct){ btn.style.borderColor='var(--red)'; btn.style.background='linear-gradient(135deg,#fff1f2,#fff)'; }
-    if(letter === choice && choice===Q3.correct){ btn.classList.add('selected'); }
-  });
-
-  const fb = document.getElementById('q3feedback');
-  const isCorrect = choice === Q3.correct;
-  let fd = isCorrect ? Q3.feedback.correct : (Q3.feedback['wrong_'+choice]||{title:'Incorrect',body:'See the correct answer highlighted above.'});
-  fb.className = 'feedback-box '+(isCorrect?'correct':'wrong');
+  const fb=document.getElementById('q3fb');
+  fb.className='feedback-box '+(fd.ok?'correct':'wrong');
   fb.style.display='block';
   fb.innerHTML=`<h4>${fd.title}</h4><p>${fd.body}</p>`;
   document.getElementById('q3next').disabled=false;
+  updateProgress();
 }
 
-// ═══════════════════════════════════════════════
-//   DEBRIEF
-// ═══════════════════════════════════════════════
-function renderDebrief(){
-  const pct = Math.round((score/3)*100);
-  document.getElementById('scoreRing').style.setProperty('--pct',pct);
-  document.getElementById('debriefNum').textContent = score;
+function answerBoard(choice) {
+  if(answers['q4']!==undefined) return;
+  const qd=Q[4]; const fd=qd.feedback[choice]||{ok:false,title:'Incorrect',body:''};
+  answers['q4']=fd.ok; if(fd.ok) score++;
+  document.getElementById('q4choices').querySelectorAll('.board-btn').forEach((btn,i)=>{
+    const l='abcd'[i]; btn.style.pointerEvents='none';
+    if(l==='b') { btn.style.borderColor='var(--green)'; btn.style.background='rgba(4,120,87,.08)'; }
+    if(l===choice&&choice!=='b') { btn.style.borderColor='var(--red)'; btn.style.background='rgba(185,28,28,.06)'; }
+  });
+  const fb=document.getElementById('q4fb');
+  fb.className='feedback-box '+(fd.ok?'correct':'wrong');
+  fb.style.display='block';
+  fb.innerHTML=`<h4>${fd.title}</h4><p>${fd.body}</p>`;
+  document.getElementById('q4next').disabled=false;
+  updateProgress();
+}
 
-  const msgs = [
-    "Review the expert feedback carefully — each decision reflects a real compliance or financial judgment error that executive teams commonly make.",
-    "Good progress. Review the decisions you missed — the compliance questions in particular have direct False Claims Act implications.",
-    "Excellent — you are ready to champion this program. All three decisions reflect sound financial and compliance reasoning."
+// ═══ DEBRIEF ══════════════════════════════════════════════════════
+function renderDebrief() {
+  const pct_score = Math.round((score/TOTAL_Q)*100);
+  document.getElementById('scoreRing').style.setProperty('--pct',pct_score);
+  setEl('debriefNum', score);
+  const msgs=[
+    'Review each decision carefully — three of the four reflect compliance or attribution errors with direct financial or legal consequences.',
+    'Good progress. The decision(s) you missed reflect real judgment calls where experienced executives make errors. Review the expert rationale above.',
+    'Strong performance. Review the one decision you missed and its expert rationale — the nuance matters in a board setting.',
+    'Excellent — 4/4. You demonstrated sound financial reasoning and compliance discipline across all four decision points. You are ready to present this program.',
   ];
-  document.getElementById('debriefMsg').textContent = msgs[score];
+  setEl('debriefMsg', msgs[score] || msgs[3]);
 
-  const items = [
-    {
-      q:'Decision 1 — CPT Licensing',
-      correct: answers.q1==='correct',
-      correct_txt:'You correctly identified the AMA licensing requirement and the CMS MLN workaround.',
-      wrong_txt:'CPT descriptors require an AMA license. Reference CMS MLN materials as the primary source in documentation tools and training platforms.'
-    },
-    {
-      q:'Decision 2 — CCM/TCM Compliance',
-      correct: answers.q2==='correct',
-      correct_txt:'You correctly identified the compliant approach: real staff time, genuine care management work, non-duplicative documentation.',
-      wrong_txt:'CCM/TCM time must be real, threshold-meeting, and non-duplicative. Patient travel time is not billable. Options A and D carry False Claims Act exposure. Option B is the only compliant path.'
-    },
-    {
-      q:'Decision 3 — Board Presentation Anchor',
-      correct: answers.q3==='correct',
-      correct_txt:'You correctly anchored to the conservative-to-base scenario ($110,567) — the two high-confidence layers. Attribution discipline preserved your credibility.',
-      wrong_txt:'Anchor your board recommendation to the conservative-to-base scenario: FFS base + confirmed TCM = $110,567. The optimistic ($172K) ceiling requires operational build-out and attribution modeling that Year 1 cannot guarantee.'
-    }
+  const items=[
+    { q:'Decision 1 — CPT Licensing & Documentation Tools', ok:answers.q1,
+      correct_txt:'You correctly identified the AMA licensing requirement and the CMS MLN workaround. Build documentation workflows around CMS-licensed materials.',
+      wrong_txt:'CPT descriptors require an AMA license. "Fair use" is not a license. Use CMS MLN materials as the primary reference in all documentation tools and training platforms. Link out for descriptor lookup rather than reproducing inline.' },
+    { q:'Decision 2 — CCM/TCM Compliance Architecture', ok:answers.q2,
+      correct_txt:'You correctly identified the compliant path: real staff time, genuine care management work, non-duplicative documentation. NEMT creates the window; clinical staff fill it.',
+      wrong_txt:'CCM/TCM time must be real, threshold-meeting, and non-duplicative. Patient travel time is never billable. Options A (false billing) and D (double-counting) carry False Claims Act exposure. Option C unnecessarily forfeits ~$26K+ in annual revenue.' },
+    { q:'Decision 3 — VBC Attribution Discipline', ok:answers.q3,
+      correct_txt:'You correctly framed VBC earn-back with low-to-medium confidence, attribution caveats, and a planned cohort study — the analytically honest and strategically sound position.',
+      wrong_txt:'VBC earn-back belongs in the model with explicit confidence labeling and a planned attribution study (e.g., REP matched-cohort design). Presenting it as fully attributable (A) overstates the evidence. Excluding it entirely (C) is overly conservative.' },
+    { q:'Decision 4 — Board Recommendation Anchor', ok:answers.q4,
+      correct_txt:'You correctly anchored to FFS base + confirmed TCM — the two high-confidence, directly-enabled layers. The higher layers are the Year 2 upside story, not the Year 1 promise.',
+      wrong_txt:'Anchor your board recommendation to the conservative-to-base scenario (FFS + TCM). The all-in figure ($172K) assumes full Year 1 operational maturity that is not realistic. The net outlay ROI is mathematically correct but structurally misleading for a board investment decision.' },
   ];
 
   document.getElementById('debriefItems').innerHTML = items.map(item=>`
     <div class="debrief-item">
-      <div class="debrief-icon ${item.correct?'correct':'wrong'}" style="font-size:20px;">
-        ${item.correct?'✅':'❌'}
-      </div>
-      <div>
-        <h5>${item.q}</h5>
-        <p>${item.correct ? item.correct_txt : item.wrong_txt}</p>
-      </div>
-    </div>
-  `).join('');
+      <div style="font-size:22px;flex-shrink:0;">${item.ok?'✅':'❌'}</div>
+      <div><h5>${item.q}</h5><p>${item.ok?item.correct_txt:item.wrong_txt}</p></div>
+    </div>`).join('');
+
+  // Rebuild value stack in debrief
+  const allIn=L.ffsNet+L.codNet+L.ccmIncr+L.tcmNet+L.vbcEarn+L.bankCRA;
+  buildWF('wf_debrief',[
+    {label:'Layer 0 — FFS Net Benefit',          v:L.ffsNet,  cls:'pos'},
+    {label:'Layer 1 — Coding Uplift',             v:L.codNet,  cls:'layer2'},
+    {label:'Layer 2a — CCM Net (incremental)',    v:L.ccmIncr, cls:'layer'},
+    {label:'Layer 2b — TCM Net',                  v:L.tcmNet,  cls:'layer'},
+    {label:'Layer 3 — VBC Quality Earn-back',     v:L.vbcEarn, cls:'layer3'},
+    {label:'Bank CRA Contribution',               v:L.bankCRA, cls:'layer3'},
+    {label:'ALL-IN NET VALUE',                    v:allIn,     cls:'grand'},
+  ]);
 }
 
-// ═══════════════════════════════════════════════
-//   RESET
-// ═══════════════════════════════════════════════
-function resetAll(){
-  score = 0; answers = {}; nodesRevealed = 0;
-  // Re-enable choices
-  document.querySelectorAll('.choice-btn,.pitfall-card,.board-btn').forEach(b=>{
-    b.disabled=false; b.style.pointerEvents='';
-    b.classList.remove('selected-correct','selected-wrong','reveal-correct','revealed-answer','selected');
-    b.style.borderColor=''; b.style.background='';
+// ═══ RESET ════════════════════════════════════════════════════════
+function resetAll() {
+  score=0; answers={}; nodesRevealed=0; predAnswered={};
+  L={ffsNet:0,progCost:0,codNet:0,ccmIncr:0,tcmNet:0,vbcEarn:0,bankCRA:0};
+  document.querySelectorAll('.choice-btn').forEach(b=>{
+    b.disabled=false;
+    b.classList.remove('selected-correct','selected-wrong','reveal-correct');
   });
-  document.querySelectorAll('.feedback-box').forEach(f=>f.style.display='none');
-  ['q1next','q2next','q3next'].forEach(id=>{
-    const el = document.getElementById(id);
-    if(el) el.disabled=true;
+  document.querySelectorAll('.vbc-card,.board-btn').forEach(b=>{
+    b.style.pointerEvents=''; b.style.borderColor=''; b.style.background='';
+    b.classList.remove('selected-correct','selected-wrong','reveal-correct');
+  });
+  document.querySelectorAll('.feedback-box').forEach(f=>{f.style.display='none';});
+  document.querySelectorAll('.pred-reveal').forEach(p=>p.classList.remove('show'));
+  document.querySelectorAll('.pred-btn').forEach(p=>p.classList.remove('correct','wrong'));
+  ['q1next','q2next','q3next','q4next'].forEach(id=>{
+    const el=document.getElementById(id); if(el) el.disabled=true;
   });
   document.getElementById('evidenceNext').disabled=true;
-  document.querySelectorAll('.chain-node').forEach(n=>n.classList.remove('visible'));
+  setEl('evidenceStatus','');
+  document.querySelectorAll('.chain-node').forEach(n=>{
+    n.classList.remove('visible'); n.style.background=''; n.style.borderColor='';
+  });
+  // Reset evidence text
+  [0,1,2,3].forEach(i=>{
+    const ec=document.getElementById('ec'+i); if(ec) ec.textContent='[ Click to expand ]';
+    const node=document.getElementById('enode'+i);
+    if(node){ const p=node.querySelector('p'); if(p) p.textContent=''; }
+  });
   go(1);
 }
 
-// ═══════════════════════════════════════════════
-//   INIT
-// ═══════════════════════════════════════════════
+// ═══ INIT ═════════════════════════════════════════════════════════
 initProgress();
-calcROI();
+calcFFS();
 </script>
 </body>
 </html>
