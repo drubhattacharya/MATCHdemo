@@ -189,12 +189,8 @@ body{font-family:var(--sans);background:var(--bg);color:var(--ink);min-height:10
 .layer-row .lr-title{font-size:14px;font-weight:700;color:#fff;}
 .layer-row .lr-sub{font-size:11px;color:rgba(255,255,255,.5);margin-top:2px;}
 .layer-row .lr-conf{font-size:10px;font-weight:700;padding:3px 9px;border-radius:20px;white-space:nowrap;}
-.layer-expand{display:none;padding:14px 18px 16px;font-size:13px;line-height:1.7;color:rgba(255,255,255,.82);border-top:1px solid rgba(255,255,255,.1);border-radius:0 0 var(--r) var(--r);margin-top:-8px;}
+.layer-expand{display:none;padding:16px 20px 18px;font-size:13px;line-height:1.75;color:#e2e8f0;border-top:1px solid rgba(255,255,255,.12);border-radius:0 0 var(--r) var(--r);margin-bottom:8px;}
 .layer-expand.show{display:block;animation:fadeIn .25s ease;}
-#lx0{background:linear-gradient(135deg,#0d2440,#162e4a);}
-#lx1{background:linear-gradient(135deg,#1a3360,#203870);}
-#lx2{background:linear-gradient(135deg,#05432f,#065438);}
-#lx3{background:linear-gradient(135deg,#3d1680,#4a1a96);}
 .conf-badge-high{background:rgba(4,120,87,.4);color:#A7F3D0;}
 .conf-badge-med{background:rgba(180,83,9,.4);color:#FDE68A;}
 .conf-badge-low{background:rgba(109,40,217,.35);color:#DDD6FE;}
@@ -467,7 +463,7 @@ body{font-family:var(--sans);background:var(--bg);color:var(--ink);min-height:10
       </div>
       <span class="lr-conf conf-badge-high">HIGH Confidence</span>
     </div>
-    <div class="layer-expand" id="lx0">
+    <div class="layer-expand" id="lx0" style="background:linear-gradient(135deg,#0d2440,#162e4a);">
       <strong>What it is:</strong> Each NEMT-enabled kept appointment generates net revenue equal to the visit's allowed amount minus marginal clinical cost. This is the program's financial floor — not ceiling.<br><br>
       <strong>Why it's high confidence:</strong> The causal chain is short and directly traceable: ride completed → appointment kept → claim generated → revenue collected. No intermediary attribution assumptions are required.<br><br>
       <strong>Evidence anchor:</strong> Shekelle et al. (2022) found a pooled <strong>37% reduction in missed appointment odds</strong> (OR 0.63, 95% CI: 0.48–0.83) with HIGH certainty evidence for appointment adherence.<span class="cite" onclick="showCite(1)">1</span> CMS cites 25%+ of no-shows as transportation-attributable across primary care populations.<span class="cite" onclick="showCite(3)">3</span><br><br>
@@ -480,7 +476,7 @@ body{font-family:var(--sans);background:var(--bg);color:var(--ink);min-height:10
       </div>
       <span class="lr-conf conf-badge-high" style="background:rgba(29,78,216,.4);color:#BFDBFE;">HIGH-MED Confidence</span>
     </div>
-    <div class="layer-expand" id="lx1">
+    <div class="layer-expand" id="lx1" style="background:linear-gradient(135deg,#162645,#1d3158);">
       <strong>What it is:</strong> NEMT programs generate structured data about transportation barriers that can be coded (Z75.3 — Transportation barriers to healthcare) and documented in the EHR. This supports more accurate claim coding and risk adjustment, producing revenue uplift per encounter.<br><br>
       <strong>Why it's high-medium confidence:</strong> The coding uplift is real and measurable, but it requires operational workflow changes — staff must be trained to ask screening questions and document findings consistently. The revenue is predictable <em>given</em> workflow compliance.<br><br>
       <strong>Compliance note:</strong> CPT code content is copyright-protected by the AMA. Documentation tools that display CPT descriptors require an AMA license. Always reference CMS MLN materials instead of reproducing raw CPT text in internal tools.
@@ -492,7 +488,7 @@ body{font-family:var(--sans);background:var(--bg);color:var(--ink);min-height:10
       </div>
       <span class="lr-conf conf-badge-med">MEDIUM Confidence</span>
     </div>
-    <div class="layer-expand" id="lx2">
+    <div class="layer-expand" id="lx2" style="background:linear-gradient(135deg,#053d2a,#064d34);">
       <strong>What it is:</strong> Patients who keep appointments can be enrolled in Chronic Care Management (CCM) or receive Transitional Care Management (TCM) following a discharge. NEMT directly enables TCM by ensuring the mandatory face-to-face visit can occur within the 7- or 14-day window.<br><br>
       <strong>Why it's medium confidence:</strong> TCM completion is directly and traceably enabled by NEMT (binary: visit happened or it didn't). CCM enrollment lift is partially attributable — not all enrolled patients have transportation barriers, so only incremental enrollment enabled by NEMT is credited to the program (typically ~40%).<br><br>
       <strong>Evidence anchor:</strong> TCM reduces 30-day readmissions by 22–32%<span class="cite" onclick="showCite(5)">5</span>, with an 86.6% reduction in readmission odds in one study.<span class="cite" onclick="showCite(13)">13</span> ASPE found TCM decreases spending by 11%, with $1.66B potential savings if all eligible beneficiaries received it — yet only 17.9% did in 2019.<span class="cite" onclick="showCite(14)">14</span>
@@ -504,7 +500,7 @@ body{font-family:var(--sans);background:var(--bg);color:var(--ink);min-height:10
       </div>
       <span class="lr-conf conf-badge-low">LOW-MED Confidence</span>
     </div>
-    <div class="layer-expand" id="lx3">
+    <div class="layer-expand" id="lx3" style="background:linear-gradient(135deg,#37126e,#451785);">
       <strong>What it is:</strong> Kept appointments close quality measure gaps — HbA1c tests performed, blood pressure recorded, post-discharge visits completed. Under value-based contracts (MIPS, ACO REACH), quality score improvements translate to financial earn-back or avoided penalties.<br><br>
       <strong>Why it's low-medium confidence:</strong> Attribution is the field's weakest link. Social risks cluster (transportation, housing, food insecurity co-occur), NEMT is typically bundled with other interventions, and no published study has isolated NEMT's independent contribution to quality measure performance with high rigor.<span class="cite" onclick="showCite(9)">9</span> Your board presentation must include a planned attribution study.<br><br>
       <strong>Key evidence gap:</strong> No published studies combine NEMT with CCM/TCM programs. The Berkowitz ACO evaluation found increased outpatient visits but no reduction in admissions or ED visits — the program was not cost-saving.<span class="cite" onclick="showCite(9)">9</span>
