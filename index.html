@@ -332,14 +332,19 @@ body{font-family:var(--sans);background:var(--bg);color:var(--ink);min-height:10
 .feedback-box h4{font-size:14px;font-weight:800;color:var(--navy);margin-bottom:6px;}
 .feedback-box p{font-size:13px;color:var(--ink);line-height:1.7;}
 .chain{display:flex;flex-direction:column;gap:0;}
-.chain-node{display:flex;gap:14px;align-items:flex-start;opacity:0;transform:translateY(8px);transition:all .35s;cursor:pointer;padding:14px 16px;border-radius:var(--r);border:1.5px solid transparent;}
-.chain-node.visible{opacity:1;transform:none;}
-.chain-node:hover.visible{background:rgba(10,139,127,.04);border-color:rgba(10,139,127,.2);}
+.chain-node{border:1.5px solid var(--border);background:var(--card);border-radius:var(--r);margin-bottom:6px;overflow:hidden;opacity:0;transition:opacity .35s;}
+.chain-node.visible{opacity:1;}
+.chain-header{display:flex;gap:14px;align-items:center;padding:14px 16px;cursor:pointer;transition:background .15s;}
+.chain-header:hover{background:rgba(10,139,127,.05);}
+.chain-node.confirmed .chain-header{background:rgba(4,120,87,.06);}
+.chain-header-right{margin-left:auto;font-size:11px;font-weight:700;color:var(--muted);white-space:nowrap;}
+.chain-node.confirmed .chain-header-right{color:var(--green);}
 .chain-icon{width:40px;height:40px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:18px;background:rgba(10,139,127,.1);}
-.chain-line{width:2px;height:20px;background:linear-gradient(to bottom,var(--teal2),transparent);margin:0 auto;margin-left:33px;}
-.chain-content h4{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:3px;}
-.chain-content p{font-size:12px;color:var(--muted);line-height:1.5;}
-.chain-content cite{font-size:10px;color:var(--teal);font-style:normal;font-weight:600;display:block;margin-top:4px;}
+.chain-line{width:2px;height:20px;background:linear-gradient(to bottom,var(--teal2),transparent);margin:0 auto;margin-left:26px;}
+.chain-content h4{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:0;}
+.chain-body{display:none;padding:12px 16px 14px;font-size:13px;line-height:1.75;color:var(--ink);border-top:1px solid var(--border);background:rgba(10,139,127,.02);}
+.chain-body.open{display:block;animation:fadeIn .2s ease;}
+.chain-cite{font-size:10px;color:var(--teal);font-weight:600;display:block;margin-top:8px;}
 .stack-builder{display:flex;flex-direction:column;gap:0;}
 .stack-row{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;border-radius:8px;margin-bottom:5px;font-size:13px;transition:all .25s;}
 .stack-row .s-label{font-weight:600;}
@@ -1106,40 +1111,40 @@ body{font-family:var(--sans);background:var(--bg);color:var(--ink);min-height:10
     </div>
   </div>
   <div class="chain" id="evidenceChain">
-    <div class="chain-node visible" id="enode0" onclick="revealNode(0)">
-      <div class="chain-icon">🚗</div>
-      <div class="chain-content">
-        <h4>Link 1 — Transportation → Missed Appointments</h4>
-        <p>Transportation barriers are documented drivers of no-shows. Click to reveal the evidence.</p>
-        <cite id="ec0">[ Click to expand ]</cite>
+    <div class="chain-node visible" id="enode0">
+      <div class="chain-header" onclick="revealNode(0)">
+        <div class="chain-icon">🚗</div>
+        <h4 class="chain-content" style="font-size:14px;font-weight:700;color:var(--navy);">Link 1 — Transportation → Missed Appointments</h4>
+        <span class="chain-header-right" id="ec0">▶ Click to expand</span>
       </div>
+      <div class="chain-body" id="ebody0"></div>
     </div>
     <div class="chain-line"></div>
-    <div class="chain-node visible" id="enode1" onclick="revealNode(1)">
-      <div class="chain-icon">🩺</div>
-      <div class="chain-content">
-        <h4>Link 2 — Missed Appointments → Worse Disease Control</h4>
-        <p>Missed care compounds over time into measurably worse clinical outcomes. Click to reveal.</p>
-        <cite id="ec1">[ Click to expand ]</cite>
+    <div class="chain-node visible" id="enode1">
+      <div class="chain-header" onclick="revealNode(1)">
+        <div class="chain-icon">🩺</div>
+        <h4 class="chain-content" style="font-size:14px;font-weight:700;color:var(--navy);">Link 2 — Missed Appointments → Worse Disease Control</h4>
+        <span class="chain-header-right" id="ec1">▶ Click to expand</span>
       </div>
+      <div class="chain-body" id="ebody1"></div>
     </div>
     <div class="chain-line"></div>
-    <div class="chain-node visible" id="enode2" onclick="revealNode(2)">
-      <div class="chain-icon">💰</div>
-      <div class="chain-content">
-        <h4>Link 3 — Kept Appointments → Revenue Recovery</h4>
-        <p>Kept appointments translate directly to recovered contribution margin. Click to reveal.</p>
-        <cite id="ec2">[ Click to expand ]</cite>
+    <div class="chain-node visible" id="enode2">
+      <div class="chain-header" onclick="revealNode(2)">
+        <div class="chain-icon">💰</div>
+        <h4 class="chain-content" style="font-size:14px;font-weight:700;color:var(--navy);">Link 3 — Kept Appointments → Revenue Recovery</h4>
+        <span class="chain-header-right" id="ec2">▶ Click to expand</span>
       </div>
+      <div class="chain-body" id="ebody2"></div>
     </div>
     <div class="chain-line"></div>
-    <div class="chain-node visible" id="enode3" onclick="revealNode(3)">
-      <div class="chain-icon">⭐</div>
-      <div class="chain-content">
-        <h4>Link 4 — Kept Appointments → VBC Quality Earn-back</h4>
-        <p>Quality measure closure depends on completed clinical encounters. Click to reveal — and the attribution caveat.</p>
-        <cite id="ec3">[ Click to expand ]</cite>
+    <div class="chain-node visible" id="enode3">
+      <div class="chain-header" onclick="revealNode(3)">
+        <div class="chain-icon">⭐</div>
+        <h4 class="chain-content" style="font-size:14px;font-weight:700;color:var(--navy);">Link 4 — Kept Appointments → VBC Quality Earn-back</h4>
+        <span class="chain-header-right" id="ec3">▶ Click to expand</span>
       </div>
+      <div class="chain-body" id="ebody3"></div>
     </div>
   </div>
   <div style="margin-top:14px;font-size:13px;color:var(--muted);" id="evidenceStatus">Click each link above to expand. <span id="evidenceCount">0</span> of 4 links confirmed.</div>
@@ -1652,18 +1657,31 @@ var EVIDENCE_DATA = [
 var countedNodes = {};
 function revealNode(n) {
   var node = document.getElementById('enode'+n);
-  node.classList.add('visible');
-  if(countedNodes[n]) return; // already counted, don't double-count
-  countedNodes[n] = true;
-  var data = EVIDENCE_DATA[n];
-  var p = node.querySelector('p'); if(p) p.textContent = data.p;
-  var cite = document.getElementById('ec'+n); if(cite) cite.textContent = '📚 ' + data.cite;
-  nodesRevealed++;
-  var statusEl = document.getElementById('evidenceCount');
-  if(statusEl) statusEl.textContent = nodesRevealed;
-  if(nodesRevealed===4) {
-    document.getElementById('evidenceNext').disabled = false;
-    document.getElementById('evidenceStatus').textContent = '✓ All four evidence links confirmed. You may proceed.';
+  var body = document.getElementById('ebody'+n);
+  var label = document.getElementById('ec'+n);
+
+  // Toggle open/close of body
+  var isOpen = body.classList.contains('open');
+  body.classList.toggle('open');
+  label.textContent = isOpen ? '▶ Click to expand' : '▼ Collapse';
+
+  // Populate evidence text on first open
+  if(!isOpen && body.innerHTML === '') {
+    var data = EVIDENCE_DATA[n];
+    body.innerHTML = '<p style="margin:0 0 6px;">' + data.p + '</p><span class="chain-cite">📚 ' + data.cite + '</span>';
+  }
+
+  // Count once, on first open
+  if(!isOpen && !countedNodes[n]) {
+    countedNodes[n] = true;
+    node.classList.add('confirmed');
+    nodesRevealed++;
+    var statusEl = document.getElementById('evidenceCount');
+    if(statusEl) statusEl.textContent = nodesRevealed;
+    if(nodesRevealed === 4) {
+      document.getElementById('evidenceNext').disabled = false;
+      document.getElementById('evidenceStatus').innerHTML = '✓ All four evidence links confirmed. You may proceed.';
+    }
   }
 }
 
@@ -1973,16 +1991,10 @@ function resetAll() {
   ['q1next','q2next','q3next','q4next'].forEach(function(id){ var el=document.getElementById(id); if(el) el.disabled=true; });
   document.getElementById('evidenceNext').disabled=true;
   setEl('evidenceCount','0');
-  document.querySelectorAll('.chain-node').forEach(function(n){ n.classList.add('visible'); });
-  var nodeDefaults = [
-    'Transportation barriers are documented drivers of no-shows. Click to reveal the evidence.',
-    'Missed care compounds over time into measurably worse clinical outcomes. Click to reveal.',
-    'Kept appointments translate directly to recovered contribution margin. Click to reveal.',
-    'Quality measure closure depends on completed clinical encounters. Click to reveal — and the attribution caveat.'
-  ];
+  document.querySelectorAll('.chain-node').forEach(function(n){ n.classList.add('visible'); n.classList.remove('confirmed'); });
   [0,1,2,3].forEach(function(i){
-    var ec=document.getElementById('ec'+i); if(ec) ec.textContent='[ Click to expand ]';
-    var node=document.getElementById('enode'+i); if(node){var p=node.querySelector('p');if(p)p.textContent=nodeDefaults[i];}
+    var ec=document.getElementById('ec'+i); if(ec) ec.textContent='▶ Click to expand';
+    var eb=document.getElementById('ebody'+i); if(eb){ eb.innerHTML=''; eb.classList.remove('open'); }
   });
   go(1);
 }
