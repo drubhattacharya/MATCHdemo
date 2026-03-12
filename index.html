@@ -1649,10 +1649,12 @@ var EVIDENCE_DATA = [
   { p:'MIPS Measure 001 (Diabetes HbA1c) and Measure 236 (Controlling High BP) both require in-person measurement — patients without recorded values are auto-classified as uncontrolled. However, isolating NEMT\'s contribution to quality scores from other concurrent interventions requires a formal matched-cohort study. Attribution is the field\'s weakest link.', cite:'Berkowitz et al. 2022 (Health Affairs; PMC9400526); CMS QPP Quality Specifications' }
 ];
 
+var countedNodes = {};
 function revealNode(n) {
   var node = document.getElementById('enode'+n);
-  if(node.classList.contains('visible')) return;
   node.classList.add('visible');
+  if(countedNodes[n]) return; // already counted, don't double-count
+  countedNodes[n] = true;
   var data = EVIDENCE_DATA[n];
   var p = node.querySelector('p'); if(p) p.textContent = data.p;
   var cite = document.getElementById('ec'+n); if(cite) cite.textContent = '📚 ' + data.cite;
@@ -1663,7 +1665,6 @@ function revealNode(n) {
     document.getElementById('evidenceNext').disabled = false;
     document.getElementById('evidenceStatus').textContent = '✓ All four evidence links confirmed. You may proceed.';
   }
-  setTimeout(function(){ if(nodesRevealed<4){ var next=document.getElementById('enode'+nodesRevealed); if(next) next.classList.add('visible'); } },100);
 }
 
 // ═══ PREDICTION CHALLENGES ═══════════════════════════════════════════════
@@ -1962,7 +1963,7 @@ function renderDebrief() {
 
 // ═══ RESET ════════════════════════════════════════════════════════════════
 function resetAll() {
-  score=0; answers={}; nodesRevealed=0; predAnswered={};
+  score=0; answers={}; nodesRevealed=0; predAnswered={}; countedNodes={};
   L={ffsNet:0,progCost:0,codNet:0,ccmIncr:0,tcmNet:0,vbcEarn:0,bankCRA:0};
   document.querySelectorAll('.choice-btn').forEach(function(b){ b.disabled=false; b.classList.remove('selected-correct','selected-wrong','reveal-correct'); });
   document.querySelectorAll('.vbc-card,.board-btn').forEach(function(b){ b.style.pointerEvents=''; b.style.borderColor=''; b.style.background=''; b.classList.remove('selected-correct','selected-wrong','reveal-correct'); });
