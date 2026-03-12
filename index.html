@@ -1106,7 +1106,7 @@ body{font-family:var(--sans);background:var(--bg);color:var(--ink);min-height:10
     </div>
   </div>
   <div class="chain" id="evidenceChain">
-    <div class="chain-node" id="enode0" onclick="revealNode(0)">
+    <div class="chain-node visible" id="enode0" onclick="revealNode(0)">
       <div class="chain-icon">🚗</div>
       <div class="chain-content">
         <h4>Link 1 — Transportation → Missed Appointments</h4>
@@ -1115,7 +1115,7 @@ body{font-family:var(--sans);background:var(--bg);color:var(--ink);min-height:10
       </div>
     </div>
     <div class="chain-line"></div>
-    <div class="chain-node" id="enode1" onclick="revealNode(1)">
+    <div class="chain-node visible" id="enode1" onclick="revealNode(1)">
       <div class="chain-icon">🩺</div>
       <div class="chain-content">
         <h4>Link 2 — Missed Appointments → Worse Disease Control</h4>
@@ -1124,7 +1124,7 @@ body{font-family:var(--sans);background:var(--bg);color:var(--ink);min-height:10
       </div>
     </div>
     <div class="chain-line"></div>
-    <div class="chain-node" id="enode2" onclick="revealNode(2)">
+    <div class="chain-node visible" id="enode2" onclick="revealNode(2)">
       <div class="chain-icon">💰</div>
       <div class="chain-content">
         <h4>Link 3 — Kept Appointments → Revenue Recovery</h4>
@@ -1133,7 +1133,7 @@ body{font-family:var(--sans);background:var(--bg);color:var(--ink);min-height:10
       </div>
     </div>
     <div class="chain-line"></div>
-    <div class="chain-node" id="enode3" onclick="revealNode(3)">
+    <div class="chain-node visible" id="enode3" onclick="revealNode(3)">
       <div class="chain-icon">⭐</div>
       <div class="chain-content">
         <h4>Link 4 — Kept Appointments → VBC Quality Earn-back</h4>
@@ -1973,10 +1973,16 @@ function resetAll() {
   ['q1next','q2next','q3next','q4next'].forEach(function(id){ var el=document.getElementById(id); if(el) el.disabled=true; });
   document.getElementById('evidenceNext').disabled=true;
   setEl('evidenceCount','0');
-  document.querySelectorAll('.chain-node').forEach(function(n){ n.classList.remove('visible'); });
+  document.querySelectorAll('.chain-node').forEach(function(n){ n.classList.add('visible'); });
+  var nodeDefaults = [
+    'Transportation barriers are documented drivers of no-shows. Click to reveal the evidence.',
+    'Missed care compounds over time into measurably worse clinical outcomes. Click to reveal.',
+    'Kept appointments translate directly to recovered contribution margin. Click to reveal.',
+    'Quality measure closure depends on completed clinical encounters. Click to reveal — and the attribution caveat.'
+  ];
   [0,1,2,3].forEach(function(i){
     var ec=document.getElementById('ec'+i); if(ec) ec.textContent='[ Click to expand ]';
-    var node=document.getElementById('enode'+i); if(node){var p=node.querySelector('p');if(p)p.textContent='';}
+    var node=document.getElementById('enode'+i); if(node){var p=node.querySelector('p');if(p)p.textContent=nodeDefaults[i];}
   });
   go(1);
 }
